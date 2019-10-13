@@ -15,5 +15,16 @@
   "bugs": {
     "url": "https://github.com/MiguelGarcia95/browser-story/issues"
   },
-  "homepage": "https://github.com/MiguelGarcia95/browser-story#readme"
+  "homepage": "https://github.com/MiguelGarcia95/browser-story#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-flash": "^0.1.1",
+    "env-cmd": "^10.0.1",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "mongoose": "^5.7.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.3"
+  }
 }
