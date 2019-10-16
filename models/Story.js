@@ -18,6 +18,10 @@ const storySchema = new mongoose.Schema({
   storyMap: {
     type: Schema.Types.ObjectId,
     ref: 'storyMap'
+  },
+  creator: {
+    type: Schema.Types.ObjectId,
+    ref: 'user'
   }
 })
 

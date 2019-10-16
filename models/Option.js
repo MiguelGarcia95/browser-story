@@ -13,10 +13,6 @@ const storySchema = new mongoose.Schema({
   optionList: {
     type: Array,
     required: false,
-  },
-  creator: {
-    type: Schema.Types.ObjectId,
-    ref: 'user'
   }
 })
 
