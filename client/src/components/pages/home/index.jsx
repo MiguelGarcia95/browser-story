@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Navbar from '../navbar';
+import Navbar from '../../navbar';
 
 const Container = styled.div`
   height: 100vh;
