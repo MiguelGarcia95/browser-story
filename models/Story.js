@@ -18,10 +18,6 @@ const storySchema = new mongoose.Schema({
   storyMap: {
     type: Schema.Types.ObjectId,
     ref: 'storyMap'
-  },
-  optionOrder: {
-    type: Array,
-    required: false,
   }
 })
 

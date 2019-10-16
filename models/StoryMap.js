@@ -5,9 +5,21 @@ const storyMapSchema = new mongoose.Schema({
     type: Schema.Types.ObjectId,
     ref: 'story'
   },
-  optionOrder: {
+  isParentOriginal: {
+    type: Boolean,
+    default: true,
+  },
+  parent: {
+    type: String,
+    required: true,
+  },
+  optionOrder: { 
     type: Array,
     required: false,
+  },
+  currentOption: {
+    type: String,
+    default: '0'
   }
 })
 

@@ -5,11 +5,18 @@ const storySchema = new mongoose.Schema({
     type: String,
     required: true,
     unique: false,
-    trim: true,
+  },
+  root: {
+    type: Boolean,
+    default: true,
   },
   optionList: {
     type: Array,
     required: false,
+  },
+  creator: {
+    type: Schema.Types.ObjectId,
+    ref: 'user'
   }
 })
 
