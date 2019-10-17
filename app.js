@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const path = require('path')
 const app = express();
 
-
 // configure mongoose to connect to mongodb
 mongoose.connect(process.env.MONGODB_URL, {
   useNewUrlParser: true,
