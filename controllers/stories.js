@@ -10,9 +10,13 @@ module.exports = {
     try {
       const storyMap = await new StoryMap({
       // once done, add this to story
+        story: story._id,
+        isParentOriginal: true,
+        parent: story._id,
       });
+      story.storyMap = storyMap._id;
       console.log(story);
-      res.status(201).send({story});
+      res.status(201).send({story, storyMap});
     } catch (error) {
       console.log(error);
       res.status(400).send({error}); 

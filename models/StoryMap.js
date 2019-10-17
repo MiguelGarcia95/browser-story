@@ -18,7 +18,7 @@ const storyMapSchema = new Schema({
     type: Array,
     required: false,
   },
-  currentOption: {
+  optionList: {
     type: String,
     default: '0'
   }
