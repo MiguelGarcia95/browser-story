@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 
 // const scoreSchema = new mongoose.Schema({storyId: String, gKarma: String, bKarma: String});
 

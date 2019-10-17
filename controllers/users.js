@@ -7,7 +7,6 @@ module.exports = {
     try {
       await user.save();
       const token = await user.createAuthToken();
-      console.log(token);
       res.status(201).send({user, token});
     } catch (error) {
       console.log(error);
@@ -22,7 +21,6 @@ module.exports = {
       
       if (match) {
         const token = await user.createAuthToken();
-        console.log(token);
         res.status(200).send({user, token});
       } else {
         res.status(401).send('Authentication error');
@@ -34,7 +32,6 @@ module.exports = {
   },
 
   loginWithToken: async (req, res) => {
-    // decode cookie
     try {
       const user = await User.findById(req.decoded.id);
       res.status(201).send({user});
