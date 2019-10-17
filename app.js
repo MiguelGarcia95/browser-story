@@ -27,7 +27,7 @@ if (process.env.NODE_ENV === 'production') {
 app.use(express.json());
 
 // routes
-const routes= require('./routes');
+const routes = require('./routes');
 app.use('/api/', routes);
 
 app.listen(process.env.PORT, () => {

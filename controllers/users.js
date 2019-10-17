@@ -44,5 +44,4 @@ module.exports = {
   logout: async (req, res) => {
     // will merely delete local cookie
   },
-  
 }
