@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const path = require('path')
 const app = express();
 
+
 // configure mongoose to connect to mongodb
 mongoose.connect(process.env.MONGODB_URL, {
   useNewUrlParser: true,
@@ -21,6 +22,13 @@ if (process.env.NODE_ENV === 'production') {
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
   });
 }
+
+// Setup express feats
+app.use(express.json());
+
+// routes
+const routes= require('./routes');
+app.use('/api/', routes);
 
 app.listen(process.env.PORT, () => {
   console.log(`Server is up on port: ${process.env.PORT}`);
