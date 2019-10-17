@@ -14,13 +14,14 @@ const storyMapSchema = new Schema({
     type: String,
     required: true,
   },
-  optionOrder: { 
+  optionList: {
     type: Array,
     required: false,
   },
-  optionList: {
-    type: String,
-    default: '0'
+  currentOption: {
+    type: Schema.Types.ObjectId,
+    ref: 'option',
+    default: 0,
   }
 })
 

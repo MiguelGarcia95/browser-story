@@ -1,12 +1,17 @@
 const Story = require('../models/Story');
 const StoryMap = require('../models/StoryMap');
+const Option = require('../models/Option');
 
 module.exports = {
-  index: async (req, res) => {
+  getStoryMap: async (req, res) => {
 
   },
 
-  edit: async (req, res) => {
+  cloneStoryMap: async (req, res) => {
+
+  },
+
+  updateCurrentOption: async (req, res) => {
 
   },
   

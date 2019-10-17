@@ -6,4 +6,6 @@ router.route('/')
   .get(stories.index)
   .post(stories.create);
 
+router.route('/edit/:id').post(stories.edit);
+
 module.exports = router;  
