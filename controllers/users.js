@@ -14,11 +14,25 @@ module.exports = {
   },
 
   login: async (req, res) => {
-    console.log(req.body)
+    try {
+      const user = await User.findOne({email: req.body.email});
+      const match = await bcrypt.compare(req.body.password, user.password);
+      
+      if (match) {
+        res.status(200).send({user});
+      } else {
+        res.status(401).send('Authentication error');
+      }
+    } catch (error) {
+      console.log(error);
+      res.status(400).send({error}); 
+    }
   },
+
   loginWithToken: async (req, res) => {
     // decode cookie
   },  
+
   logout: async (req, res) => {
     // will merely delete local cookie
   },
