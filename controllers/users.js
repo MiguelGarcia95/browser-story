@@ -3,8 +3,14 @@ const bcrypt = require('bcryptjs');
 
 module.exports = {
   register: async (req, res) => {
-    console.log(req.body)
-    res.status(200).send('succcess')
+    const user = await new User(req.body);
+    try {
+      await user.save();
+      res.status(201).send({user});
+    } catch (error) {
+      console.log(error);
+      res.status(400).send({error}); 
+    }
   },
 
   login: async (req, res) => {
