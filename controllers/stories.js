@@ -6,7 +6,11 @@ module.exports = {
 
   create: async (req, res) => {
     const story = await new Story(req.body);
+    
     try {
+      const storyMap = await new StoryMap({
+      // once done, add this to story
+      });
       console.log(story);
       res.status(201).send({story});
     } catch (error) {
