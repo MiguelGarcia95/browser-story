@@ -2,10 +2,9 @@ const express = require('express');
 const router = express.Router();
 const stories = require('../controllers/stories');
 
-router.route('/')
-  .get(stories.index)
-  .post(stories.create);
-
-router.route('/edit/:id').post(stories.edit);
+router.route('/').post(stories.create);
+router.route('/:id').get(stories.getStory);
+router.route('/:id/start').post(stories.startStory);
+router.route('/edit/:id').patch(stories.edit);
 
 module.exports = router;  

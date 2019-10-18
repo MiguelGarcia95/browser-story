@@ -21,7 +21,7 @@ const storyMapSchema = new Schema({
   currentOption: {
     type: Schema.Types.ObjectId,
     ref: 'option',
-    default: 0,
+    required: false
   }
 })
 
