@@ -9,12 +9,14 @@ module.exports = {
   startStory: async (req, res) => {
     try {
       const story = await Story.findById(req.params.id);
-      console.log('story started');
 
-      // const userStoryTracker = await new StoryTracker({
-      // })
+      const userStoryTracker = await new StoryTracker({
+        story: story._id,
+        user: req.body.user._id,
+      });
+      await  userStoryTracker.save();
 
-
+      res.status(201).send({userStoryTracker});
     } catch (error) {
       
     }

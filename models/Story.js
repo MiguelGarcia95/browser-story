@@ -12,6 +12,14 @@ const storySchema = new Schema({
     type: String,
     required: false,
   },
+  status: {
+    type: String,
+    default: 'On Going'
+  },
+  private: {
+    type: Boolean,
+    default: true
+  },
   image: {
     type: String,
     required: false,
