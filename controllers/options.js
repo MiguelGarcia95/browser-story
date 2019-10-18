@@ -3,7 +3,7 @@ const StoryTracker = require('../models/StoryTracker');
 const Option = require('../models/Option');
 
 module.exports = {
-  index: async (req, res) => {
+  getOption: async (req, res) => {
 
   },
 

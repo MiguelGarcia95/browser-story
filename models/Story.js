@@ -28,10 +28,10 @@ const storySchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'user'
   },
-  optionList: {
-    type: Array,
-    required: false,
-  },
+  optionList: [{
+    type: Schema.Types.ObjectId,
+    ref: 'option'
+  }],
 })
 
 const Story = mongoose.model('story', storySchema);

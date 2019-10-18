@@ -1,10 +1,11 @@
 const Story = require('../models/Story');
 const StoryTracker = require('../models/StoryTracker');
+const Option = require('../models/Option');
 
 module.exports = {
   getStory: async (req, res) => {
     try {
-      const story = await Story.findById(req.params.id);
+      const story = await Story.findById(req.params.id).populate('optionList');
       res.status(201).send({story});
     } catch (error) {
       console.log(error);
@@ -14,8 +15,12 @@ module.exports = {
 
   addStartingOption: async (req, res) => {
     try {
-      console.log(req.body);
-      res.status(201).send({});
+      const option = await new Option(req.body)
+      const story = await Story.findById(req.params.id);
+      story.optionList = [option._id];
+      option.save();
+      story.save();
+      res.status(201).send({story, option});
     } catch (error) {
       console.log(error);
       res.status(400).send({error}); 
