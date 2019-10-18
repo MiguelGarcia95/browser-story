@@ -6,6 +6,10 @@ module.exports = {
 
   },
 
+  addStartingOption: async (req, res) => {
+
+  },
+
   startStory: async (req, res) => {
     try {
       const story = await Story.findById(req.params.id);
