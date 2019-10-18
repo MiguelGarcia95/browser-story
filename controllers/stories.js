@@ -3,11 +3,33 @@ const StoryTracker = require('../models/StoryTracker');
 
 module.exports = {
   getStory: async (req, res) => {
-
+    try {
+      const story = await Story.findById(req.params.id);
+      res.status(201).send({story});
+    } catch (error) {
+      console.log(error);
+      res.status(400).send({error}); 
+    }
   },
 
   addStartingOption: async (req, res) => {
+    try {
+      console.log(req.body);
+      res.status(201).send({});
+    } catch (error) {
+      console.log(error);
+      res.status(400).send({error}); 
+    }
+  },
 
+  getStoryTracker: async (req, res) => {
+    try {
+      const storyTracker = await StoryTracker.findById(req.params.id);
+      res.status(201).send({storyTracker});
+    } catch (error) {
+      console.log(error);
+      res.status(400).send({error}); 
+    }
   },
 
   startStory: async (req, res) => {

@@ -4,11 +4,19 @@ const storySchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
-    unique: false,
   },
-  root: {
-    type: Boolean,
-    default: true,
+  description: {
+    type: String,
+  },
+  trigger: {
+    type: String,
+  },
+  location: {
+    type: String,
+  },
+  karmaPoints: {
+    type: Number,
+    default: 0,
   },
   optionList: {
     type: Array,
