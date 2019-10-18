@@ -1,5 +1,5 @@
 const Story = require('../models/Story');
-const StoryMap = require('../models/StoryMap');
+const StoryTracker = require('../models/StoryTracker');
 
 module.exports = {
   getStory: async (req, res) => {
@@ -8,10 +8,12 @@ module.exports = {
 
   startStory: async (req, res) => {
     try {
-      const story = await Story.findById(req.params.id).populate('storyMap');
+      const story = await Story.findById(req.params.id);
       console.log('story started');
-      console.log(story.storyMap);
-      console.log(req.body.userId);
+
+      // const userStoryTracker = await new StoryTracker({
+      // })
+
 
     } catch (error) {
       
@@ -21,15 +23,8 @@ module.exports = {
   create: async (req, res) => {
     const story = await new Story(req.body);
     try {
-      const storyMap = await new StoryMap({
-        story: story._id,
-        isParentOriginal: true,
-        parent: story._id,
-      });
-      story.storyMap = storyMap._id;
       await story.save();
-      await storyMap.save();
-      res.status(201).send({story, storyMap});
+      res.status(201).send({story});
     } catch (error) {
       console.log(error);
       res.status(400).send({error}); 

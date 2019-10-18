@@ -1,5 +1,5 @@
 const Story = require('../models/Story');
-const StoryMap = require('../models/StoryMap');
+const StoryTracker = require('../models/StoryTracker');
 const Option = require('../models/Option');
 
 module.exports = {

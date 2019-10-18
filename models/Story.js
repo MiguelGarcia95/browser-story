@@ -16,14 +16,14 @@ const storySchema = new Schema({
     type: String,
     required: false,
   },
-  storyMap: {
-    type: Schema.Types.ObjectId,
-    ref: 'storyMap'
-  },
-  creator: {
+  user: {
     type: Schema.Types.ObjectId,
     ref: 'user'
-  }
+  },
+  optionList: {
+    type: Array,
+    required: false,
+  },
 })
 
 const Story = mongoose.model('story', storySchema);
