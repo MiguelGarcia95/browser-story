@@ -12,8 +12,8 @@ export default function Home() {
   return (
     <Container>
       <Navbar name={'test'}>
-
       </Navbar>
+      
     </Container>
   )
 }
