@@ -1,5 +1,3 @@
-const Story = require('../models/Story');
-const StoryTracker = require('../models/StoryTracker');
 const Option = require('../models/Option');
 
 module.exports = {
@@ -16,7 +14,6 @@ module.exports = {
   edit: async (req, res) => {
     try {
       const option = await Option.findByIdAndUpdate(req.params.id, {$set:req.body});
-      // option.update({$set:req.body});
       res.status(201).send({message: 'Success'});
     } catch (error) {
       console.log(error);
