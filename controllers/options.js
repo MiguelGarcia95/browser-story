@@ -5,7 +5,7 @@ const Option = require('../models/Option');
 module.exports = {
   getOption: async (req, res) => {
     try {
-      const option = await Option.findById(req.params.id).populate('optionList');
+      const option = await Option.findById(req.params.id).populate('optionList', 'name trigger description location karmaPoints');
       res.status(201).send({option});
     } catch (error) {
       console.log(error);
@@ -15,7 +15,9 @@ module.exports = {
 
   edit: async (req, res) => {
     try {
-      
+      const option = await Option.findById(req.params.id);
+      console.log('edit');
+      res.status(201).send({option});
     } catch (error) {
       console.log(error);
       res.status(400).send({error}); 
