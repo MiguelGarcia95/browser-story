@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
 const storySchema = new mongoose.Schema({
   name: {
@@ -18,10 +19,10 @@ const storySchema = new mongoose.Schema({
     type: Number,
     default: 0,
   },
-  optionList: {
-    type: Array,
-    required: false,
-  }
+  optionList: [{
+    type: Schema.Types.ObjectId,
+    ref: 'option'
+  }],
 })
 
 const Story = mongoose.model('option', storySchema);

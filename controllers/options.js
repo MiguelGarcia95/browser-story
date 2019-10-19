@@ -4,14 +4,32 @@ const Option = require('../models/Option');
 
 module.exports = {
   getOption: async (req, res) => {
-
+    try {
+      const option = await Option.findById(req.params.id).populate('optionList');
+      res.status(201).send({option});
+    } catch (error) {
+      console.log(error);
+      res.status(400).send({error}); 
+    }
   },
 
   edit: async (req, res) => {
-
+    try {
+      
+    } catch (error) {
+      console.log(error);
+      res.status(400).send({error}); 
+    }
   },
   
   addOption: async (req, res) => {
-  
+    try {
+      const currentOption = await Option.findById(req.params.id);
+      const newOption = await new Option(req.body);
+      
+    } catch (error) {
+      console.log(error);
+      res.status(400).send({error}); 
+    }
   },
 }
