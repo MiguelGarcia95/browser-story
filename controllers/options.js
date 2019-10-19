@@ -24,9 +24,12 @@ module.exports = {
   
   addOption: async (req, res) => {
     try {
-      const currentOption = await Option.findById(req.params.id);
+      const option = await Option.findById(req.params.id);
       const newOption = await new Option(req.body);
-      
+      option.optionList = [...option.optionList, newOption._id];
+      await newOption.save();
+      await option.save();
+      res.status(201).send({option, newOption});
     } catch (error) {
       console.log(error);
       res.status(400).send({error}); 
