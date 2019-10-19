@@ -15,9 +15,9 @@ module.exports = {
 
   edit: async (req, res) => {
     try {
-      const option = await Option.findById(req.params.id);
-      console.log('edit');
-      res.status(201).send({option});
+      const option = await Option.findByIdAndUpdate(req.params.id, {$set:req.body});
+      // option.update({$set:req.body});
+      res.status(201).send({message: 'Success'});
     } catch (error) {
       console.log(error);
       res.status(400).send({error}); 
