@@ -20,7 +20,8 @@ module.exports = {
       story.optionList = [option._id];
       option.save();
       story.save();
-      res.status(201).send({story, option});
+      // res.status(201).send({story, option});
+      res.status(201).send({message: 'Success'});
     } catch (error) {
       console.log(error);
       res.status(400).send({error}); 
@@ -64,6 +65,12 @@ module.exports = {
   },
 
   edit: async (req, res) => {
-    // edit name, image, and description
+    try {
+      await Story.findByIdAndUpdate(req.params.id, {$set:req.body});
+      res.status(201).send({message: 'Success'});
+    } catch (error) {
+      console.log(error);
+      res.status(400).send({error}); 
+    }
   },
 }
