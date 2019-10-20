@@ -17,11 +17,23 @@ const Container = styled.div`
   box-sizing: border-box;
   padding-left: 0px;
   padding-right: 250px;
-  // padding-top: 50px;
   position: absolute;
   left: 0;
   top: 0;
   z-index: 1;
+`;
+
+const Content = styled.div`
+  width: 100%;
+  padding: 0 50px;
+  padding-top: 100px;
+  box-sizing: border-box;
+`;
+
+const Title = styled.h1`
+  font-size: 2rem;
+  color: #232323;
+  font-weight: 300;
 `;
 
 export default function Home() {
@@ -30,6 +42,9 @@ export default function Home() {
       <Sidebar />
       <Container>
         <Navbar name={'test'} />
+        <Content>
+          <Title>Recently Added</Title>
+        </Content>
       </Container>
     </Body>
   )

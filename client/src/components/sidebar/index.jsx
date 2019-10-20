@@ -19,9 +19,6 @@ const Header = styled.div`
   background: red;
   padding: 0 10px; 
   box-sizing: border-box;
-  background: #cb2d3e; 
-  background: -webkit-linear-gradient(to right, #ef473a, #cb2d3e);  
-  background: linear-gradient(to right, #ef473a, #cb2d3e);
 
   background: #a73737; 
   background: -webkit-linear-gradient(to right, #ef473a, #a73737);  
