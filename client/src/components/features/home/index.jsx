@@ -34,6 +34,7 @@ const Title = styled.h1`
   font-size: 2rem;
   color: #232323;
   font-weight: 300;
+  width: 100%;
 `;
 
 export default function Home() {
