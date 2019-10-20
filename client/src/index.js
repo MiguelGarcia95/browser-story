@@ -4,15 +4,19 @@ import {HashRouter, Switch, Route, withRouter} from 'react-router-dom';
 import {Provider, connect} from 'react-redux';
 import '@atlaskit/css-reset';
 import './index.css';
-import App from './components/App';
-import store from './store';
 import * as serviceWorker from './serviceWorker';
+import Home from './components/features/home';
+import Login from './components/auth/login';
+import SignUp from './components/auth/signup';
+import store from './store';
 
 const Root = () => {
   return (
     <HashRouter>
       <Switch>
-        <Route exact path='/' component={App} />
+        <Route exact path='/' component={Home} />
+        <Route exact path='/login' component={Login} />
+        <Route exact path='/signup' component={SignUp} />
       </Switch>
     </HashRouter>
   )
