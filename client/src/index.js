@@ -5,6 +5,7 @@ import {Provider, connect} from 'react-redux';
 import '@atlaskit/css-reset';
 import './index.css';
 import App from './components/App';
+import store from './store';
 import * as serviceWorker from './serviceWorker';
 
 const Root = () => {
@@ -21,9 +22,11 @@ const RootWithAuth = withRouter(connect()(Root));
 
 const RootWithRouter = () => {
   return(
-    <HashRouter>
-      <RootWithAuth />
-    </HashRouter>
+    <Provider store={store}>
+      <HashRouter>
+        <RootWithAuth />
+      </HashRouter>
+    </Provider>
   )
 }
 
