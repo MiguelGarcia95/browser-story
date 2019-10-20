@@ -33,8 +33,19 @@ const Content = styled.div`
 const Title = styled.h1`
   font-size: 2rem;
   color: #232323;
+  margin-left: 1.66%;
   font-weight: 300;
   width: 100%;
+  margin-bottom: 50px;
+`;
+
+const Story = styled.div`
+  width: 30%;
+  margin: 10px 1.66%;
+  height: 200px;
+  background: red;
+  border-radius: 10px;
+  float: left;
 `;
 
 export default function Home() {
@@ -42,9 +53,13 @@ export default function Home() {
     <Body>
       <Sidebar />
       <Container>
-        <Navbar name={'test'} />
+        <Navbar name={''} />
         <Content>
           <Title>Recently Added</Title>
+          <Story />
+          <Story />
+          <Story />
+          <Story />
         </Content>
       </Container>
     </Body>
