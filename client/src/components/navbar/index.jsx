@@ -8,9 +8,8 @@ const Container = styled.div`
   z-index: 3;
   position: sticky;
   position: fixed;
+  box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.1);
 `;
-
-// f9f9f9
 
 export default function Navbar({name}) {
   return (

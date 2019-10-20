@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Navbar from '../../navbar';
+import Sidebar from '../../sidebar';
 
 const Body = styled.div`
   height: 100vh;
@@ -12,36 +13,23 @@ const Body = styled.div`
 const Container = styled.div`
   width: 100vw;
   margin: auto;
-  background: red;
   min-height: 100vh;
   box-sizing: border-box;
-  padding-left: 300px;
-  padding-right: 50px;
-  padding-top: 50px;
+  padding-left: 0px;
+  padding-right: 250px;
+  // padding-top: 50px;
   position: absolute;
   left: 0;
   top: 0;
   z-index: 1;
 `;
 
-const Sidebar = styled.div`
-width: 250px;
-background: green;
-height: 100vh;
-padding-top: 50px;
-position: absolute;
-box-sizing: border-box;
-top: 0; left: 0;
-z-index: 2;
-`;
-
 export default function Home() {
   return (
     <Body>
-      <Navbar name={'test'} />
       <Sidebar />
       <Container>
-
+        <Navbar name={'test'} />
       </Container>
     </Body>
   )
