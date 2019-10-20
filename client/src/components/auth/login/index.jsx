@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Navbar from '../../navbar';
+import Form from '../../form';
 
 const Body = styled.div`
   height: 100vh;
@@ -19,11 +20,16 @@ const Container = styled.div`
 `;
 
 export default function Login() {
+  const formInputs = [
+    {name: 'email', type: 'email', placeholder: 'Type Email'},
+    {name: 'password', type: 'password', placeholder: 'Type Password'},
+  ];
   return (
     <Body>
       <Navbar name={''} />
       <Container>
         'login'
+        <Form inputs={formInputs}  />
       </Container>
     </Body>
   )
