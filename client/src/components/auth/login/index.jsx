@@ -28,8 +28,7 @@ export default function Login() {
     <Body>
       <Navbar name={''} />
       <Container>
-        'login'
-        <Form inputs={formInputs}  />
+        <Form inputs={formInputs} submit='Login' title='Login' />
       </Container>
     </Body>
   )
