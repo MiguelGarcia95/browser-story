@@ -1,5 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+import {Link} from 'react-router-dom';
+import {connect} from 'react-redux';
+
+import {login} from '../../../actions/user';
+
 import Navbar from '../../navbar';
 import Form from '../../form';
 
@@ -21,7 +26,7 @@ const Container = styled.div`
 
 class Login extends React.Component {
   onSubmit = (body) => {
-    console.log(body)
+    this.props.login(body)
   }
 
   render() {
@@ -40,4 +45,16 @@ class Login extends React.Component {
   }
 }
 
-export default Login;
+const mapStateToProps = state => {
+  return {
+    user: state.user.user
+  }
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    login: userData => dispatch(login(userData))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
