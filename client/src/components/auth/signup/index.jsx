@@ -1,5 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+import {Link} from 'react-router-dom';
+import {connect} from 'react-redux';
+
+import {signup} from '../../../actions/user';
+
 import Navbar from '../../navbar';
 import Form from '../../form';
 
@@ -20,8 +25,8 @@ const Container = styled.div`
 `;
 
 class SignUp extends React.Component {
-  onSubmit = (body) => {
-    console.log(body)
+  onSubmit = body => {
+    this.props.signup(body)
   }
 
   render() {
@@ -42,4 +47,16 @@ class SignUp extends React.Component {
   }
 }
 
-export default SignUp;
+const mapStateToProps = state => {
+  return {
+    user: state.user.user
+  }
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    signup: userData => dispatch(signup(userData))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignUp);

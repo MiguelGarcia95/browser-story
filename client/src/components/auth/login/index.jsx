@@ -25,7 +25,7 @@ const Container = styled.div`
 `;
 
 class Login extends React.Component {
-  onSubmit = (body) => {
+  onSubmit = body => {
     this.props.login(body)
   }
 
