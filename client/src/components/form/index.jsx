@@ -13,7 +13,7 @@ const Body = styled.form`
   left: 0; right: 0;
   margin: auto;
 `;
-// 75px height
+
 const Title = styled.h1`
   font-size: 2rem;
   color: #232323;
@@ -23,7 +23,7 @@ const Title = styled.h1`
   line-height: 75px;
   height: 75px;
 `;
-// 60px per input
+
 const Input = styled.input` 
   width: 100%;
   border: none;
@@ -33,7 +33,7 @@ const Input = styled.input`
   height: 35px;
   margin-bottom: 25px;
 `;
-// 50px per input
+
 const Button = styled.button`
   width: 100%;
   border: none;
