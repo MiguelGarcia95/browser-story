@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Link} from 'react-router-dom';
+import Link from '../../_styledComponent/Link';
 import {connect} from 'react-redux';
 
 import {login} from '../../../actions/user';
@@ -25,6 +25,20 @@ const Container = styled.div`
 `;
 
 class Login extends React.Component {
+  componentDidMount() {
+    this.redirectIfAuth(this.props);
+  }
+
+  componentDidUpdate(prevProps) {
+    this.redirectIfAuth(this.props);
+  }
+
+  redirectIfAuth = props => {
+    if (props.user) {
+      props.history.push('/');
+    }
+  }
+  
   onSubmit = body => {
     this.props.login(body)
   }
@@ -39,6 +53,7 @@ class Login extends React.Component {
         <Navbar name={''} />
         <Container>
           <Form inputs={formInputs} submit='Login' title='Login' onSubmit={this.onSubmit} />
+          <Link to='/signup'>Sign Up</Link>
         </Container>
       </Body>
     )
