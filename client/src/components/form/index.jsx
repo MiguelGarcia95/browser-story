@@ -5,7 +5,7 @@ const Body = styled.form`
   height: ${props => props.height ? props.height : props.height}px;
   max-height: 700px;
   width: 400px;
-  background-color: green;
+  background-color: #fff;
   position: absolute;
   box-sizing: border-box;
   padding: 0 50px;
@@ -40,6 +40,7 @@ const Button = styled.button`
   box-sizing: border-box;
   font-size: 1.1rem;
   height: 50px;
+  background: #f6f6f6;
 `;
 
  class Form extends React.Component {
