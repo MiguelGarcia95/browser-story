@@ -8,3 +8,21 @@ export const logout = () => {
     })
   }
 }
+
+export const login = () => {
+  return dispatch => {
+    dispatch({
+      type: LOGIN,
+      // token: null,
+    })
+  }
+}
+
+export const signup = () => {
+  return dispatch => {
+    dispatch({
+      type: SIGNUP,
+      // token: null,
+    })
+  }
+}
