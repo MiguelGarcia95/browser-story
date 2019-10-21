@@ -46,7 +46,7 @@ const Button = styled.button`
    displayInputs = inputs => {
      return inputs.map(input => {
        return (
-        <Input type={input.type} placeholder={input.placeholder} name={input.name} />
+        <Input key={input.name} type={input.type} placeholder={input.placeholder} name={input.name} onChange={this.onChange} />
        )
      })
    }
@@ -62,11 +62,18 @@ const Button = styled.button`
     return height;
    }
 
+   onSubmit = e => {
+     e.preventDefault();
+     console.log(this.state)
+   }
+
+   onChange = e => this.setState({[e.target.name]: e.target.value});
+
    render() {
      const {inputs, submit, title, textareas} = this.props;
      const bodyHeight = this.getBodyHeight(inputs, textareas);
      return (
-       <Body height={bodyHeight} >
+       <Body height={bodyHeight} onSubmit={this.onSubmit} >
          <Title>{title}</Title>
          {this.displayInputs(inputs)}
          <Button type='submit'>{submit}</Button>
