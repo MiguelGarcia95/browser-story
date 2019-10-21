@@ -64,7 +64,7 @@ const Button = styled.button`
 
    onSubmit = e => {
      e.preventDefault();
-     console.log(this.state)
+     this.props.onSubmit(this.state)
    }
 
    onChange = e => this.setState({[e.target.name]: e.target.value});

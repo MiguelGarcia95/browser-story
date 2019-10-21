@@ -19,17 +19,25 @@ const Container = styled.div`
   z-index: 1;
 `;
 
-export default function Login() {
-  const formInputs = [
-    {name: 'email', type: 'email', placeholder: 'Type Email'},
-    {name: 'password', type: 'password', placeholder: 'Type Password'},
-  ];
-  return (
-    <Body>
-      <Navbar name={''} />
-      <Container>
-        <Form inputs={formInputs} submit='Login' title='Login' />
-      </Container>
-    </Body>
-  )
+class Login extends React.Component {
+  onSubmit = (body) => {
+    console.log(body)
+  }
+
+  render() {
+    const formInputs = [
+      {name: 'email', type: 'email', placeholder: 'Type Email'},
+      {name: 'password', type: 'password', placeholder: 'Type Password'},
+    ];
+    return (
+      <Body>
+        <Navbar name={''} />
+        <Container>
+          <Form inputs={formInputs} submit='Login' title='Login' onSubmit={this.onSubmit} />
+        </Container>
+      </Body>
+    )
+  }
 }
+
+export default Login;
