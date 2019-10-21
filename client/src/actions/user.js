@@ -18,6 +18,15 @@ export const login = () => {
   }
 }
 
+export const loginWithToken = () => {
+  return dispatch => {
+    dispatch({
+      type: LOGIN_WITH_TOKEN,
+      // token: null,
+    })
+  }
+}
+
 export const signup = () => {
   return dispatch => {
     dispatch({
