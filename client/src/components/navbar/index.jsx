@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {connect} from 'react-redux';
 
 import {getCookie} from '../../functions/cookies';
-import {signinWithToken, logout} from '../../actions/user';
+import {loginWithToken, logout} from '../../actions/user';
 
 const Container = styled.div`
   width: 100%;
@@ -18,7 +18,7 @@ const Container = styled.div`
  class Navbar extends React.Component {
   componentDidMount() {
     if (getCookie('token') !== '' && !this.props.user) {
-      this.props.signinWithToken();
+      this.props.loginWithToken();
     } else if (getCookie('token') === '') {
       this.props.history.push('/login');
     }
@@ -42,7 +42,7 @@ const Container = styled.div`
 
 const mapStateToProps = state => {
   return {
-    token: state.auth.token,
+    token: state.user.token,
     user: state.user.user
   }
 };
@@ -50,7 +50,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     logout: () => dispatch(logout()),
-    signinWithToken: () => dispatch(signinWithToken())
+    loginWithToken: () => dispatch(loginWithToken())
   }
 }
 

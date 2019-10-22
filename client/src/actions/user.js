@@ -6,10 +6,7 @@ import {setCookie, getCookie, deleteCookie} from '../functions/cookies';
 export const logout = () => {
   return dispatch => {
     deleteCookie('token');
-    dispatch({
-      type: LOGOUT,
-      token: null,
-    })
+    dispatch({type: LOGOUT})
   }
 }
 
@@ -38,10 +35,16 @@ export const signup = userData => {
 }
 
 export const loginWithToken = () => {
-  return dispatch => {
+  return async dispatch => {
+    const token = getCookie('token');
+    const results = await axios.post('/api/users/loginWithToken', null, {
+      headers: {'Authorization': "bearer " + token},
+    });
+
     dispatch({
       type: LOGIN_WITH_TOKEN,
-      // token: null,
+      user: results.data.user,
+      token: token
     })
   }
 }

@@ -41,6 +41,7 @@ const Button = styled.button`
   font-size: 1.1rem;
   height: 50px;
   background: #f6f6f6;
+  cursor: pointer;
 `;
 
  class Form extends React.Component {
