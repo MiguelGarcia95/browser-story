@@ -1,9 +1,12 @@
 const User = require('../models/User');
 const bcrypt = require('bcryptjs');
+const md5 = require('md5');
 
 module.exports = {
   register: async (req, res) => {
     const user = await new User(req.body);
+    req.body.avatar = `https://gravatar.com/avatar/${md5(req.body.email)}?d=identicon`;
+
     try {
       await user.save();
       const token = await user.createAuthToken();

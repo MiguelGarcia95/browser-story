@@ -2,6 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import Navbar from '../../navbar';
 import Sidebar from '../../sidebar';
+import {connect} from 'react-redux';
+
+// import {signup} from '../../../actions/user';
 
 const Body = styled.div`
   height: 100vh;
@@ -18,8 +21,7 @@ const Container = styled.div`
   padding-left: 0px;
   padding-right: 250px;
   position: absolute;
-  left: 0;
-  top: 0;
+  left: 0; top: 0;
   z-index: 1;
 `;
 
@@ -32,6 +34,16 @@ const Title = styled.h1`
   margin-bottom: 50px;
 `;
 
+const Content = styled.div`
+  width: 100%;
+  width: 80%;
+  margin: auto;
+  padding: 25px;
+  margin-top: 100px;
+  box-sizing: border-box;
+  background: #fff;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+`;
 
 class Profile extends React.Component {
   render() {
@@ -40,11 +52,19 @@ class Profile extends React.Component {
         <Sidebar />
         <Container>
           <Navbar history={this.props.history} name={''} />
-          <Title>Profile</Title>
+          <Content>
+            <Title>{this.props.user && `${this.props.user.username}'s`} Profile</Title>
+          </Content>
         </Container>
       </Body>
     )
   }
 }
 
-export default Profile
+const mapStateToProps = state => {
+  return {
+    user: state.user.user
+  }
+};
+
+export default connect(mapStateToProps)(Profile)
