@@ -7,6 +7,7 @@ import './index.css';
 import * as serviceWorker from './serviceWorker';
 import Home from './components/features/home';
 import Login from './components/auth/login';
+import Profile from './components/user/profile';
 import SignUp from './components/auth/signup';
 import store from './store';
 
@@ -15,6 +16,7 @@ const Root = () => {
     <HashRouter>
       <Switch>
         <Route exact path='/' component={Home} />
+        <Route path='/u/:id' component={Profile} />
         <Route exact path='/login' component={Login} />
         <Route exact path='/signup' component={SignUp} />
       </Switch>
