@@ -19,42 +19,68 @@ const Container = styled.div`
   min-height: 100vh;
   box-sizing: border-box;
   padding-left: 0px;
-  padding-right: 250px;
+  // padding-right: 250px;
   position: absolute;
   left: 0; top: 0;
   z-index: 1;
 `;
 
 const Title = styled.h1`
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: #232323;
-  margin-left: 1.66%;
-  font-weight: 300;
+  font-weight: 500;
   width: 100%;
-  margin-bottom: 50px;
+  letter-spacing: 2px;
+  margin-top: 20px;
 `;
 
 const Content = styled.div`
   width: 100%;
-  width: 80%;
   margin: auto;
+  text-align: center;
   padding: 25px;
-  margin-top: 100px;
+  margin-top: 50px;
   box-sizing: border-box;
-  background: #fff;
   box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+`;
+
+const Avatar = styled.img`
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  border-radius: 50%;
+  text-align: center;
+`;
+
+const StoryStart = styled.div`
+  width: 800px;
+  height: 400px;
+  background: red;
+  margin: auto;
+  margin-top: 50px;
+  // box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+`;
+
+const UserEditForm = styled.form`
+
 `;
 
 class Profile extends React.Component {
   render() {
     return (
       <Body>
-        <Sidebar />
+        {/* <Sidebar /> */}
         <Container>
           <Navbar history={this.props.history} name={''} />
           <Content>
-            <Title>{this.props.user && `${this.props.user.username}'s`} Profile</Title>
+            {this.props.user && (
+            <React.Fragment>
+              <Avatar src={this.props.user.avatar} />
+              <Title>{this.props.user.username}</Title>
+            </React.Fragment>
+            )}
           </Content>
+            <StoryStart></StoryStart>
         </Container>
       </Body>
     )
