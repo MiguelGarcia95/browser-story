@@ -40,7 +40,7 @@ class Profile extends React.Component {
         <Sidebar />
         <Container>
           <Navbar history={this.props.history} name={''} />
-          <Title>Recently Added</Title>
+          <Title>Profile</Title>
         </Container>
       </Body>
     )

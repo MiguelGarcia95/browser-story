@@ -15,10 +15,10 @@ const Root = () => {
   return (
     <HashRouter>
       <Switch>
-        <Route exact path='/' component={Home} />
         <Route path='/u/:id' component={Profile} />
         <Route exact path='/login' component={Login} />
         <Route exact path='/signup' component={SignUp} />
+        <Route exact path='/' component={Home} />
       </Switch>
     </HashRouter>
   )

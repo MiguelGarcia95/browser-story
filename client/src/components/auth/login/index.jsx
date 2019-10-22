@@ -35,7 +35,7 @@ class Login extends React.Component {
 
   redirectIfAuth = props => {
     if (props.user) {
-      props.history.push('/');
+      props.history.push(`/u/${props.user._id}`);
     }
   }
 
