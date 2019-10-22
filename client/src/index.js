@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {HashRouter, Switch, Route, withRouter} from 'react-router-dom';
+import {HashRouter, Switch, Route, withRouter, Redirect} from 'react-router-dom';
 import {Provider, connect} from 'react-redux';
 import '@atlaskit/css-reset';
 import './index.css';
@@ -19,6 +19,9 @@ const Root = () => {
         <Route exact path='/login' component={Login} />
         <Route exact path='/signup' component={SignUp} />
         <Route exact path='/' component={Home} />
+        <Route path='/'>
+          <Redirect to='/' />
+        </Route>
       </Switch>
     </HashRouter>
   )
