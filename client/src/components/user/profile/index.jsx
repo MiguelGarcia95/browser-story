@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import Navbar from '../../navbar';
-import Sidebar from '../../sidebar';
+// import Sidebar from '../../sidebar';
 import {connect} from 'react-redux';
 
 // import {signup} from '../../../actions/user';
+// import {getStory} from '../../../actions/story';
 
 const Body = styled.div`
   height: 100vh;
@@ -54,16 +55,19 @@ const Avatar = styled.img`
 
 const StoryStart = styled.div`
   width: 800px;
-  height: 400px;
-  background: red;
+  height: 500px;
+  background: #fff;
   margin: auto;
   margin-top: 50px;
   // box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
 `;
 
-const UserEditForm = styled.form`
-
+const StoryImage = styled.img`
+  width: 100%;
+  height: 400px;
 `;
+
+// const UserEditForm = styled.form``;
 
 class Profile extends React.Component {
   render() {
@@ -80,7 +84,9 @@ class Profile extends React.Component {
             </React.Fragment>
             )}
           </Content>
-            <StoryStart></StoryStart>
+            <StoryStart>
+              <StoryImage src='http://getwallpapers.com/wallpaper/full/a/5/3/871525-beautiful-horror-background-images-1920x1080.jpg' />
+            </StoryStart>
         </Container>
       </Body>
     )
@@ -92,5 +98,11 @@ const mapStateToProps = state => {
     user: state.user.user
   }
 };
+
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     getStory: userId => dispatch(getStory(userId))
+//   }
+// }
 
 export default connect(mapStateToProps)(Profile)
