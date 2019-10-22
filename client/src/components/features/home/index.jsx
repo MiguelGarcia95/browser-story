@@ -48,20 +48,24 @@ const Story = styled.div`
   float: left;
 `;
 
-export default function Home() {
-  return (
-    <Body>
-      <Sidebar />
-      <Container>
-        <Navbar name={''} />
-        <Content>
-          <Title>Recently Added</Title>
-          <Story />
-          <Story />
-          <Story />
-          <Story />
-        </Content>
-      </Container>
-    </Body>
-  )
+class Home extends React.Component {
+  render() {
+    return (
+      <Body>
+        <Sidebar />
+        <Container>
+          <Navbar history={this.props.history} name={''} />
+          <Content>
+            <Title>Recently Added</Title>
+            <Story />
+            <Story />
+            <Story />
+            <Story />
+          </Content>
+        </Container>
+      </Body>
+    )
+  }
 }
+
+export default Home

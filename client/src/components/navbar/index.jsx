@@ -34,6 +34,7 @@ const Container = styled.div`
     const {name} = this.props;
     return (
       <Container data-testid='navbar'>
+        <button onClick={() => this.props.logout()} >Logout</button>
         {name}
       </Container>
     )

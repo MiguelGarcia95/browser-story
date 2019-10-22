@@ -38,7 +38,7 @@ class SignUp extends React.Component {
       props.history.push('/');
     }
   }
-  
+
   onSubmit = body => {
     this.props.signup(body)
   }
@@ -52,7 +52,7 @@ class SignUp extends React.Component {
     ];
     return (
       <Body>
-        <Navbar name={''} />
+        <Navbar history={this.props.history} name={''} />
         <Container>
           <Form inputs={formInputs} submit='Sign Up' title='Sign Up' onSubmit={this.onSubmit} />
           <Link to='/login'>Login</Link>
