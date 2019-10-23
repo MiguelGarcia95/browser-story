@@ -9,6 +9,7 @@ import Home from './components/features/home';
 import Login from './components/auth/login';
 import Profile from './components/user/profile';
 import SignUp from './components/auth/signup';
+import BeginStory from './components/story/begin';
 import store from './store';
 
 const Root = () => {
@@ -18,6 +19,7 @@ const Root = () => {
         <Route path='/u/:id' component={Profile} />
         <Route exact path='/login' component={Login} />
         <Route exact path='/signup' component={SignUp} />
+        <Route exact path='/s/:id' component={BeginStory} />
         <Route exact path='/' component={Home} />
         <Route path='/'>
           <Redirect to='/' />
