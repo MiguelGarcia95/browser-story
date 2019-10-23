@@ -91,9 +91,12 @@ class Profile extends React.Component {
             </React.Fragment>
             )}
           </Content>
+            {stories && ( 
             <StoryStart>
               <StoryImage src='http://getwallpapers.com/wallpaper/full/a/5/3/871525-beautiful-horror-background-images-1920x1080.jpg' />
             </StoryStart>
+            )}
+
         </Container>
       </Body>
     )
