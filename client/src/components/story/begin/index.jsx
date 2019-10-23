@@ -26,24 +26,24 @@ const Container = styled.div`
   z-index: 1;
 `;
 
-const Title = styled.h1`
-  font-size: 1.5rem;
-  color: #232323;
-  font-weight: 500;
-  width: 100%;
-  letter-spacing: 2px;
-  margin-top: 20px;
-`;
-
-// const Content = styled.div`
+// const Title = styled.h1`
+//   font-size: 1.5rem;
+//   color: #232323;
+//   font-weight: 500;
 //   width: 100%;
-//   margin: auto;
-//   text-align: center;
-//   padding: 25px;
-//   margin-top: 50px;
-//   box-sizing: border-box;
-//   box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+//   letter-spacing: 2px;
+//   margin-top: 20px;
 // `;
+
+const Content = styled.div`
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  padding: 25px;
+  margin-top: 50px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+`;
 
 // const Avatar = styled.img`
 //   width: 100px;
@@ -68,6 +68,14 @@ const Title = styled.h1`
 //   height: 400px;
 // `;
 
+const Story = styled.div`
+
+`;
+
+const Description = styled.p``;
+
+const Title = styled.h1``;
+
 const StoryLink = styled(Link)`
   font-size: 2em;
   line-height: 50px;
@@ -78,7 +86,8 @@ const StoryLink = styled(Link)`
   }
 `;
 
-// const EditStoryMapForm = styled.form``;
+const EditStoryMapForm = styled.form`
+`;
 
 class Begin extends React.Component {
 
@@ -94,6 +103,15 @@ class Begin extends React.Component {
         {/* <Sidebar /> */}
         <Container>
           <Navbar history={this.props.history} name={''} />
+          {story && (
+          <Content>
+            <Story>
+              <Title>{story.name}</Title>
+              <Description>{story.description ? story.description : 'Description Not Available'}</Description>
+            </Story>
+            <EditStoryMapForm></EditStoryMapForm>
+          </Content>
+          )}
         </Container>
       </Body>
     )

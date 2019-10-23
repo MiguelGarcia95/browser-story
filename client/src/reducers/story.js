@@ -1,4 +1,4 @@
-import {GET_STORIES} from '../actions/types';
+import {GET_STORIES, GET_STORY} from '../actions/types';
 
 const initialState = {
   stories: [],
@@ -11,6 +11,11 @@ const story = (state = initialState, action) => {
       return {
         ...state,
         stories: action.stories,
+      }
+    case GET_STORY:
+      return {
+        ...state,
+        story: action.story
       }
     default:
       return state;

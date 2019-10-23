@@ -23,14 +23,13 @@ export const getAllStories = () => {
   }
 }
 
-
-
-
 export const getStory = storyId => {
   return async dispatch => {
     const results = await axios.get(`/api/stories/${storyId}`);
-    console.log(results)
-    dispatch({type: GET_STORY})
+    dispatch({
+      type: GET_STORY,
+      story: results.data.story
+    })
   }
 }
 
