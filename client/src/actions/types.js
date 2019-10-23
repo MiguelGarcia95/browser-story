@@ -14,6 +14,7 @@ export const ADD_STARTING_STORY_OPTION = 'ADD_STARTING_STORY_OPTION';
 export const DELETE_STORY = 'DELETE_STORY';
 
 // Option Types
+export const SET_OPTIONS = 'SET_OPTIONS';
 export const GET_OPTION = 'GET_OPTION';
 export const ADD_OPTION = 'ADD_OPTION';
 export const EDIT_OPTION = 'EDIT_OPTION';
