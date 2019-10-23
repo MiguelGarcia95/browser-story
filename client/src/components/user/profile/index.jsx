@@ -78,8 +78,6 @@ const StoryLink = styled(Link)`
   }
 `;
 
-// const UserEditForm = styled.form``;
-
 class Profile extends React.Component {
 
   componentDidMount() {
@@ -93,7 +91,7 @@ class Profile extends React.Component {
       return (
         <StoryStart key={story._id}>
           <StoryImage src='http://getwallpapers.com/wallpaper/full/a/5/3/871525-beautiful-horror-background-images-1920x1080.jpg' />
-          <StoryLink to='/s/story._id'>Start</StoryLink>
+          <StoryLink to={`/s/${story._id}`}>Start</StoryLink>
         </StoryStart>
       )
     })

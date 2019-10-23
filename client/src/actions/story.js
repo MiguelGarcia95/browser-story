@@ -26,9 +26,10 @@ export const getAllStories = () => {
 
 
 
-export const getStory = () => {
+export const getStory = storyId => {
   return async dispatch => {
-    // const results = await axios.post(`/api/stories/${user}`, userData);
+    const results = await axios.get(`/api/stories/${storyId}`);
+    console.log(results)
     dispatch({type: GET_STORY})
   }
 }

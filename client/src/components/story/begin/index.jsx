@@ -78,12 +78,12 @@ const StoryLink = styled(Link)`
   }
 `;
 
-// const UserEditForm = styled.form``;
+// const EditStoryMapForm = styled.form``;
 
 class Begin extends React.Component {
 
   componentDidMount() {
-    // this.props.getStory(this.props.match.params.id);
+    this.props.getStory(this.props.match.params.id);
   }
 
   render() {
@@ -103,13 +103,13 @@ class Begin extends React.Component {
 const mapStateToProps = state => {
   return {
     user: state.user.user,
-    // stories: state.story.stories,
+    story: state.story.story,
   }
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    getStory: userId => dispatch(getStory(userId)),
+    getStory: storyId => dispatch(getStory(storyId)),
   }
 }
 
