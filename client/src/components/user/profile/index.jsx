@@ -4,8 +4,7 @@ import Navbar from '../../navbar';
 // import Sidebar from '../../sidebar';
 import {connect} from 'react-redux';
 
-// import {signup} from '../../../actions/user';
-// import {getStory} from '../../../actions/story';
+import {getStory, getStories} from '../../../actions/story';
 
 const Body = styled.div`
   height: 100vh;
@@ -70,6 +69,11 @@ const StoryImage = styled.img`
 // const UserEditForm = styled.form``;
 
 class Profile extends React.Component {
+
+  componentDidMount() {
+    console.log(this.props.match.params.id)
+  }
+
   render() {
     return (
       <Body>
@@ -99,10 +103,11 @@ const mapStateToProps = state => {
   }
 };
 
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     getStory: userId => dispatch(getStory(userId))
-//   }
-// }
+const mapDispatchToProps = dispatch => {
+  return {
+    getStory: userId => dispatch(getStory(userId)),
+    getStories: userId => dispatch(getStories(userId))
+  }
+}
 
-export default connect(mapStateToProps)(Profile)
+export default connect(mapStateToProps, mapDispatchToProps)(Profile)

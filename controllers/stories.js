@@ -13,6 +13,16 @@ module.exports = {
     }
   },
 
+  getStories: async (req, res) => {
+    try {
+      const stories = await Story.find({user: req.body.user}).populate('optionList', 'name trigger description location karmaPoints');
+      res.status(201).send({stories});
+    } catch (error) {
+      console.log(error);
+      res.status(400).send({error}); 
+    }
+  },
+
   addStartingOption: async (req, res) => {
     try {
       const option = await new Option(req.body)

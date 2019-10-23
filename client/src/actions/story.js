@@ -1,22 +1,29 @@
-import {GET_STORY, START_STORY, ADD_STARTING_STORY_OPTION} from './types';
+import {GET_STORY, START_STORY, ADD_STARTING_STORY_OPTION, GET_STORIES} from './types';
 import axios from 'axios';
 
-export const getStory = () => {
-  return dispatch => {
-    // const results = await axios.post(`/api/stories/${user}`, userData);
+export const getStories = userId => {
+  return async dispatch => {
+    const results = await axios.get(`/api/stories/getStories`, {user: userId});
+    console.log(results)
+    dispatch({type: GET_STORIES})
+  }
+}
 
+export const getStory = () => {
+  return async dispatch => {
+    // const results = await axios.post(`/api/stories/${user}`, userData);
     dispatch({type: GET_STORY})
   }
 }
 
 export const startStory = () => {
-  return dispatch => {
+  return async dispatch => {
     dispatch({type: START_STORY})
   }
 }
 
 export const addStartingStoryOption = () => {
-  return dispatch => {
+  return async dispatch => {
     dispatch({type: ADD_STARTING_STORY_OPTION})
   }
 }
