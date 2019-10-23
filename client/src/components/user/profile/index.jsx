@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import Navbar from '../../navbar';
+import Link from '../../_styledComponent/Link';
 // import Sidebar from '../../sidebar';
 import {connect} from 'react-redux';
 
-import {getStory, getStories} from '../../../actions/story';
+import {getStory, getStories, getAllStories} from '../../../actions/story';
 
 const Body = styled.div`
   height: 100vh;
@@ -54,9 +55,10 @@ const Avatar = styled.img`
 
 const StoryStart = styled.div`
   width: 800px;
-  height: 500px;
-  background: #fff;
+  height: 450px;
+  // background: #fff;
   margin: auto;
+  text-align: center;
   margin-top: 50px;
   // box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
 `;
@@ -66,13 +68,35 @@ const StoryImage = styled.img`
   height: 400px;
 `;
 
+const StoryLink = styled(Link)`
+  font-size: 2em;
+  line-height: 50px;
+  margin: auto;
+  &:hover {
+    text-decoration: none;
+    color: black;
+  }
+`;
+
 // const UserEditForm = styled.form``;
 
 class Profile extends React.Component {
 
   componentDidMount() {
     // console.log(this.props.match.params.id)
-    this.props.getStories(this.props.match.params.id);
+    // this.props.getStories(this.props.match.params.id);
+    this.props.getAllStories();
+  }
+
+  displayStories = stories => {
+    return stories.map(story => {
+      return (
+        <StoryStart key={story._id}>
+          <StoryImage src='http://getwallpapers.com/wallpaper/full/a/5/3/871525-beautiful-horror-background-images-1920x1080.jpg' />
+          <StoryLink to='/s/story._id'>Start</StoryLink>
+        </StoryStart>
+      )
+    })
   }
 
   render() {
@@ -83,20 +107,13 @@ class Profile extends React.Component {
         {/* <Sidebar /> */}
         <Container>
           <Navbar history={this.props.history} name={''} />
-          <Content>
-            {this.props.user && (
-            <React.Fragment>
+          {this.props.user && (
+            <Content>
               <Avatar src={this.props.user.avatar} />
               <Title>{this.props.user.username}</Title>
-            </React.Fragment>
-            )}
-          </Content>
-            {stories && ( 
-            <StoryStart>
-              <StoryImage src='http://getwallpapers.com/wallpaper/full/a/5/3/871525-beautiful-horror-background-images-1920x1080.jpg' />
-            </StoryStart>
-            )}
-
+            </Content>
+          )}
+          {stories && this.displayStories(stories)}
         </Container>
       </Body>
     )
@@ -113,7 +130,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     getStory: userId => dispatch(getStory(userId)),
-    getStories: userId => dispatch(getStories(userId))
+    getStories: userId => dispatch(getStories(userId)),
+    getAllStories: () => dispatch(getAllStories())
   }
 }
 
