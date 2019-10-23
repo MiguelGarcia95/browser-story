@@ -3,9 +3,11 @@ import axios from 'axios';
 
 export const getStories = userId => {
   return async dispatch => {
-    const results = await axios.get(`/api/stories/getStories`, {user: userId});
-    console.log(results)
-    dispatch({type: GET_STORIES})
+    const results = await axios.post(`/api/stories/getStories`, {user: userId});
+    dispatch({
+      type: GET_STORIES,
+      stories: results.data.stories
+    })
   }
 }
 
