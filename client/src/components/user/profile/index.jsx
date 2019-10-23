@@ -76,6 +76,8 @@ class Profile extends React.Component {
   }
 
   render() {
+    const {stories} = this.props;
+    console.log(stories);
     return (
       <Body>
         {/* <Sidebar /> */}
@@ -100,7 +102,8 @@ class Profile extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    user: state.user.user
+    user: state.user.user,
+    stories: state.story.stories,
   }
 };
 

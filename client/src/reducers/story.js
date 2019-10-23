@@ -10,8 +10,7 @@ const story = (state = initialState, action) => {
     case GET_STORIES:
       return {
         ...state,
-        user: action.user,
-        token: action.token
+        stories: action.stories,
       }
     default:
       return state;
