@@ -4,11 +4,13 @@ const Schema = mongoose.Schema;
 const storyTrackerSchema = new Schema({
   story: {
     type: Schema.Types.ObjectId,
-    ref: 'story'
+    ref: 'story',
+    required: true,
   },
   user: {
     type: Schema.Types.ObjectId,
-    ref: 'user'
+    ref: 'user',
+    required: true,
   },
   currentOption: {
     type: Schema.Types.ObjectId,

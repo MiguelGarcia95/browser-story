@@ -106,6 +106,7 @@ class Begin extends React.Component {
   render() {
     const {story, storyTracker} = this.props;
     console.log(story);
+    console.log(storyTracker);
     return (
       <Body>
         {/* <Sidebar /> */}
