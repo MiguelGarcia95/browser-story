@@ -4,10 +4,9 @@ import axios from 'axios';
 export const setOptions = story => {
   return async dispatch => {
     // const results = await axios.post(`/api/stories/getStories`, {user: userId});
-    console.log(story);
     dispatch({
       type: SET_OPTIONS,
-      options: story
+      options: story.optionList
     })
   }
 }
