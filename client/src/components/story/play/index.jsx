@@ -6,6 +6,7 @@ import Navbar from '../../navbar';
 import {connect} from 'react-redux';
 
 import {getStory, getStoryTracker} from '../../../actions/story';
+import {getOption, setOptions} from '../../../actions/option';
 
 const Body = styled.div`
   height: 100vh;
@@ -104,11 +105,11 @@ class Play extends React.Component {
     // if (nextProps.match.params.oId !== 0 && !nextProps.options) {
     if (!nextProps.options) {
       if (nextProps.match.params.oId !== 0) {
-        console.log('getOptions')
-        this.props.getOptions(nextProps.match.params.oId);
+        console.log('getOption')
+        this.props.getOption(nextProps.match.params.oId);
       } else {
         console.log('getOptionsFromStory')
-        this.props.getOptionsFromStory(nextProps.story._id)
+        this.props.setOptions(nextProps.story._id)
       }
     }
   }
@@ -150,6 +151,8 @@ const mapDispatchToProps = dispatch => {
   return {
     getStory: storyId => dispatch(getStory(storyId)),
     getStoryTracker: data => dispatch(getStoryTracker(data)),
+    setOptions: story => dispatch(setOptions(story)),
+    getOption: optionId => dispatch(getOption(optionId)),
   }
 }
 
