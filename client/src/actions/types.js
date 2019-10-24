@@ -8,6 +8,7 @@ export const SIGNUP = 'SIGNUP';
 // Story Types
 export const GET_STORY = 'GET_STORY';
 export const GET_STORIES = 'GET_STORIES';
+export const GET_STORY_TRACKER = 'GET_STORY_TRACKER';
 export const START_STORY = 'START_STORY';
 export const EDIT_STORY = 'EDIT_STORY';
 export const ADD_STORY = 'ADD_STORY';

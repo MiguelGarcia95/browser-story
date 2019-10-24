@@ -1,8 +1,9 @@
-import {GET_STORIES, GET_STORY} from '../actions/types';
+import {GET_STORIES, GET_STORY, GET_STORY_TRACKER} from '../actions/types';
 
 const initialState = {
   stories: [],
-  story: null
+  story: null,
+  storyTracker: null,
 };
 
 const story = (state = initialState, action) => {
@@ -16,6 +17,11 @@ const story = (state = initialState, action) => {
       return {
         ...state,
         story: action.story
+      }
+    case GET_STORY_TRACKER:
+      return {
+        ...state,
+        storyTracker: action.storyTracker
       }
     default:
       return state;

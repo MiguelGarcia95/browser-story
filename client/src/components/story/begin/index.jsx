@@ -5,7 +5,7 @@ import Link from '../../_styledComponent/Link';
 // import Sidebar from '../../sidebar';
 import {connect} from 'react-redux';
 
-import {getStory, getStories, getAllStories} from '../../../actions/story';
+import {getStory, getStoryTracker} from '../../../actions/story';
 
 const Body = styled.div`
   height: 100vh;
@@ -76,6 +76,8 @@ const Description = styled.p``;
 
 const Title = styled.h1``;
 
+const Status = styled.p``;
+
 const StoryLink = styled(Link)`
   font-size: 2em;
   line-height: 50px;
@@ -108,6 +110,8 @@ class Begin extends React.Component {
             <Story>
               <Title>{story.name}</Title>
               <Description>{story.description ? story.description : 'Description Not Available'}</Description>
+              <Status>Status: {story.status}</Status>
+              {/* if story started, show continue, otherwise, show start story */}
             </Story>
             <EditStoryMapForm></EditStoryMapForm>
           </Content>
@@ -128,6 +132,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     getStory: storyId => dispatch(getStory(storyId)),
+    getStoryTracker: data => dispatch(getStoryTracker(data)),
   }
 }
 
