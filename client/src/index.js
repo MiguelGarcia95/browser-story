@@ -10,6 +10,7 @@ import Login from './components/auth/login';
 import Profile from './components/user/profile';
 import SignUp from './components/auth/signup';
 import BeginStory from './components/story/begin';
+import PlayStory from './components/story/play';
 import store from './store';
 
 const Root = () => {
@@ -20,6 +21,7 @@ const Root = () => {
         <Route exact path='/login' component={Login} />
         <Route exact path='/signup' component={SignUp} />
         <Route exact path='/s/:id' component={BeginStory} />
+        <Route exact path='/s/:id/o/:oId' component={PlayStory} />
         <Route exact path='/' component={Home} />
         <Route path='/'>
           <Redirect to='/' />
