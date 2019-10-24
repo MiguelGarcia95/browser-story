@@ -99,13 +99,12 @@ class Begin extends React.Component {
 
   UNSAFE_componentWillUpdate(nextProps) {
     if (nextProps.user && nextProps.story && !nextProps.storyTracker) {
-      console.log('getStoryTracker')
       this.props.getStoryTracker({user: nextProps.user._id, story: nextProps.story._id})
     }
   }
 
   render() {
-    const {story} = this.props;
+    const {story, storyTracker} = this.props;
     console.log(story);
     return (
       <Body>
@@ -118,6 +117,9 @@ class Begin extends React.Component {
               <Title>{story.name}</Title>
               <Description>{story.description ? story.description : 'Description Not Available'}</Description>
               <Status>Status: {story.status}</Status>
+              <p>
+                {storyTracker ? 'Continue' : 'Start'}
+              </p>
               {/* if story started, show continue, otherwise, show start story */}
             </Story>
             <EditStoryMapForm></EditStoryMapForm>
@@ -133,6 +135,7 @@ const mapStateToProps = state => {
   return {
     user: state.user.user,
     story: state.story.story,
+    storyTracker: state.story.storyTracker
   }
 };
 
