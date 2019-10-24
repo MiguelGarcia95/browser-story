@@ -91,15 +91,25 @@ const Status = styled.p``;
 const EditStoryMapForm = styled.form`
 `;
 
-class Begin extends React.Component {
+class Play extends React.Component {
   componentDidMount() {
     this.props.getStory(this.props.match.params.id);
-    console.log(this.props.match.params.oId);
   }
 
   UNSAFE_componentWillUpdate(nextProps) {
     if (nextProps.user && nextProps.story && !nextProps.storyTracker) {
       this.props.getStoryTracker({user: nextProps.user._id, story: nextProps.story._id})
+    }
+
+    // if (nextProps.match.params.oId !== 0 && !nextProps.options) {
+    if (!nextProps.options) {
+      if (nextProps.match.params.oId !== 0) {
+        console.log('getOptions')
+        this.props.getOptions(nextProps.match.params.oId);
+      } else {
+        console.log('getOptionsFromStory')
+        this.props.getOptionsFromStory(nextProps.story._id)
+      }
     }
   }
 
@@ -117,10 +127,7 @@ class Begin extends React.Component {
               <Title>{story.name}</Title>
               <Description>{story.description ? story.description : 'Description Not Available'}</Description>
               <Status>Status: {story.status}</Status>
-              <p>
-              {/* if story started, show continue and redirect to current option, otherwise, show start story and begining options */}
-                {storyTracker ? 'Continue' : 'Start'}
-              </p>
+              
             </Story>
             <EditStoryMapForm></EditStoryMapForm>
           </Content>
@@ -146,4 +153,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Begin)
+export default connect(mapStateToProps, mapDispatchToProps)(Play)
