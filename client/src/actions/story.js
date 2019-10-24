@@ -14,7 +14,7 @@ export const getStories = userId => {
 
 export const getStoryTracker = data => {
   return async dispatch => {
-    const results = await axios.post('/api/stories/getStoryTracker', {data});
+    const results = await axios.post('/api/stories/getStoryTracker', data);
     dispatch({
       type: GET_STORY_TRACKER,
       storyTracker: results.data.storyTracker

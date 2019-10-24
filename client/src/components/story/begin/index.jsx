@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Navbar from '../../navbar';
-import Link from '../../_styledComponent/Link';
+// import Link from '../../_styledComponent/Link';
 // import Sidebar from '../../sidebar';
 import {connect} from 'react-redux';
 
@@ -78,23 +78,30 @@ const Title = styled.h1``;
 
 const Status = styled.p``;
 
-const StoryLink = styled(Link)`
-  font-size: 2em;
-  line-height: 50px;
-  margin: auto;
-  &:hover {
-    text-decoration: none;
-    color: black;
-  }
-`;
+// const StoryLink = styled(Link)`
+//   font-size: 2em;
+//   line-height: 50px;
+//   margin: auto;
+//   &:hover {
+//     text-decoration: none;
+//     color: black;
+//   }
+// `;
 
 const EditStoryMapForm = styled.form`
 `;
 
 class Begin extends React.Component {
-
   componentDidMount() {
     this.props.getStory(this.props.match.params.id);
+
+  }
+
+  UNSAFE_componentWillUpdate(nextProps) {
+    if (nextProps.user && nextProps.story && !nextProps.storyTracker) {
+      console.log('getStoryTracker')
+      this.props.getStoryTracker({user: nextProps.user._id, story: nextProps.story._id})
+    }
   }
 
   render() {

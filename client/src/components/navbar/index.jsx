@@ -24,7 +24,7 @@ const Container = styled.div`
     }
   }
 
-  componentWillUpdate(nextProps) {
+  UNSAFE_componentWillUpdate(nextProps) {
     if (!nextProps.token) {
       this.props.history.push('/login');
     }
