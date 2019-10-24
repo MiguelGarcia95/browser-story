@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Navbar from '../../navbar';
-// import Link from '../../_styledComponent/Link';
+import Link from '../../_styledComponent/Link';
 // import Sidebar from '../../sidebar';
 import {connect} from 'react-redux';
 
@@ -120,7 +120,7 @@ class Begin extends React.Component {
               <Status>Status: {story.status}</Status>
               <p>
               {/* if story started, show continue and redirect to current option, otherwise, show start story and begining options */}
-                {storyTracker ? 'Continue' : 'Start'}
+                {storyTracker ? <Link to={`/s/${story._id}/o/depends`}>Continue</Link> : <Link to={`/s/${story._id}/o/0`}>Start</Link> }
               </p>
             </Story>
             <EditStoryMapForm></EditStoryMapForm>
