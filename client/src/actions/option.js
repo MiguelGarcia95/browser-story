@@ -1,12 +1,12 @@
 import {ADD_OPTION, DELETE_OPTION, GET_OPTION, SET_OPTIONS} from './types';
 import axios from 'axios';
 
-export const setOptions = story => {
+export const setOptions = optionList => {
   return async dispatch => {
     // const results = await axios.post(`/api/stories/getStories`, {user: userId});
     dispatch({
       type: SET_OPTIONS,
-      options: story.optionList
+      options: optionList
     })
   }
 }

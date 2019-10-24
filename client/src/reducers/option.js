@@ -1,7 +1,7 @@
 import {ADD_OPTION, DELETE_OPTION, GET_OPTION, SET_OPTIONS} from '../actions/types';
 
 const initialState = {
-  options: [],
+  options: null,
   option: null,
 };
 
