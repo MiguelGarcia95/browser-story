@@ -105,18 +105,15 @@ class Play extends React.Component {
     // if (nextProps.match.params.oId !== 0 && !nextProps.options) {
     if (!nextProps.options && nextProps.story) {
       if (nextProps.match.params.oId != 0) {
-        console.log('getOption')
         this.props.getOption(nextProps.match.params.oId);
       } else {
-        console.log('getOptionsFromStory')
         this.props.setOptions(nextProps.story.optionList)
       }
     }
   }
 
   render() {
-    const {story, storyTracker} = this.props;
-    console.log(story);
+    const {story, storyTracker, option, options} = this.props;
     return (
       <Body>
         {/* <Sidebar /> */}
@@ -128,7 +125,9 @@ class Play extends React.Component {
               <Title>{story.name}</Title>
               <Description>{story.description ? story.description : 'Description Not Available'}</Description>
               <Status>Status: {story.status}</Status>
-              
+              {options && (
+                options.map(op => <p key={op._id}>{op.name}</p>)
+              )}
             </Story>
             <EditStoryMapForm></EditStoryMapForm>
           </Content>
