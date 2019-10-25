@@ -1,5 +1,6 @@
-import React, {useState} from 'react';
+import React from 'react';
 import styled from 'styled-components';
+import { IoIosBook } from 'react-icons/io';
 
 const Container = styled.div`
   width: 250px;
@@ -36,11 +37,11 @@ const ListItem = styled.div`
 `;
 
 export default function Sidebar({opened, toggleSidebar}) {
-  // const [opened, open] = useState(true);
   return (
     <Container open={opened}>
       <Header onClick={() => toggleSidebar()}>
       {/* <Header > */}
+        <IoIosBook color='white' size='2em' />
       </Header>
       <List>
         <ListItem />

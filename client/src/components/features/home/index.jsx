@@ -17,6 +17,9 @@ const Container = styled.div`
   box-sizing: border-box;
   padding-left: 0px;
   padding-right: 250px;
+  ${props => !props.open && `
+    padding-right: 50px;
+  `}
   position: absolute;
   left: 0;
   top: 0;
@@ -59,7 +62,7 @@ class Home extends React.Component {
     return (
       <Body>
         <Sidebar toggleSidebar={this.toggleSidebar} opened={this.state.opened} />
-        <Container>
+        <Container open={this.state.opened}>
           <Navbar history={this.props.history} name={''} />
           <Content>
             <Title>Recently Added</Title>
