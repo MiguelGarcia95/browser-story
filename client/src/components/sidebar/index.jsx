@@ -27,6 +27,7 @@ const Header = styled.div`
   background: #a73737; 
   background: -webkit-linear-gradient(to right, #ef473a, #a73737);  
   background: linear-gradient(to right, #ef473a, #a73737);
+  cursor:pointer;
 `;
 
 const Title = styled.p`
