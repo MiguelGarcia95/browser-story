@@ -14,10 +14,11 @@ export const setOptions = optionList => {
 export const getOption = optionId => {
   return async dispatch => {
     const results = await axios.get(`/api/options/${optionId}`);
+    console.log(results.data.option)
     dispatch({
       type: GET_OPTION,
       option: results.data.option,
-      // options: 
+      options: results.data.option.optionList
     })
   }
 }

@@ -15,7 +15,8 @@ const option = (state = initialState, action) => {
     case GET_OPTION:
       return {
         ...state,
-        option: action.option
+        option: action.option,
+        options: action.options,
       }
     default:
       return state;
