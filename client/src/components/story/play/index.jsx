@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Navbar from '../../navbar';
-// import Link from '../../_styledComponent/Link';
+import Link from '../../_styledComponent/Link';
 // import Sidebar from '../../sidebar';
 import {connect} from 'react-redux';
 
@@ -109,6 +109,8 @@ class Play extends React.Component {
       } else {
         this.props.setOptions(nextProps.story.optionList)
       }
+    } else if (nextProps.options && nextProps.match.params.id !== this.props.match.params.id) {
+      console.log('clicked new option')
     }
   }
 
@@ -126,7 +128,7 @@ class Play extends React.Component {
               <Description>{story.description ? story.description : 'Description Not Available'}</Description>
               <Status>Status: {story.status}</Status>
               {options && (
-                options.map(op => <p key={op._id}>{op.name}</p>)
+                options.map(op => <Link to={`/s/${story._id}/o/${op._id}`} key={op._id}>{op.name}</Link>)
               )}
             </Story>
             <EditStoryMapForm></EditStoryMapForm>
