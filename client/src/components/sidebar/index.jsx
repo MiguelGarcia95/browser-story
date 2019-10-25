@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -10,6 +10,9 @@ const Container = styled.div`
   top: 0; 
   right: 0;
   z-index: 2;
+  ${props => !props.open && `
+    width: 50px;
+  `}
   // box-shadow: -1px 0px 5px 0px rgba(0,0,0,0.1);
 `;
 
@@ -32,10 +35,12 @@ const List = styled.div`
 const ListItem = styled.div`
 `;
 
-export default function Sidebar() {
+export default function Sidebar({opened, toggleSidebar}) {
+  // const [opened, open] = useState(true);
   return (
-    <Container>
-      <Header >
+    <Container open={opened}>
+      <Header onClick={() => toggleSidebar()}>
+      {/* <Header > */}
       </Header>
       <List>
         <ListItem />

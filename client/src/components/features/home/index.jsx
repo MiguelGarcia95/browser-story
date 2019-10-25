@@ -49,10 +49,16 @@ const Story = styled.div`
 `;
 
 class Home extends React.Component {
+  state = {
+    opened: true,
+  }
+
+  toggleSidebar = () => this.setState({opened: !this.state.opened});
+
   render() {
     return (
       <Body>
-        <Sidebar />
+        <Sidebar toggleSidebar={this.toggleSidebar} opened={this.state.opened} />
         <Container>
           <Navbar history={this.props.history} name={''} />
           <Content>
