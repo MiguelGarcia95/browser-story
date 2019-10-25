@@ -22,12 +22,26 @@ const Header = styled.div`
   height: 50px;
   background: red;
   padding: 0 10px; 
+  position: relative;
   box-sizing: border-box;
-
   background: #a73737; 
   background: -webkit-linear-gradient(to right, #ef473a, #a73737);  
   background: linear-gradient(to right, #ef473a, #a73737);
+`;
 
+const Title = styled.p`
+  line-height: 50px;
+  position: absolute;
+  top: 0; left: 0px; right: 0;
+  width: 100px;
+  ${props => !props.open && `
+    width: 0px;
+  `}
+  overflow:hidden;
+  text-align: center;
+  margin: auto;
+  color: white;
+  font-size: 1.5em;
 `;
 
 const List = styled.div`
@@ -40,8 +54,8 @@ export default function Sidebar({opened, toggleSidebar}) {
   return (
     <Container open={opened}>
       <Header onClick={() => toggleSidebar()}>
-      {/* <Header > */}
-        <IoIosBook color='white' size='2em' />
+        <IoIosBook color='white' size='2em' style={{marginTop: '11px'}} />
+        <Title open={opened} >Stories</Title>
       </Header>
       <List>
         <ListItem />
