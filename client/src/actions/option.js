@@ -13,7 +13,7 @@ export const setOptions = optionList => {
 
 export const getOption = optionId => {
   return async dispatch => {
-    const results = await axios.post(`/api/options/${optionId}`);
+    const results = await axios.get(`/api/options/${optionId}`);
     dispatch({
       type: GET_OPTION,
       option: results.data.option,

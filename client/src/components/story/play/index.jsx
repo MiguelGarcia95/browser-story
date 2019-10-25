@@ -109,8 +109,9 @@ class Play extends React.Component {
       } else {
         this.props.setOptions(nextProps.story.optionList)
       }
-    } else if (nextProps.options && nextProps.match.params.id !== this.props.match.params.id) {
+    } else if (nextProps.options && nextProps.match.params.oId !== this.props.match.params.oId) {
       console.log('clicked new option')
+      this.props.getOption(nextProps.match.params.oId);
     }
   }
 
