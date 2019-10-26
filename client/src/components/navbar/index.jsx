@@ -57,24 +57,31 @@ const Right = styled(NavSection)`
   }
   
   render() {
-    const {name, opened, user} = this.props;
-    return (
-      <Container data-testid='navbar' open={opened}>
-        <Left>
-          <NavLink to='/'>Home</NavLink>
-        </Left>
-        {user && 
-        <Right>
-          <NavLink to={`/u/${user._id}`}>
-            <IoIosPerson color='black' size='2em' />
-          </NavLink>
-          <IoIosLogOut onClick={() => this.props.logout()} color='black' size='2em' />
-        </Right>
-        }
+    const {opened, user} = this.props;
+    if (user) {
+      return (
+        <Container data-testid='navbar' open={opened}>
+          <Left>
+            <NavLink to='/'>Home</NavLink>
+          </Left>
+          <Right>
+            <NavLink to={`/u/${user._id}`}>
+              <IoIosPerson color='black' size='2em' />
+            </NavLink>
+            <IoIosLogOut onClick={() => this.props.logout()} color='black' size='2em' />
+          </Right>
+        </Container>
+      )
+    } else {
+      return (
+        <Container data-testid='navbar' open={opened}>
+          <Left>
+            <NavLink to='/login'>Home</NavLink>
+          </Left>
+        </Container>
+      )
+    }
 
-        {name}
-      </Container>
-    )
   }
 }
 
