@@ -28,6 +28,9 @@ const NavSection = styled.div`
   width: 200px;
   height: 100%;
   a, svg {cursor: pointer;}
+  svg, a {
+    margin: 11px 5px;
+  }
 `;
 
 const Left = styled(NavSection)`
@@ -54,18 +57,21 @@ const Right = styled(NavSection)`
   }
   
   render() {
-    const {name, opened} = this.props;
+    const {name, opened, user} = this.props;
     return (
       <Container data-testid='navbar' open={opened}>
         <Left>
           <NavLink to='/'>Home</NavLink>
         </Left>
+        {user && 
         <Right>
-          <NavLink to={`/u/user._id`}>
-            <IoIosPerson color='black' size='2em' style={{marginTop: '11px'}} />
+          <NavLink to={`/u/${user._id}`}>
+            <IoIosPerson color='black' size='2em' />
           </NavLink>
-          <IoIosLogOut onClick={() => this.props.logout()} color='black' size='2em' style={{marginTop: '11px'}} />
+          <IoIosLogOut onClick={() => this.props.logout()} color='black' size='2em' />
         </Right>
+        }
+
         {name}
       </Container>
     )
