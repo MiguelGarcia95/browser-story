@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import {connect} from 'react-redux';
+import { IoIosLogOut, IoIosLogIn, IoIosPerson } from 'react-icons/io';
 
 import NavLink from '../_styledComponent/NavLink';
 
@@ -26,19 +27,16 @@ const Container = styled.div`
 const NavSection = styled.div`
   width: 200px;
   height: 100%;
+  a, svg {cursor: pointer;}
 `;
 
 const Left = styled(NavSection)`
-  background: red;
   float: left;
 `;
 
 const Right = styled(NavSection)`
-  background: red;
   float: right;
 `;
-
-
 
  class Navbar extends React.Component {
   componentDidMount() {
@@ -63,7 +61,10 @@ const Right = styled(NavSection)`
           <NavLink to='/'>Home</NavLink>
         </Left>
         <Right>
-          <button onClick={() => this.props.logout()} >Logout</button>
+          <NavLink to={`/u/user._id`}>
+            <IoIosPerson color='black' size='2em' style={{marginTop: '11px'}} />
+          </NavLink>
+          <IoIosLogOut onClick={() => this.props.logout()} color='black' size='2em' style={{marginTop: '11px'}} />
         </Right>
         {name}
       </Container>
