@@ -13,10 +13,11 @@ const Container = styled.div`
   height: 50px;
   background-color: #fff;
   box-sizing: border-box;
-  padding-right: 250px;
+  padding-right: 300px;
+  padding-left: 50px;
   position: absolute;
   ${props => !props.open && `
-    padding-right: 50px;
+    padding-right: 100px;
   `}
   z-index: 3;
   position: sticky;
@@ -25,20 +26,24 @@ const Container = styled.div`
 `;
 
 const NavSection = styled.div`
-  width: 200px;
+  width: 100px;
   height: 100%;
   a, svg {cursor: pointer;}
-  svg, a {
-    margin: 11px 5px;
+  svg {
+    margin-top: 11px;
+    width: 50px;
+    text-align: center;
   }
 `;
 
 const Left = styled(NavSection)`
   float: left;
+  margin-left: 1.66%;
 `;
 
 const Right = styled(NavSection)`
   float: right;
+  margin-right: 1.66%;
 `;
 
  class Navbar extends React.Component {
