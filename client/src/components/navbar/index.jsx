@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import {connect} from 'react-redux';
-import { IoIosLogOut, IoIosLogIn, IoIosPerson } from 'react-icons/io';
+import { IoIosLogOut, IoIosLogIn, IoIosPerson, IoIosHome} from 'react-icons/io';
 
 import NavLink from '../_styledComponent/NavLink';
 
@@ -67,7 +67,9 @@ const Right = styled(NavSection)`
       return (
         <Container data-testid='navbar' open={opened}>
           <Left>
-            <NavLink to='/'>Home</NavLink>
+            <NavLink to='/login'>
+              <IoIosHome color='black' size='2em'/>
+            </NavLink>
           </Left>
           <Right>
             <NavLink to={`/u/${user._id}`}>
@@ -81,7 +83,9 @@ const Right = styled(NavSection)`
       return (
         <Container data-testid='navbar' open={opened}>
           <Left>
-            <NavLink to='/login'>Home</NavLink>
+            <NavLink to='/login'>
+              <IoIosHome color='black' size='2em' />
+            </NavLink>
           </Left>
         </Container>
       )
