@@ -26,14 +26,32 @@ const Container = styled.div`
 `;
 
 const NavSection = styled.div`
-  width: 100px;
+  width: 150px;
   height: 100%;
   a, svg {cursor: pointer;}
   svg {
     margin-top: 11px;
     width: 50px;
     text-align: center;
+    float: right;
   }
+  p {
+    width: 50px;
+    line-height: 27px;
+    margin-top: 11px;
+    float: left;
+    margin-left: 10px;
+    text-decoration: none;
+    color: black;
+  }
+`;
+
+const Avatar = styled.img`
+  width: 25px; height: 25px;
+  margin-top: 12.5px;
+  border-radius: 50%;
+  object-fit: cover;
+  float: left;
 `;
 
 const Left = styled(NavSection)`
@@ -63,34 +81,24 @@ const Right = styled(NavSection)`
   
   render() {
     const {opened, user} = this.props;
-    if (user) {
-      return (
-        <Container data-testid='navbar' open={opened}>
-          <Left>
-            <NavLink to='/login'>
-              <IoIosHome color='black' size='2em'/>
-            </NavLink>
-          </Left>
-          <Right>
-            <NavLink to={`/u/${user._id}`}>
-              <IoIosPerson color='black' size='2em' />
-            </NavLink>
-            <IoIosLogOut onClick={() => this.props.logout()} color='black' size='2em' />
-          </Right>
-        </Container>
-      )
-    } else {
-      return (
-        <Container data-testid='navbar' open={opened}>
-          <Left>
-            <NavLink to='/login'>
-              <IoIosHome color='black' size='2em' />
-            </NavLink>
-          </Left>
-        </Container>
-      )
-    }
-
+    return (
+      <Container data-testid='navbar' open={opened}>
+        <Left>
+          <NavLink to='/home'>
+            <IoIosHome color='black' size='2em'/>
+          </NavLink>
+        </Left>
+        <Right>
+          {user && 
+          <NavLink to={`/u/${user._id}`}>
+            <Avatar img={user.avatar} />
+            <p>{user.username}</p>
+          </NavLink>
+          }
+          <IoIosLogOut onClick={() => this.props.logout()} color='black' size='2em' />
+        </Right>
+      </Container>
+    )
   }
 }
 
