@@ -24,6 +24,20 @@ const Container = styled.div`
   z-index: 1;
 `;
 
+const RedirectLink = styled(Link)`
+  text-decoration: none;
+  &:hover {color: black;}
+`;
+
+const Text = styled.p`
+  font-size: 1rem;
+  position: absolute;
+  bottom: 15px;
+  left: 0; right: 0;
+  text-align: center;
+  margin: auto;
+`;
+
 class SignUp extends React.Component {
   componentDidMount() {
     this.redirectIfAuth(this.props);
@@ -55,7 +69,9 @@ class SignUp extends React.Component {
         <Navbar history={this.props.history} name={''} />
         <Container>
           <Form inputs={formInputs} submit='Sign Up' title='Sign Up' onSubmit={this.onSubmit} />
-          <Link to='/login'>Login</Link>
+          <Text>
+            Already Registered? - <RedirectLink to='/login'>Login</RedirectLink>
+          </Text>
         </Container>
       </Body>
     )
