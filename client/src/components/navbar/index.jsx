@@ -43,6 +43,9 @@ const NavSection = styled.div`
     margin-left: 10px;
     text-decoration: none;
     color: black;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 `;
 
