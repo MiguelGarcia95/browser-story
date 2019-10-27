@@ -31,10 +31,17 @@ const Container = styled.div`
 `;
 
  class Chat extends React.Component {
+   state = {
+     opened: false,
+   };
+
+  toggleChat = () => this.setState({opened: !this.state.opened});
+
    render() {
-    const {opened, sidebarOpen} = this.props;
+    const {sidebarOpen} = this.props;
+    const {opened} = this.state;
      return (
-       <Container open={opened} sidebarOpen={sidebarOpen} >
+       <Container open={opened} sidebarOpen={sidebarOpen} onClick={this.toggleChat} >
          
        </Container>
      )

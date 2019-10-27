@@ -72,7 +72,7 @@ class Home extends React.Component {
             <Story />
             <Story />
           </Content>
-          <Chat />
+          <Chat sidebarOpen={this.state.opened} />
         </Container>
       </Body>
     )
