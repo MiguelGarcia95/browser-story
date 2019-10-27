@@ -7,15 +7,15 @@ const sampleData = {
       user: 'Richard',
       avatar: 'https://www.w3schools.com/bootstrap/img_avatar3.png',
       messages: [
-        {from: 'id95516168', avatar: 'https://www.w3schools.com/bootstrap/img_avatar3.png', message: 'How are you man?'},
+        {from: 'Richard', avatar: 'https://www.w3schools.com/bootstrap/img_avatar3.png', message: 'How are you man?'},
         {from: 'you', avatar: 'https://www.w3schools.com/bootstrap/img_avatar3.png', message: 'Good. What was up with you last night?'},
-        {from: 'id95516168', avatar: 'https://www.w3schools.com/bootstrap/img_avatar3.png', message: 'What do you mean?'},
+        {from: 'Richard', avatar: 'https://www.w3schools.com/bootstrap/img_avatar3.png', message: 'What do you mean?'},
         {from: 'you', avatar: 'https://www.w3schools.com/bootstrap/img_avatar3.png', message: 'Last night you were being weird. Always looking around as if searching for someone. We honestly thought you were on something.'},
-        {from: 'id95516168', avatar: 'https://www.w3schools.com/bootstrap/img_avatar3.png', message: 'What I meant is that we did not meet last night.'},
+        {from: 'Richard', avatar: 'https://www.w3schools.com/bootstrap/img_avatar3.png', message: 'What I meant is that we did not meet last night.'},
         {from: 'you', avatar: 'https://www.w3schools.com/bootstrap/img_avatar3.png', message: 'Bull! Check out Sandra\'s feed. She uploaded a video from last night. You are on it.'},
         {from: 'you', avatar: 'https://www.w3schools.com/bootstrap/img_avatar3.png', message: 'Here!', attachment: 'image.jpg'},
         {from: 'you', avatar: 'https://www.w3schools.com/bootstrap/img_avatar3.png', message: 'At 3:41! See! There you.', attachment: 'image.jpg'},
-        {from: 'id95516168', avatar: 'https://www.w3schools.com/bootstrap/img_avatar3.png', message: 'Dude. Last night I was with my girlfriend. Check her account. She was here!'},
+        {from: 'Richard', avatar: 'https://www.w3schools.com/bootstrap/img_avatar3.png', message: 'Dude. Last night I was with my girlfriend. Check her account. She was here!'},
       ]
     }
   ],
@@ -75,6 +75,12 @@ const UserName = styled.p`
   margin-top: 0;
 `;
 
+const ChatBox = styled.div`
+  width: 300px;
+  height: 300px;
+
+`;
+
  class Chat extends React.Component {
    state = {
      opened: false,
@@ -97,6 +103,14 @@ const UserName = styled.p`
     })
   }
 
+  displayChatTexts = (texts) => {
+    return texts.map((text, i) => {
+      return (
+        <p key={i}>{text.message}</p>
+      )
+    })
+  }
+
   displayChatBox = type => {
     if (type === 'menu') {
       return (
@@ -107,12 +121,12 @@ const UserName = styled.p`
     } else {
       return (
         <Box>
-          <MenuItem onClick={() => this.setChatDispaly('menu')} >
+          <ChatBox onClick={() => this.setChatDispaly('menu')} >
             {/* Load in messages at one second intervals */}
-            {/* {this.displayUserChat('userId')} */}
+            {/* {this.displayChatTexts('userId')} */}
+            {this.displayChatTexts(sampleData.users[0].messages)}
             {this.state.chatUser}
-          </MenuItem>
-
+          </ChatBox>
         </Box>
       )
     }
