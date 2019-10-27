@@ -8,6 +8,7 @@ const Body = styled.form`
   background-color: #fff;
   position: absolute;
   box-sizing: border-box;
+  box-shadow: 0 0 5px 0px rgba(0,0,0,0.1);
   padding: 0 50px;
   top: 150px; bottom: 0;
   left: 0; right: 0;
