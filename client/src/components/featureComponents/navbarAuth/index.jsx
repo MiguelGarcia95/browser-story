@@ -30,6 +30,7 @@ const NavSection = styled.div`
     width: 50px;
     text-align: center;
   }
+  a {float: left;}
 `;
 
 const Left = styled(NavSection)`

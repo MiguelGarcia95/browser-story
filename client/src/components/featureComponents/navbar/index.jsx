@@ -60,6 +60,7 @@ const Avatar = styled.img`
 const Left = styled(NavSection)`
   float: left;
   margin-left: 1.66%;
+  a {float: left;}
 `;
 
 const Right = styled(NavSection)`
