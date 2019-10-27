@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import Navbar from '../../navbar';
+import Navbar from '../../featureComponents/navbar';
 import Link from '../../_styledComponent/Link';
-// import Sidebar from '../../sidebar';
+// import Sidebar from '../../featureComponents/sidebar';
 import {connect} from 'react-redux';
 
 import {getStory, getStories, getAllStories} from '../../../actions/story';

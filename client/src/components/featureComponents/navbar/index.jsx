@@ -3,10 +3,10 @@ import styled from 'styled-components';
 import {connect} from 'react-redux';
 import { IoIosLogOut, IoIosLogIn, IoIosPerson, IoIosHome} from 'react-icons/io';
 
-import NavLink from '../_styledComponent/NavLink';
+import NavLink from '../../_styledComponent/NavLink';
 
-import {getCookie} from '../../functions/cookies';
-import {loginWithToken, logout} from '../../actions/user';
+import {getCookie} from '../../../functions/cookies';
+import {loginWithToken, logout} from '../../../actions/user';
 
 const Container = styled.div`
   width: 100%;

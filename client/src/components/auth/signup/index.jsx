@@ -6,7 +6,7 @@ import {connect} from 'react-redux';
 import {signup} from '../../../actions/user';
 
 import Navbar from '../../featureComponents/navbarAuth';
-import Form from '../../form';
+import Form from '../../featureComponents/form';
 
 const Body = styled.div`
   height: 100vh;

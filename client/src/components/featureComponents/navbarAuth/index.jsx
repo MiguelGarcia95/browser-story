@@ -4,7 +4,6 @@ import { IoIosHome } from 'react-icons/io';
 
 import NavLink from '../../_styledComponent/NavLink';
 
-
 const Container = styled.div`
   width: 100%;
   height: 50px;

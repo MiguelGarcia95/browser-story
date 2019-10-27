@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import Navbar from '../../navbar';
-import Sidebar from '../../sidebar';
+import Navbar from '../../featureComponents/navbar';
+import Sidebar from '../../featureComponents/sidebar';
 
 const Body = styled.div`
   height: 100vh;
