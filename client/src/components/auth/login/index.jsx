@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 
 import {login} from '../../../actions/user';
 
-import Navbar from '../../navbarAuth';
+import Navbar from '../../featureComponents/navbarAuth';
 import Form from '../../form';
 
 const Body = styled.div`

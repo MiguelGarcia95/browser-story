@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { IoIosHome } from 'react-icons/io';
 
-import NavLink from '../_styledComponent/NavLink';
+import NavLink from '../../_styledComponent/NavLink';
 
 
 const Container = styled.div`
