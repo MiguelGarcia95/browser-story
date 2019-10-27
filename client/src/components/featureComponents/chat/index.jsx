@@ -22,12 +22,13 @@ const sampleData = {
 
 const Container = styled.div`
   height: 50px;
-  width: 250px;
+  width: 300px;
   position: absolute;
   bottom: 0;
   right: 50px;
   background: #a85757;
-  background: #fff;
+  overflow: hidden;
+  // background: #fff;
   ${props => props.open && `
     height: 350px;
   `}
@@ -38,24 +39,68 @@ const Container = styled.div`
 `;
 
 const Header = styled.div`
-  width: 250px;
+  width: 300px;
   height: 50px;
   background: #a73737;
+  cursor: pointer;
+`;
+
+const Box = styled.div`
+  width: 300px;
+  height: 300px;
+  overflow: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+`;
+
+const MenuItem = styled.div`
+  width: 100%;
+  height: 50px;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
 `;
 
  class Chat extends React.Component {
    state = {
      opened: false,
+     chatBox: 'menu',
+     chatUser: 'Richard',
    };
 
   toggleChat = () => this.setState({opened: !this.state.opened});
 
+  displayChatBox = type => {
+    if (type === 'menu') {
+      return (
+        <Box>
+          <MenuItem />
+          <MenuItem />
+          <MenuItem />
+          <MenuItem />
+          <MenuItem />
+          <MenuItem />
+          <MenuItem />
+          <MenuItem />
+          <MenuItem />
+          <MenuItem />
+        </Box>
+      )
+    } else {
+      return (
+        <Box>
+
+        </Box>
+      )
+    }
+  }
+
    render() {
     const {sidebarOpen} = this.props;
-    const {opened} = this.state;
+    const {opened, chatBox} = this.state;
      return (
        <Container open={opened} sidebarOpen={sidebarOpen}>
-         <Header  onClick={this.toggleChat}  ></Header>
+         <Header onClick={this.toggleChat} ></Header>
+         {this.displayChatBox(chatBox)}
        </Container>
      )
    }
