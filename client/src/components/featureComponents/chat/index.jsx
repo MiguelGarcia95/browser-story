@@ -64,7 +64,15 @@ const MenuItem = styled.div`
 const Avatar = styled.img`
   width: 30px; height: 30px;
   margin: 10px;
+  float: left;
   border-radius: 50%;
+`;
+
+const UserName = styled.p`
+  width: 250px;
+  float: left;
+  line-height: 50px;
+  margin-top: 0;
 `;
 
  class Chat extends React.Component {
@@ -83,6 +91,7 @@ const Avatar = styled.img`
       return (
         <MenuItem onClick={() => this.setChatDispaly('user', 'Richard')} >
           <Avatar src={user.avatar} />
+          <UserName>Richard</UserName>
         </MenuItem>
       )
     })
