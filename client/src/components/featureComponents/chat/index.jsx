@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const sampleData = {
   users: [
     {
-      user: '123123',
+      user: 'Richard',
       avatar: 'https://www.w3schools.com/bootstrap/img_avatar3.png',
       messages: [
         {from: 'id95516168', avatar: 'https://www.w3schools.com/bootstrap/img_avatar3.png', message: 'How are you man?'},
@@ -91,7 +91,7 @@ const UserName = styled.p`
       return (
         <MenuItem onClick={() => this.setChatDispaly('user', 'Richard')} >
           <Avatar src={user.avatar} />
-          <UserName>Richard</UserName>
+          <UserName>{user.user}</UserName>
         </MenuItem>
       )
     })
@@ -108,6 +108,8 @@ const UserName = styled.p`
       return (
         <Box>
           <MenuItem onClick={() => this.setChatDispaly('menu')} >
+            {/* Load in messages at one second intervals */}
+            {/* {this.displayUserChat('userId')} */}
             {this.state.chatUser}
           </MenuItem>
 
