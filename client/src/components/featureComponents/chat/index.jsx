@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 
 const sampleData = {
   messages: [
@@ -14,12 +15,28 @@ const sampleData = {
   ]
 }
 
+const Container = styled.div`
+  background: #a73737;
+  height: 50px;
+  width: 250px;
+  position: absolute;
+  bottom: 0;
+  right: 50px;
+  ${props => props.open && `
+    height: 350px;
+  `}
+  ${props => props.sidebarOpen && `
+    right: 250px;
+  `}
+`;
+
  class Chat extends React.Component {
    render() {
+    const {opened, sidebarOpen} = this.props;
      return (
-       <div>
+       <Container open={opened} sidebarOpen={sidebarOpen} >
          
-       </div>
+       </Container>
      )
    }
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Navbar from '../../featureComponents/navbar';
+import Chat from '../../featureComponents/chat';
 import Sidebar from '../../featureComponents/sidebar';
 
 const Body = styled.div`
@@ -71,6 +72,7 @@ class Home extends React.Component {
             <Story />
             <Story />
           </Content>
+          <Chat />
         </Container>
       </Body>
     )
