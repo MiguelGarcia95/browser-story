@@ -14,7 +14,6 @@ const Container = styled.div`
   ${props => !props.open && `
     width: 50px;
   `}
-  // box-shadow: -1px 0px 5px 0px rgba(0,0,0,0.1);
 `;
 
 const Header = styled.div`

@@ -53,7 +53,7 @@ const Story = styled.div`
 
 class Home extends React.Component {
   state = {
-    opened: true,
+    opened: false,
   }
 
   toggleSidebar = () => this.setState({opened: !this.state.opened});
