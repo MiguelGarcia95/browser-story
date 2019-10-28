@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import {IoIosArrowBack, IoIosArrowDown, IoIosArrowUp, IoIosText} from 'react-icons/io';
+import ChatText from '../chatText';
 
 const sampleData = {
   users: [
@@ -8,15 +9,15 @@ const sampleData = {
       user: 'Richard',
       avatar: 'https://www.w3schools.com/bootstrap/img_avatar3.png',
       messages: [
-        {from: 'Richard', float: 'left', avatar: 'https://www.w3schools.com/bootstrap/img_avatar3.png', message: 'How are you man?'},
-        {from: 'you', float: 'right', avatar: 'https://www.w3schools.com/bootstrap/img_avatar3.png', message: 'Good. What was up with you last night?'},
-        {from: 'Richard', float: 'left', avatar: 'https://www.w3schools.com/bootstrap/img_avatar3.png', message: 'What do you mean?'},
-        {from: 'you', float: 'right', avatar: 'https://www.w3schools.com/bootstrap/img_avatar3.png', message: 'Last night you were being weird. Always looking around as if searching for someone. We honestly thought you were on something.'},
-        {from: 'Richard', float: 'left', avatar: 'https://www.w3schools.com/bootstrap/img_avatar3.png', message: 'What I meant is that we did not meet last night.'},
-        {from: 'you', float: 'right', avatar: 'https://www.w3schools.com/bootstrap/img_avatar3.png', message: 'Bull! Check out Sandra\'s feed. She uploaded a video from last night. You are on it.'},
-        {from: 'you', float: 'right', avatar: 'https://www.w3schools.com/bootstrap/img_avatar3.png', message: 'Here!', attachment: 'image.jpg'},
-        {from: 'you', float: 'right', avatar: 'https://www.w3schools.com/bootstrap/img_avatar3.png', message: 'At 3:41! See! There you.', attachment: 'image.jpg'},
-        {from: 'Richard', float: 'left', avatar: 'https://www.w3schools.com/bootstrap/img_avatar3.png', message: 'Dude. Last night I was with my girlfriend. Check her account. She was here!'},
+        {from: 'Richard', delay: 0, float: 'left', avatar: 'https://www.w3schools.com/bootstrap/img_avatar3.png', message: 'How are you man?'},
+        {from: 'you', delay: 1, float: 'right', avatar: 'https://www.w3schools.com/bootstrap/img_avatar3.png', message: 'Good. What was up with you last night?'},
+        {from: 'Richard', delay: 2, float: 'left', avatar: 'https://www.w3schools.com/bootstrap/img_avatar3.png', message: 'What do you mean?'},
+        {from: 'you', delay: 3, float: 'right', avatar: 'https://www.w3schools.com/bootstrap/img_avatar3.png', message: 'Last night you were being weird. Always looking around as if searching for someone. We honestly thought you were on something.'},
+        {from: 'Richard', delay: 4, float: 'left', avatar: 'https://www.w3schools.com/bootstrap/img_avatar3.png', message: 'What I meant is that we did not meet last night.'},
+        {from: 'you', delay: 5, float: 'right', avatar: 'https://www.w3schools.com/bootstrap/img_avatar3.png', message: 'Bull! Check out Sandra\'s feed. She uploaded a video from last night. You are on it.'},
+        {from: 'you', delay: 6, float: 'right', avatar: 'https://www.w3schools.com/bootstrap/img_avatar3.png', message: 'Here!', attachment: 'image.jpg'},
+        {from: 'you', delay: 7, float: 'right', avatar: 'https://www.w3schools.com/bootstrap/img_avatar3.png', message: 'At 3:41! See! There you.', attachment: 'image.jpg'},
+        {from: 'Richard', delay: 8, float: 'left', avatar: 'https://www.w3schools.com/bootstrap/img_avatar3.png', message: 'Dude. Last night I was with my girlfriend. Check her account. She was here!'},
       ]
     }
   ],
@@ -87,17 +88,6 @@ const ChatBox = styled.div`
   box-sizing: border-box;
   padding: 10px;
   position: relative;
-`;
-
-const Text = styled.p`
-  padding: 5px 10px;
-  border-radius: 20px;
-  color: white; 
-  background: orange;
-  width: 80%;
-  ${props => `
-    float: ${props.float};
-  `}
 `;
 
 const User = styled.p`
@@ -171,17 +161,7 @@ const ChatBuffer = styled.div`
     })
   }
 
-  displayChatTexts = (texts) => {
-    let j = 0;
-    if (j < texts.length) {
-    }
-
-    return texts.map((text, i) => {
-      return (
-        <Text key={i} float={text.float} >{text.message}</Text>
-      )
-    })
-  }
+  displayChatTexts = texts => texts.map((text, i) => <ChatText key={i} text={text} />)
 
   displayChatBox = type => {
     if (type === 'menu') {
