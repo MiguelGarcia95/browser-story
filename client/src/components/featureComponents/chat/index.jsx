@@ -44,11 +44,11 @@ const Header = styled.div`
   width: 300px;
   height: 50px;
   background: #a73737;
-  cursor: pointer;
   svg {
     margin-top: 11px;
     width: 50px;
     text-align: center;
+    cursor: pointer;
   }
 `;
 
@@ -98,6 +98,17 @@ const Text = styled.p`
   ${props => `
     float: ${props.float};
   `}
+`;
+
+const User = styled.p`
+  width: 200px;
+  color: white;
+  float: left;
+  box-sizing: border-box;
+  padding-left: 10px;
+  margin-top: 0;
+  line-height: 50px;
+  font-size: 1.2rem;
 `;
 
  class Chat extends React.Component {
@@ -164,6 +175,7 @@ const Text = styled.p`
           <Header>
             <IoIosArrowBack color='white' size='2em' style={{float: 'left'}} onClick={() => this.setChatDispaly('menu')} />
             <IoIosArrowDown color='white' size='2em' style={{float: 'left'}} onClick={this.toggleChat} />
+            <User>{sampleData.users[0].user}</User>
           </Header>
         )
       }
