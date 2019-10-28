@@ -2,24 +2,41 @@ import React, { Component } from 'react'
 import styled from "styled-components";
 
 const Text = styled.p`
-  padding: 5px 10px;
+  padding: 0;
   border-radius: 20px;
   color: white; 
   background: orange;
   width: 80%;
-  // overflow: hidden;
-  // height: 0;
+  overflow: hidden;
+  height: 0;
   ${props => `
     float: ${props.float};
+  `}
+  ${props => props.display && `
+    // float: ${props.float};
+    height: unset;  
+    padding: 5px 10px;
+
   `}
 `;
 
 class ChatText extends Component {
+  state = {
+    display: false
+  }
+
+  componentDidMount() {
+    setTimeout(() => {
+      console.log('sent')
+      this.setState({display: true})
+      console.log(this.props.text)
+    }, this.props.text.delay*1000)
+  }
   render() {
     const {text} = this.props;
 
     return (
-      <Text float={text.float} >
+      <Text float={text.float} display={this.state.display} >
         {text.message}
       </Text>
     )
