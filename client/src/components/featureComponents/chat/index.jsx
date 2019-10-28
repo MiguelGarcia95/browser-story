@@ -151,7 +151,7 @@ const User = styled.p`
     } else {
       return (
         <Box>
-          <ChatBox onClick={() => this.setChatDispaly('menu')} >
+          <ChatBox>
             {/* Load in messages at one second intervals */}
             {/* {this.displayChatTexts('userId')} */}
             {this.displayChatTexts(sampleData.users[0].messages)}
@@ -182,8 +182,8 @@ const User = styled.p`
       
     } else {
       return (
-        <Header onClick={this.toggleChat}>
-
+        <Header >
+          <IoIosArrowUp color='white' size='2em' style={{float: 'left'}} onClick={this.toggleChat} />
         </Header>
       )
     }
