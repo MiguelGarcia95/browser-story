@@ -87,7 +87,6 @@ const ChatBox = styled.div`
   box-sizing: border-box;
   padding: 10px;
   position: relative;
-  padding-bottom: 60px;
 `;
 
 const Text = styled.p`
@@ -113,7 +112,6 @@ const User = styled.p`
 `;
 
 const TextBox = styled.div`
-  width: 300px;
   width: 280px;
   box-sizing: border-box;
   height: 50px;
@@ -122,6 +120,14 @@ const TextBox = styled.div`
   position: fixed;
   // left: 0;
   bottom: 0;
+  border-radius: 50px;
+`;
+
+const ChatBuffer = styled.div`
+  width: 300px;
+  height: 50px;
+  float: left;
+  background: transparent;
 `;
 
  class Chat extends React.Component {
@@ -168,6 +174,7 @@ const TextBox = styled.div`
             {/* Load in messages at one second intervals */}
             {/* {this.displayChatTexts('userId')} */}
             {this.displayChatTexts(sampleData.users[0].messages)}
+            <ChatBuffer />
             <TextBox />
           </ChatBox>
         </Box>
