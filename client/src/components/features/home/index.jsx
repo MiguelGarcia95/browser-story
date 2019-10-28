@@ -59,6 +59,19 @@ class Home extends React.Component {
 
   toggleSidebar = () => this.setState({opened: !this.state.opened});
 
+  /**
+   * Features
+   * -Chat
+   * -- On image click, allow some events to happen
+   * -- on link click, display a user page
+   * 
+   * -User Page
+   * -- on user page, image click do event
+   * -- on user page, on comment scroll, trigger event
+   * -- on user page, on post click, trigger event
+   * 
+   * */ 
+
   render() {
     return (
       <Body>

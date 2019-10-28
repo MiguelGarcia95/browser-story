@@ -153,7 +153,7 @@ const ChatBuffer = styled.div`
    state = {
      opened: false,
      chatBox: 'menu',
-     chatUser: null,
+     chatUser: null
    };
 
   toggleChat = () => this.setState({opened: !this.state.opened});
