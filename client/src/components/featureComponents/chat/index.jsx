@@ -150,20 +150,20 @@ const ChatBuffer = styled.div`
 `;
 
  class Chat extends React.Component {
-   state = {
-     opened: false,
-     chatBox: 'menu',
-     chatUser: null
-   };
+  state = {
+    opened: false,
+    chatBox: 'menu',
+    chatUser: null
+  };
 
   toggleChat = () => this.setState({opened: !this.state.opened});
 
   setChatDispaly = (display, user = null) => this.setState({chatBox: display, chatUser: user});
 
   displayMenuItems = () => {
-    return sampleData.users.map(user => {
+    return sampleData.users.map((user, i) => {
       return (
-        <MenuItem onClick={() => this.setChatDispaly('user', 'Richard')} >
+        <MenuItem key={i} onClick={() => this.setChatDispaly('user', 'Richard')} >
           <Avatar src={user.avatar} />
           <UserName>{user.user}</UserName>
         </MenuItem>
@@ -172,6 +172,10 @@ const ChatBuffer = styled.div`
   }
 
   displayChatTexts = (texts) => {
+    let j = 0;
+    if (j < texts.length) {
+    }
+
     return texts.map((text, i) => {
       return (
         <Text key={i} float={text.float} >{text.message}</Text>
@@ -189,7 +193,7 @@ const ChatBuffer = styled.div`
     } else {
       return (
         <Box>
-          <ChatBox>
+          <ChatBox >
             {/* Load in messages at one second intervals */}
             {/* {this.displayChatTexts('userId')} */}
             {this.displayChatTexts(sampleData.users[0].messages)}
@@ -209,7 +213,7 @@ const ChatBuffer = styled.div`
         return (
           <Header>
             <IoIosArrowDown color='white' size='2em' style={{float: 'left'}} onClick={this.toggleChat} />
-            <IoIosText color='white' size='2em' style={{float: 'right'}} />
+            <IoIosText color='white' size='2em' style={{float: 'right', cursor: 'unset'}} />
           </Header>
         )
       } else {
@@ -218,7 +222,7 @@ const ChatBuffer = styled.div`
             <IoIosArrowBack color='white' size='2em' style={{float: 'left'}} onClick={() => this.setChatDispaly('menu')} />
             <IoIosArrowDown color='white' size='2em' style={{float: 'left'}} onClick={this.toggleChat} />
             <User>{sampleData.users[0].user}</User>
-            <IoIosText color='white' size='2em' style={{float: 'right'}} />
+            <IoIosText color='white' size='2em' style={{float: 'right', cursor: 'unset'}} />
           </Header>
         )
       }
@@ -226,7 +230,7 @@ const ChatBuffer = styled.div`
       return (
         <Header >
           <IoIosArrowUp color='white' size='2em' style={{float: 'left'}} onClick={this.toggleChat} />
-          <IoIosText color='white' size='2em' style={{float: 'right'}} />
+          <IoIosText color='white' size='2em' style={{float: 'right', cursor: 'unset'}} />
         </Header>
       )
     }
