@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import {IoIosArrowBack, IoIosArrowDown, IoIosArrowUp} from 'react-icons/io';
 
 const sampleData = {
   users: [
@@ -78,6 +79,8 @@ const UserName = styled.p`
 const ChatBox = styled.div`
   width: 300px;
   height: 300px;
+  box-sizing: border-box;
+  padding: 10px;
 `;
 
 const Text = styled.p`
@@ -142,12 +145,38 @@ const Text = styled.p`
     }
   }
 
+  displayHeader = (opened, chatBox) => {
+    if (opened) {
+      if (chatBox === 'menu') {
+        return (
+          <Header>
+            <IoIosArrowDown onClick={this.toggleChat} />
+          </Header>
+        )
+      } else {
+        return (
+          <Header>
+            <IoIosArrowBack onClick={() => this.setChatDispaly('menu')} />
+            <IoIosArrowDown onClick={this.toggleChat} />
+          </Header>
+        )
+      }
+      
+    } else {
+      return (
+        <Header onClick={this.toggleChat}>
+
+        </Header>
+      )
+    }
+  }
+
    render() {
     const {sidebarOpen} = this.props;
     const {opened, chatBox} = this.state;
      return (
        <Container open={opened} sidebarOpen={sidebarOpen}>
-         <Header onClick={this.toggleChat} ></Header>
+         {this.displayHeader(opened, chatBox)}
          {this.displayChatBox(chatBox)}
        </Container>
      )
