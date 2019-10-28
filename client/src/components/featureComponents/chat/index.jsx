@@ -7,15 +7,15 @@ const sampleData = {
       user: 'Richard',
       avatar: 'https://www.w3schools.com/bootstrap/img_avatar3.png',
       messages: [
-        {from: 'Richard', avatar: 'https://www.w3schools.com/bootstrap/img_avatar3.png', message: 'How are you man?'},
-        {from: 'you', avatar: 'https://www.w3schools.com/bootstrap/img_avatar3.png', message: 'Good. What was up with you last night?'},
-        {from: 'Richard', avatar: 'https://www.w3schools.com/bootstrap/img_avatar3.png', message: 'What do you mean?'},
-        {from: 'you', avatar: 'https://www.w3schools.com/bootstrap/img_avatar3.png', message: 'Last night you were being weird. Always looking around as if searching for someone. We honestly thought you were on something.'},
-        {from: 'Richard', avatar: 'https://www.w3schools.com/bootstrap/img_avatar3.png', message: 'What I meant is that we did not meet last night.'},
-        {from: 'you', avatar: 'https://www.w3schools.com/bootstrap/img_avatar3.png', message: 'Bull! Check out Sandra\'s feed. She uploaded a video from last night. You are on it.'},
-        {from: 'you', avatar: 'https://www.w3schools.com/bootstrap/img_avatar3.png', message: 'Here!', attachment: 'image.jpg'},
-        {from: 'you', avatar: 'https://www.w3schools.com/bootstrap/img_avatar3.png', message: 'At 3:41! See! There you.', attachment: 'image.jpg'},
-        {from: 'Richard', avatar: 'https://www.w3schools.com/bootstrap/img_avatar3.png', message: 'Dude. Last night I was with my girlfriend. Check her account. She was here!'},
+        {from: 'Richard', float: 'left', avatar: 'https://www.w3schools.com/bootstrap/img_avatar3.png', message: 'How are you man?'},
+        {from: 'you', float: 'right', avatar: 'https://www.w3schools.com/bootstrap/img_avatar3.png', message: 'Good. What was up with you last night?'},
+        {from: 'Richard', float: 'left', avatar: 'https://www.w3schools.com/bootstrap/img_avatar3.png', message: 'What do you mean?'},
+        {from: 'you', float: 'right', avatar: 'https://www.w3schools.com/bootstrap/img_avatar3.png', message: 'Last night you were being weird. Always looking around as if searching for someone. We honestly thought you were on something.'},
+        {from: 'Richard', float: 'left', avatar: 'https://www.w3schools.com/bootstrap/img_avatar3.png', message: 'What I meant is that we did not meet last night.'},
+        {from: 'you', float: 'right', avatar: 'https://www.w3schools.com/bootstrap/img_avatar3.png', message: 'Bull! Check out Sandra\'s feed. She uploaded a video from last night. You are on it.'},
+        {from: 'you', float: 'right', avatar: 'https://www.w3schools.com/bootstrap/img_avatar3.png', message: 'Here!', attachment: 'image.jpg'},
+        {from: 'you', float: 'right', avatar: 'https://www.w3schools.com/bootstrap/img_avatar3.png', message: 'At 3:41! See! There you.', attachment: 'image.jpg'},
+        {from: 'Richard', float: 'left', avatar: 'https://www.w3schools.com/bootstrap/img_avatar3.png', message: 'Dude. Last night I was with my girlfriend. Check her account. She was here!'},
       ]
     }
   ],
@@ -78,7 +78,17 @@ const UserName = styled.p`
 const ChatBox = styled.div`
   width: 300px;
   height: 300px;
+`;
 
+const Text = styled.p`
+  padding: 5px;
+  border-radius: 10px;
+  color: white; 
+  background: orange;
+  width: 80%;
+  ${props => `
+    float: ${props.float};
+  `}
 `;
 
  class Chat extends React.Component {
@@ -106,7 +116,7 @@ const ChatBox = styled.div`
   displayChatTexts = (texts) => {
     return texts.map((text, i) => {
       return (
-        <p key={i}>{text.message}</p>
+        <Text key={i} float={text.float} >{text.message}</Text>
       )
     })
   }
