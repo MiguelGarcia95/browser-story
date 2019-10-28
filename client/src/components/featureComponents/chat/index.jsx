@@ -45,6 +45,11 @@ const Header = styled.div`
   height: 50px;
   background: #a73737;
   cursor: pointer;
+  svg {
+    margin-top: 11px;
+    width: 50px;
+    text-align: center;
+  }
 `;
 
 const Box = styled.div`
@@ -81,6 +86,7 @@ const ChatBox = styled.div`
   height: 300px;
   box-sizing: border-box;
   padding: 10px;
+
 `;
 
 const Text = styled.p`
@@ -150,14 +156,14 @@ const Text = styled.p`
       if (chatBox === 'menu') {
         return (
           <Header>
-            <IoIosArrowDown onClick={this.toggleChat} />
+            <IoIosArrowDown color='white' size='2em' style={{float: 'left'}} onClick={this.toggleChat} />
           </Header>
         )
       } else {
         return (
           <Header>
-            <IoIosArrowBack onClick={() => this.setChatDispaly('menu')} />
-            <IoIosArrowDown onClick={this.toggleChat} />
+            <IoIosArrowBack color='white' size='2em' style={{float: 'left'}} onClick={() => this.setChatDispaly('menu')} />
+            <IoIosArrowDown color='white' size='2em' style={{float: 'left'}} onClick={this.toggleChat} />
           </Header>
         )
       }
