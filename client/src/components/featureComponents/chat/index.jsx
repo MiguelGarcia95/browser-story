@@ -114,13 +114,26 @@ const User = styled.p`
 const TextBox = styled.div`
   width: 280px;
   box-sizing: border-box;
-  height: 50px;
+  height: 40px;
   background: red;
   z-index: 10;
   position: fixed;
-  // left: 0;
   bottom: 0;
-  border-radius: 50px;
+  border-radius: 40px;
+  margin-bottom: 5px;
+`;
+
+const TextInput = styled.input`
+  width: 260px;
+  height: 30px;
+  padding: 5px;
+  box-sizing: border-box;
+  margin-top: 5px;
+  margin-left: 10px;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
 `;
 
 const ChatBuffer = styled.div`
@@ -175,7 +188,9 @@ const ChatBuffer = styled.div`
             {/* {this.displayChatTexts('userId')} */}
             {this.displayChatTexts(sampleData.users[0].messages)}
             <ChatBuffer />
-            <TextBox />
+            <TextBox>
+              <TextInput type='text' placeholder='Thoughts go here...' />
+            </TextBox>
           </ChatBox>
         </Box>
       )
