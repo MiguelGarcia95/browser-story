@@ -32,7 +32,7 @@ const Container = styled.div`
   overflow: hidden;
   // background: #fff;
   ${props => props.open && `
-    height: 350px;
+    height: 400px;
   `}
   ${props => props.sidebarOpen && `
     right: 250px;
@@ -54,7 +54,7 @@ const Header = styled.div`
 
 const Box = styled.div`
   width: 300px;
-  height: 300px;
+  height: 350px;
   overflow: scroll;
   &::-webkit-scrollbar {
     display: none;
@@ -86,12 +86,13 @@ const ChatBox = styled.div`
   height: 300px;
   box-sizing: border-box;
   padding: 10px;
-
+  position: relative;
+  padding-bottom: 60px;
 `;
 
 const Text = styled.p`
   padding: 5px;
-  border-radius: 10px;
+  border-radius: 20px;
   color: white; 
   background: orange;
   width: 80%;
@@ -109,6 +110,18 @@ const User = styled.p`
   margin-top: 0;
   line-height: 50px;
   font-size: 1.2rem;
+`;
+
+const TextBox = styled.div`
+  width: 300px;
+  width: 280px;
+  box-sizing: border-box;
+  height: 50px;
+  background: red;
+  z-index: 10;
+  position: fixed;
+  // left: 0;
+  bottom: 0;
 `;
 
  class Chat extends React.Component {
@@ -155,7 +168,7 @@ const User = styled.p`
             {/* Load in messages at one second intervals */}
             {/* {this.displayChatTexts('userId')} */}
             {this.displayChatTexts(sampleData.users[0].messages)}
-            {this.state.chatUser}
+            <TextBox />
           </ChatBox>
         </Box>
       )
@@ -179,7 +192,6 @@ const User = styled.p`
           </Header>
         )
       }
-      
     } else {
       return (
         <Header >
