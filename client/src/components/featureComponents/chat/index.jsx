@@ -134,6 +134,9 @@ const TextInput = styled.input`
   border: none;
   outline: none;
   color: white;
+  &::placeholder {color: rgba(255,255,255,0.7); opacity: 1;}
+  &:-ms-input-placeholder { color: rgba(255,255,255,0.7);}
+  &::-ms-input-placeholder {color: rgba(255,255,255,0.7);}
 `;
 
 const ChatBuffer = styled.div`
