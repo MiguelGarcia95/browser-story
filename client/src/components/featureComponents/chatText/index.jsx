@@ -12,7 +12,7 @@ const Text = styled.p`
   ${props => `
     float: ${props.float};
   `}
-  ${props => props.display && `
+  ${props => props.displayHeight && `
     // float: ${props.float};
     height: unset;  
     padding: 5px 10px;
@@ -30,13 +30,14 @@ class ChatText extends Component {
       console.log('sent')
       this.setState({display: true})
       console.log(this.props.text)
+      // toggle scrollDown from parent
     }, this.props.text.delay*1000)
   }
   render() {
     const {text} = this.props;
 
     return (
-      <Text float={text.float} display={this.state.display} >
+      <Text float={text.float} displayHeight={this.state.display} >
         {text.message}
       </Text>
     )
