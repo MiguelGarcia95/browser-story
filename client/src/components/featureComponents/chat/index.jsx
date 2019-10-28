@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {IoIosArrowBack, IoIosArrowDown, IoIosArrowUp} from 'react-icons/io';
+import {IoIosArrowBack, IoIosArrowDown, IoIosArrowUp, IoIosText} from 'react-icons/io';
 
 const sampleData = {
   users: [
@@ -90,7 +90,7 @@ const ChatBox = styled.div`
 `;
 
 const Text = styled.p`
-  padding: 5px;
+  padding: 5px 10px;
   border-radius: 20px;
   color: white; 
   background: orange;
@@ -101,12 +101,15 @@ const Text = styled.p`
 `;
 
 const User = styled.p`
-  width: 200px;
+  width: 150px;
   color: white;
   float: left;
   box-sizing: border-box;
   padding-left: 10px;
   margin-top: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   line-height: 50px;
   font-size: 1.2rem;
 `;
@@ -115,7 +118,7 @@ const TextBox = styled.div`
   width: 280px;
   box-sizing: border-box;
   height: 40px;
-  background: red;
+  background: #a73737;
   z-index: 10;
   position: fixed;
   bottom: 0;
@@ -206,6 +209,7 @@ const ChatBuffer = styled.div`
         return (
           <Header>
             <IoIosArrowDown color='white' size='2em' style={{float: 'left'}} onClick={this.toggleChat} />
+            <IoIosText color='white' size='2em' style={{float: 'right'}} />
           </Header>
         )
       } else {
@@ -214,6 +218,7 @@ const ChatBuffer = styled.div`
             <IoIosArrowBack color='white' size='2em' style={{float: 'left'}} onClick={() => this.setChatDispaly('menu')} />
             <IoIosArrowDown color='white' size='2em' style={{float: 'left'}} onClick={this.toggleChat} />
             <User>{sampleData.users[0].user}</User>
+            <IoIosText color='white' size='2em' style={{float: 'right'}} />
           </Header>
         )
       }
@@ -221,6 +226,7 @@ const ChatBuffer = styled.div`
       return (
         <Header >
           <IoIosArrowUp color='white' size='2em' style={{float: 'left'}} onClick={this.toggleChat} />
+          <IoIosText color='white' size='2em' style={{float: 'right'}} />
         </Header>
       )
     }
