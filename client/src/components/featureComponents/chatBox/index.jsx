@@ -46,9 +46,6 @@ const TextInput = styled.input`
 `;
 
 class ChatBox extends Component {
-  state = {
-  }
-
   displayChatTexts = texts => texts.map((text, i) => <ChatText key={i} delay={i} text={text} scrollDown={this.scrollToBottom} />);
   
   scrollToBottom = () => {
