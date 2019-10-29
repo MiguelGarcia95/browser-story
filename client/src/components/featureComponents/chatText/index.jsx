@@ -32,10 +32,6 @@ class ChatText extends Component {
     }, (this.props.delay + 1)*1000)
   }
 
-  componentWillUnmount() {
-    clearTimeout();
-  }
-
   render() {
     return (
       <Text float={this.props.text.float} displayHeight={this.state.display} >

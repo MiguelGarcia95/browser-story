@@ -50,10 +50,6 @@ class ChatBox extends Component {
     currentText: 0,
   }
 
-  componentWillUnmount() {
-    this.chatBox = null;
-  }
-
   displayChatTexts = texts => {
     return texts.map((text, i) => {
       return <ChatText key={i} currentText={this.state.currentText} id={i} delay={i} text={text} scrollDown={this.scrollToBottom} />
@@ -63,6 +59,8 @@ class ChatBox extends Component {
   scrollToBottom = () => {
     if (this.chatBox) {
       this.chatBox.scrollIntoView({behavior: 'smooth'});
+    } else {
+      console.log('chatbox no longer here')
     }
   };
   
