@@ -63,6 +63,11 @@ class ChatBox extends Component {
       console.log('chatbox no longer here')
     }
   };
+
+  toggleNextText = () => {
+    // if nextTextExists
+    this.setState({currentText: this.state.currentText++});
+  }
   
   render() {
     {/* If im going to show next text on click, pass currentText to ChatText and only display if allowed */}

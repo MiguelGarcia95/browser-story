@@ -29,6 +29,11 @@ const Header = styled.div`
 `;
 
 function ChatHeader({opened, view, toggleChat, user, setChatDispaly}) {
+  const closeHeader = () => {
+    toggleChat();
+    setChatDispaly('menu');
+  }
+  
   if (opened) {
     if (view === 'menu') {
       return (
@@ -41,7 +46,7 @@ function ChatHeader({opened, view, toggleChat, user, setChatDispaly}) {
       return (
         <Header>
           <IoIosArrowBack color='white' size='2em' style={{float: 'left'}} onClick={() => setChatDispaly('menu')} />
-          <IoIosArrowDown color='white' size='2em' style={{float: 'left'}} onClick={toggleChat} />
+          <IoIosArrowDown color='white' size='2em' style={{float: 'left'}} onClick={closeHeader} />
           <User>{user.user}</User>
           <IoIosText color='white' size='2em' style={{float: 'right', cursor: 'unset'}} />
         </Header>

@@ -26,10 +26,11 @@ class ChatText extends Component {
   }
 
   componentDidMount() {
-    setTimeout(() => {
-      this.setState({display: true})
-      this.props.scrollDown();
-    }, (this.props.delay + 1)*1000)
+    // remove/delete once continue function works
+    // setTimeout(() => {
+    //   this.setState({display: true})
+    //   this.props.scrollDown();
+    // }, (this.props.delay + 1)*1000)
   }
 
   render() {
