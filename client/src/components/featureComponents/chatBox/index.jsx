@@ -29,7 +29,7 @@ const TextBox = styled.div`
   margin-bottom: 5px;
 `;
 
-const TextInput = styled.input`
+const TextInput = styled.div`
   width: 260px;
   height: 30px;
   padding: 5px;
@@ -52,32 +52,34 @@ class ChatBox extends Component {
 
   displayChatTexts = texts => {
     return texts.map((text, i) => {
-      return <ChatText key={i} currentText={this.state.currentText} id={i} delay={i} text={text} scrollDown={this.scrollToBottom} />
+      return <ChatText key={i} currentText={this.state.currentText} id={i} delay={i} text={text} />
     })
   };
   
   scrollToBottom = () => {
     if (this.chatBox) {
       this.chatBox.scrollIntoView({behavior: 'smooth'});
-    } else {
-      console.log('chatbox no longer here')
     }
   };
 
   toggleNextText = () => {
     // if nextTextExists
-    this.setState({currentText: this.state.currentText++});
+    if (this.props.messages.length > this.state.currentText + 1) {
+      this.setState({currentText: this.state.currentText + 1});
+      setTimeout(() => {
+        this.scrollToBottom();
+      }, 50);
+    }
   }
   
   render() {
     {/* If im going to show next text on click, pass currentText to ChatText and only display if allowed */}
-
     return (
       <Box >
         {/* {this.displayChatTexts('userId')} */}
         {this.displayChatTexts(this.props.messages)}
         <ChatBuffer ref={node => this.chatBox = node} />
-        <TextBox>
+        <TextBox onClick={this.toggleNextText}>
           <TextInput type='text' placeholder='Thoughts go here...' />
         </TextBox>
       </Box>

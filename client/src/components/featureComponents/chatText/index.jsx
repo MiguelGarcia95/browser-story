@@ -12,11 +12,10 @@ const Text = styled.p`
   ${props => `
     float: ${props.float};
   `}
-  ${props => props.displayHeight && `
+  ${props => props.visible && `
     // float: ${props.float};
     height: unset;  
     padding: 5px 10px;
-
   `}
 `;
 
@@ -25,17 +24,18 @@ class ChatText extends Component {
     display: false
   }
 
-  componentDidMount() {
-    // remove/delete once continue function works
-    // setTimeout(() => {
-    //   this.setState({display: true})
-    //   this.props.scrollDown();
-    // }, (this.props.delay + 1)*1000)
-  }
+  isTextVisible = textId => {
+    if (this.props.currentText >= textId) {
+      return true;
+    } else {
+      return false;
+    }
+  };
 
   render() {
+    const isVisible = this.isTextVisible(this.props.id);
     return (
-      <Text float={this.props.text.float} displayHeight={this.state.display} >
+      <Text float={this.props.text.float} visible={isVisible} displayHeight={this.state.display} >
         {this.props.text.message}
       </Text>
     )
