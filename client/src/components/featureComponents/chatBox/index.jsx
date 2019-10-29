@@ -40,9 +40,28 @@ const TextBox = styled.p`
   `}
 `;
 
-const Option = styled.p`
-  border-radius: 5px;
+const OptionBox = styled.div`
+  width: 280px;
+  box-sizing: border-box;
+  height: 140px;
   background: rgba(0,0,0,0.1);
+  z-index: 10;
+  position: fixed;
+  bottom: 0;
+  border-radius: 5px;
+  margin-bottom: 5px;
+`;
+
+const Option = styled.p`
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  box-sizing: border-box;
+  padding: 0 5px;
+  border-radius: 5px;
+  background: rgba(255,255,255,0.5);
+  font-weight: 500;
+  cursor: pointer;
 `;
 
 class ChatBox extends Component {
@@ -71,10 +90,10 @@ class ChatBox extends Component {
     }
   }
 
-  displayTextBoxPicker = () => {
-
+  optionClick = () => {
+    console.log('option clicked')
   }
-  
+
   render() {
     const isTextLast = this.props.messages.length === this.state.currentText + 1;
     const areThereOptions = true;
@@ -82,10 +101,18 @@ class ChatBox extends Component {
       <Box >
         {/* {this.displayChatTexts('userId')} */}
         {this.displayChatTexts(this.props.messages)}
-        <ChatBuffer ref={node => this.chatBox = node} />
+        <ChatBuffer ref={node => this.chatBox = node} options={areThereOptions} />
+        {areThereOptions ?
+        <OptionBox>
+          <Option onClick={this.optionClick}>Option 01</Option>
+          <Option onClick={this.optionClick}>Option 02</Option>
+          <Option onClick={this.optionClick}>Option 03</Option>
+        </OptionBox>
+          : 
         <TextBox onClick={this.toggleNextText} reachedLast={isTextLast} >
           Continue
         </TextBox>
+        }
       </Box>
     )
   }
