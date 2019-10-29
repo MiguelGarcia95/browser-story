@@ -17,32 +17,20 @@ const ChatBuffer = styled.div`
   background: transparent;
 `;
 
-const TextBox = styled.div`
+const TextBox = styled.p`
   width: 280px;
   box-sizing: border-box;
   height: 40px;
+  line-height: 40px;
   background: #a73737;
   z-index: 10;
   position: fixed;
   bottom: 0;
   border-radius: 40px;
   margin-bottom: 5px;
-`;
-
-const TextInput = styled.div`
-  width: 260px;
-  height: 30px;
-  padding: 5px;
-  box-sizing: border-box;
-  margin-top: 5px;
-  margin-left: 10px;
-  background: transparent;
-  border: none;
-  outline: none;
+  text-align: center;
   color: white;
-  &::placeholder {color: rgba(255,255,255,0.7); opacity: 1;}
-  &:-ms-input-placeholder { color: rgba(255,255,255,0.7);}
-  &::-ms-input-placeholder {color: rgba(255,255,255,0.7);}
+  cursor: pointer;
 `;
 
 class ChatBox extends Component {
@@ -80,7 +68,7 @@ class ChatBox extends Component {
         {this.displayChatTexts(this.props.messages)}
         <ChatBuffer ref={node => this.chatBox = node} />
         <TextBox onClick={this.toggleNextText}>
-          <TextInput type='text' placeholder='Thoughts go here...' />
+          Continue
         </TextBox>
       </Box>
     )
