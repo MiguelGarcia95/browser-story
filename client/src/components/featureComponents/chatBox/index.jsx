@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import styled from "styled-components";
+import ChatText from '../chatText';
 
-const Box = styled.p`
+const Box = styled.div`
   width: 300px;
   height: 300px;
   box-sizing: border-box;
@@ -48,15 +49,18 @@ class ChatBox extends Component {
   state = {
   }
 
-  displayChatTexts = texts => {
-
-  }
-
+  displayChatTexts = texts => texts.map((text, i) => <ChatText key={i} delay={i} text={text} scrollDown={this.scrollToBottom} />);
+  
+  scrollToBottom = () => {
+    this.chatBox.scrollIntoView({behavior: 'smooth'});
+  };
+  
   render() {
+    {/* If im going to show next text on click, create component for ChatBox */}
     return (
       <Box >
         {/* {this.displayChatTexts('userId')} */}
-        {/* {this.displayChatTexts(sampleData.users[0].messages)} */}
+        {this.displayChatTexts(this.props.messages)}
         <ChatBuffer ref={node => this.chatBox = node} />
         <TextBox>
           <TextInput type='text' placeholder='Thoughts go here...' />

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import {IoIosArrowBack, IoIosArrowDown, IoIosArrowUp, IoIosText} from 'react-icons/io';
 import ChatText from '../chatText';
-// import ChatBox from '../chatBox';
+import ChatBox from '../chatBox';
 
 const sampleData = {
   users: [
@@ -83,14 +83,6 @@ const UserName = styled.p`
   margin-top: 0;
 `;
 
-const ChatBox = styled.div`
-  width: 300px;
-  height: 300px;
-  box-sizing: border-box;
-  padding: 10px;
-  position: relative;
-`;
-
 const User = styled.p`
   width: 150px;
   color: white;
@@ -103,41 +95,6 @@ const User = styled.p`
   white-space: nowrap;
   line-height: 50px;
   font-size: 1.2rem;
-`;
-
-const TextBox = styled.div`
-  width: 280px;
-  box-sizing: border-box;
-  height: 40px;
-  background: #a73737;
-  z-index: 10;
-  position: fixed;
-  bottom: 0;
-  border-radius: 40px;
-  margin-bottom: 5px;
-`;
-
-const TextInput = styled.input`
-  width: 260px;
-  height: 30px;
-  padding: 5px;
-  box-sizing: border-box;
-  margin-top: 5px;
-  margin-left: 10px;
-  background: transparent;
-  border: none;
-  outline: none;
-  color: white;
-  &::placeholder {color: rgba(255,255,255,0.7); opacity: 1;}
-  &:-ms-input-placeholder { color: rgba(255,255,255,0.7);}
-  &::-ms-input-placeholder {color: rgba(255,255,255,0.7);}
-`;
-
-const ChatBuffer = styled.div`
-  width: 300px;
-  height: 50px;
-  float: left;
-  background: transparent;
 `;
 
  class Chat extends React.Component {
@@ -179,15 +136,7 @@ const ChatBuffer = styled.div`
     } else {
       return (
         <Box>
-          {/* If im going to show next text on click, create component for ChatBox */}
-          <ChatBox >
-            {/* {this.displayChatTexts('userId')} */}
-            {this.displayChatTexts(sampleData.users[0].messages)}
-            <ChatBuffer ref={node => this.chatBox = node} />
-            <TextBox>
-              <TextInput type='text' placeholder='Thoughts go here...' />
-            </TextBox>
-          </ChatBox>
+          <ChatBox messages={sampleData.users[0].messages} />
         </Box>
       )
     }
