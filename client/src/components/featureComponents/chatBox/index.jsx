@@ -15,6 +15,9 @@ const ChatBuffer = styled.div`
   height: 50px;
   float: left;
   background: transparent;
+  ${props => props.options && `
+    height: 150px;
+  `}
 `;
 
 const TextBox = styled.p`
@@ -37,6 +40,11 @@ const TextBox = styled.p`
   `}
 `;
 
+const Option = styled.p`
+  border-radius: 5px;
+  background: rgba(0,0,0,0.1);
+`;
+
 class ChatBox extends Component {
   state = {
     currentText: 0,
@@ -55,7 +63,6 @@ class ChatBox extends Component {
   };
 
   toggleNextText = () => {
-    // if nextTextExists
     if (this.props.messages.length > this.state.currentText + 1) {
       this.setState({currentText: this.state.currentText + 1});
       setTimeout(() => {
@@ -70,6 +77,7 @@ class ChatBox extends Component {
   
   render() {
     const isTextLast = this.props.messages.length === this.state.currentText + 1;
+    const areThereOptions = true;
     return (
       <Box >
         {/* {this.displayChatTexts('userId')} */}
