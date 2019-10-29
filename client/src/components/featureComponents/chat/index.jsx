@@ -93,13 +93,6 @@ const UserName = styled.p`
     })
   }
 
-  displayChatTexts = texts => texts.map((text, i) => <ChatText key={i} delay={i} text={text} scrollDown={this.scrollToBottom} />);
-
-  scrollToBottom = () => {
-    this.chatBox.scrollIntoView({behavior: 'smooth'});
-  };
-  
-
   displayChatBox = type => {
     if (type === 'menu') {
       return (
