@@ -161,13 +161,10 @@ const ChatBuffer = styled.div`
     })
   }
 
-  displayChatTexts = texts => texts.map((text, i) => <ChatText key={i} text={text} scrollDown={this.scrollTextDown} />);
+  displayChatTexts = texts => texts.map((text, i) => <ChatText key={i} delay={i} text={text} scrollDown={this.scrollToBottom} />);
 
-  scrollTextDown = () => {
-    // console.log()
+  scrollToBottom = () => {
     this.chatBox.scrollIntoView({behavior: 'smooth', alignTo: false});
-    console.log(this.chatBox.clientHeight)
-    console.log(this.chatBox.scrollHeight)
   };
   
 
@@ -181,8 +178,8 @@ const ChatBuffer = styled.div`
     } else {
       return (
         <Box>
+          {/* If im going to show next text on click, create component for ChatBox */}
           <ChatBox >
-            {/* Load in messages at one second intervals */}
             {/* {this.displayChatTexts('userId')} */}
             {this.displayChatTexts(sampleData.users[0].messages)}
             <ChatBuffer ref={node => this.chatBox = node} />

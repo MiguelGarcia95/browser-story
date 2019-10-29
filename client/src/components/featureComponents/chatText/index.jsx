@@ -29,12 +29,12 @@ class ChatText extends Component {
     setTimeout(() => {
       this.setState({display: true})
       this.props.scrollDown();
-    }, this.props.text.delay*1000)
+    }, (this.props.delay + 1)*1000)
   }
   render() {
     return (
-      <Text float={this.props.float} displayHeight={this.state.display} >
-        {this.props.message}
+      <Text float={this.props.text.float} displayHeight={this.state.display} >
+        {this.props.text.message}
       </Text>
     )
   }
