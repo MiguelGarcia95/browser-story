@@ -46,14 +46,23 @@ const TextInput = styled.input`
 `;
 
 class ChatBox extends Component {
-  displayChatTexts = texts => texts.map((text, i) => <ChatText key={i} delay={i} text={text} scrollDown={this.scrollToBottom} />);
+  state = {
+    currentText: 0,
+  }
+
+  displayChatTexts = texts => {
+    return texts.map((text, i) => {
+      return <ChatText key={i} currentText={this.state.currentText} id={i} delay={i} text={text} scrollDown={this.scrollToBottom} />
+    })
+  };
   
   scrollToBottom = () => {
     this.chatBox.scrollIntoView({behavior: 'smooth'});
   };
   
   render() {
-    {/* If im going to show next text on click, create component for ChatBox */}
+    {/* If im going to show next text on click, pass currentText to ChatText and only display if allowed */}
+
     return (
       <Box >
         {/* {this.displayChatTexts('userId')} */}
