@@ -27,18 +27,14 @@ class ChatText extends Component {
 
   componentDidMount() {
     setTimeout(() => {
-      console.log('sent')
       this.setState({display: true})
-      console.log(this.props.text)
-      // toggle scrollDown from parent
+      this.props.scrollDown();
     }, this.props.text.delay*1000)
   }
   render() {
-    const {text} = this.props;
-
     return (
-      <Text float={text.float} displayHeight={this.state.display} >
-        {text.message}
+      <Text float={this.props.float} displayHeight={this.state.display} >
+        {this.props.message}
       </Text>
     )
   }

@@ -161,7 +161,15 @@ const ChatBuffer = styled.div`
     })
   }
 
-  displayChatTexts = texts => texts.map((text, i) => <ChatText key={i} text={text} />)
+  displayChatTexts = texts => texts.map((text, i) => <ChatText key={i} text={text} scrollDown={this.scrollTextDown} />);
+
+  scrollTextDown = () => {
+    // console.log()
+    this.chatBox.scrollIntoView({behavior: 'smooth', alignTo: false});
+    console.log(this.chatBox.clientHeight)
+    console.log(this.chatBox.scrollHeight)
+  };
+  
 
   displayChatBox = type => {
     if (type === 'menu') {
@@ -177,7 +185,7 @@ const ChatBuffer = styled.div`
             {/* Load in messages at one second intervals */}
             {/* {this.displayChatTexts('userId')} */}
             {this.displayChatTexts(sampleData.users[0].messages)}
-            <ChatBuffer />
+            <ChatBuffer ref={node => this.chatBox = node} />
             <TextBox>
               <TextInput type='text' placeholder='Thoughts go here...' />
             </TextBox>
