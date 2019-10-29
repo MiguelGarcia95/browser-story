@@ -31,6 +31,10 @@ const TextBox = styled.p`
   text-align: center;
   color: white;
   cursor: pointer;
+  ${props => props.reachedLast && `
+    color: gray;
+    cursor: unset;
+  `}
 `;
 
 class ChatBox extends Component {
@@ -59,15 +63,19 @@ class ChatBox extends Component {
       }, 50);
     }
   }
+
+  displayTextBoxPicker = () => {
+
+  }
   
   render() {
-    {/* If im going to show next text on click, pass currentText to ChatText and only display if allowed */}
+    const isTextLast = this.props.messages.length === this.state.currentText + 1;
     return (
       <Box >
         {/* {this.displayChatTexts('userId')} */}
         {this.displayChatTexts(this.props.messages)}
         <ChatBuffer ref={node => this.chatBox = node} />
-        <TextBox onClick={this.toggleNextText}>
+        <TextBox onClick={this.toggleNextText} reachedLast={isTextLast} >
           Continue
         </TextBox>
       </Box>
