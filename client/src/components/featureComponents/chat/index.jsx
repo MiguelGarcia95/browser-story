@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import {IoIosArrowBack, IoIosArrowDown, IoIosArrowUp, IoIosText} from 'react-icons/io';
 import ChatText from '../chatText';
+// import ChatBox from '../chatBox';
 
 const sampleData = {
   users: [
@@ -164,7 +165,7 @@ const ChatBuffer = styled.div`
   displayChatTexts = texts => texts.map((text, i) => <ChatText key={i} delay={i} text={text} scrollDown={this.scrollToBottom} />);
 
   scrollToBottom = () => {
-    this.chatBox.scrollIntoView({behavior: 'smooth', alignTo: false});
+    this.chatBox.scrollIntoView({behavior: 'smooth'});
   };
   
 
