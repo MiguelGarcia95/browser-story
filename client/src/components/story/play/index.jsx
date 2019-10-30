@@ -95,6 +95,12 @@ const EditStoryMapForm = styled.form`
 class Play extends React.Component {
   componentDidMount() {
     this.props.getStory(this.props.match.params.id);
+    // on option load/check, only allow if it comes from a previous option or home/start.
+    if (this.props.location.state) {
+      console.log('Allowed: ', this.props.location.state.allowed)
+    } else {
+      console.log('not Allowed')
+    }
   }
 
   UNSAFE_componentWillUpdate(nextProps) {
