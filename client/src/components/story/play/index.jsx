@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Navbar from '../../featureComponents/navbar';
 import Link from '../../_styledComponent/Link';
+import {Redirect} from 'react-router-dom';
 // import Sidebar from '../../featureComponents/sidebar';
 import {connect} from 'react-redux';
 
@@ -93,21 +94,14 @@ const EditStoryMapForm = styled.form`
 `;
 
 class Play extends React.Component {
+  state = {
+    redirect: false,
+  }
   componentDidMount() {
     this.props.getStory(this.props.match.params.id);
-    // on option load/check, only allow if it comes from a previous option or home/start.
     if (this.props.location.state) {
-      console.log('Allowed: ', this.props.location.state.allowed)
     } else {
-// redirect to start, and at start redirect to continue link if redirectOnArrival: true 
-//       <Redirect
-//   to={{
-//     pathname: "/login",
-//     search: "?utm=your+face",
-//     state: { referrer: currentLocation, redirectOnArrival: true }
-//   }}
-// />
-      console.log('not Allowed')
+      this.setState({redirect: true})
     }
   }
 
@@ -131,6 +125,20 @@ class Play extends React.Component {
 
   render() {
     const {story, storyTracker, option, options} = this.props;
+    const {redirect} = this.state;
+
+    if (redirect && story) {
+      console.log(redirect)
+      return (
+        <Redirect
+          to={{
+            pathname: `/s/${story._id}`,
+            state: { redirectOnArrival: true }
+          }}
+        />
+      )
+    }
+
     return (
       <Body>
         {/* <Sidebar /> */}
