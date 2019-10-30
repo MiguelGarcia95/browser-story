@@ -40,8 +40,19 @@ module.exports = {
       story.optionList = [option._id];
       option.save();
       story.save();
-      // res.status(201).send({story, option});
       res.status(201).send({message: 'Success'});
+    } catch (error) {
+      console.log(error);
+      res.status(400).send({error}); 
+    }
+  },
+
+  updateStoryTracker: async (req, res) =>  {
+    try {
+      console.log(req.params.id);
+      console.log(req.body);
+      // const storyTracker = await StoryTracker.findByIdAndUpdate(req.params.id, {$set:req.body});
+      res.status(201).send({storyTracker: ''});
     } catch (error) {
       console.log(error);
       res.status(400).send({error}); 
