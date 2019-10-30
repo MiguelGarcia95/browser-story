@@ -28,15 +28,6 @@ const Container = styled.div`
   z-index: 1;
 `;
 
-// const Title = styled.h1`
-//   font-size: 1.5rem;
-//   color: #232323;
-//   font-weight: 500;
-//   width: 100%;
-//   letter-spacing: 2px;
-//   margin-top: 20px;
-// `;
-
 const Content = styled.div`
   width: 100%;
   margin: auto;
@@ -47,31 +38,7 @@ const Content = styled.div`
   box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
 `;
 
-// const Avatar = styled.img`
-//   width: 100px;
-//   height: 100px;
-//   margin: auto;
-//   border-radius: 50%;
-//   text-align: center;
-// `;
-
-// const StoryStart = styled.div`
-//   width: 800px;
-//   height: 450px;
-//   // background: #fff;
-//   margin: auto;
-//   text-align: center;
-//   margin-top: 50px;
-//   // box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
-// `;
-
-// const StoryImage = styled.img`
-//   width: 100%;
-//   height: 400px;
-// `;
-
 const Story = styled.div`
-
 `;
 
 const Description = styled.p``;
@@ -79,16 +46,6 @@ const Description = styled.p``;
 const Title = styled.h1``;
 
 const Status = styled.p``;
-
-// const StoryLink = styled(Link)`
-//   font-size: 2em;
-//   line-height: 50px;
-//   margin: auto;
-//   &:hover {
-//     text-decoration: none;
-//     color: black;
-//   }
-// `;
 
 const EditStoryMapForm = styled.form`
 `;
