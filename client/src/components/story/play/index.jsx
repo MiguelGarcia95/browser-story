@@ -85,7 +85,6 @@ class Play extends React.Component {
     const {redirect} = this.state;
 
     if (redirect && story) {
-      console.log(redirect)
       return (
         <Redirect
           to={{

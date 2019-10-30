@@ -17,10 +17,16 @@ export const getStoryTracker = data => {
     const results = await axios.post('/api/stories/getStoryTracker', data);
     dispatch({
       type: GET_STORY_TRACKER,
-      storyTracker: results.data.storyTracker
+      storyTracker: results.data.storyTracker[0]
     })
   }
 } 
+
+export const updateStoryTracker = data => {
+  return async => {
+    console.log(data);
+  }
+}
 
 export const getAllStories = () => {
   return async dispatch => {

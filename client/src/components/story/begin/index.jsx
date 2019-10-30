@@ -102,7 +102,6 @@ class Begin extends React.Component {
               <Status>Status: {story.status}</Status>
               <p>
               {/* if story started, show continue and redirect to current option, otherwise, show start story and begining options */}
-              {/* params={{ testvalue: "hello" }} */}
                 {storyTracker ? <Link to={{pathname: `/s/${story._id}/o/0`, state: {allowed: true}}} >Continue</Link>: <Link to={{pathname: `/s/${story._id}/o/0`, state: {allowed: true}}} >Start</Link> }
                 {/* {storyTracker ? <Link to={`/s/${story._id}/o/depends`}>Continue</Link> : <Link to={`/s/${story._id}/o/0`}>Start</Link> } */}
               </p>
