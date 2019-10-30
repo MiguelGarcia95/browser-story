@@ -103,6 +103,15 @@ class Begin extends React.Component {
     }
   }
 
+  // redirect to start, and at start redirect to continue link if redirectOnArrival: true 
+//       <Redirect
+//   to={{
+//     pathname: "/login",
+//     search: "?utm=your+face",
+//     state: { referrer: currentLocation, redirectOnArrival: true }
+//   }}
+// />
+
   render() {
     const {story, storyTracker} = this.props;
     console.log(story);
