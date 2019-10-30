@@ -6,7 +6,7 @@ import {Redirect} from 'react-router-dom';
 // import Sidebar from '../../featureComponents/sidebar';
 import {connect} from 'react-redux';
 
-import {getStory, getStoryTracker} from '../../../actions/story';
+import {getStory, getStoryTracker, updateStoryTracker} from '../../../actions/story';
 import {getOption, setOptions} from '../../../actions/option';
 
 const Body = styled.div`
@@ -57,6 +57,9 @@ class Play extends React.Component {
   componentDidMount() {
     this.props.getStory(this.props.match.params.id);
     if (this.props.location.state) {
+      if (this.props.match.params.oId != 0) {
+        this.props.updateStoryTracker(this.props.match.params.oId)
+      }
     } else {
       this.setState({redirect: true})
     }
@@ -135,6 +138,7 @@ const mapDispatchToProps = dispatch => {
     getStoryTracker: data => dispatch(getStoryTracker(data)),
     setOptions: story => dispatch(setOptions(story)),
     getOption: optionId => dispatch(getOption(optionId)),
+    updateStoryTracker: data => dispatch(updateStoryTracker(data)),
   }
 }
 

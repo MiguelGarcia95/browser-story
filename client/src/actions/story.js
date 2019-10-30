@@ -23,8 +23,10 @@ export const getStoryTracker = data => {
 } 
 
 export const updateStoryTracker = data => {
-  return async => {
-    console.log(data);
+  return async dispatch => {
+    const results = await axios.patch(`/api/stories/updateStoryTracker/${data}`, data);
+
+    console.log(results);
   }
 }
 
