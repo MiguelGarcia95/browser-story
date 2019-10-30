@@ -71,10 +71,21 @@ class Begin extends React.Component {
     }
   }
 
+  displayStartLink = (storyTracker, story) => {
+    if (storyTracker) {
+      return (
+        <Link to={{pathname: `/s/${story._id}/o/${storyTracker.currentOption}`, state: {allowed: true}}} >Continue</Link>
+      )
+    } else {
+      return (
+        <Link to={{pathname: `/s/${story._id}/o/0`, state: {allowed: true}}} >Start</Link>
+      )
+    }
+  }
+
   render() {
     const {story, storyTracker} = this.props;
     const {redirect} = this.state;
-    // console.log(story);
     console.log(storyTracker);
 
     if (redirect && storyTracker) {
