@@ -99,6 +99,14 @@ class Play extends React.Component {
     if (this.props.location.state) {
       console.log('Allowed: ', this.props.location.state.allowed)
     } else {
+      // redirect to start, and at start redirect to continue link
+//       <Redirect
+//   to={{
+//     pathname: "/login",
+//     search: "?utm=your+face",
+//     state: { referrer: currentLocation }
+//   }}
+// />
       console.log('not Allowed')
     }
   }
