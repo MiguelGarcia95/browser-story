@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Navbar from '../../featureComponents/navbar';
 import Link from '../../_styledComponent/Link';
+import {Redirect} from 'react-router-dom';
 // import Sidebar from '../../featureComponents/sidebar';
 import {connect} from 'react-redux';
 
@@ -92,9 +93,18 @@ const EditStoryMapForm = styled.form`
 `;
 
 class Begin extends React.Component {
+  state = {
+    redirect: false,
+  }
+
   componentDidMount() {
     this.props.getStory(this.props.match.params.id);
-    console.log(this.props.match.params.oId);
+
+    if (this.props.location.state) {
+      if (this.props.location.state.redirectOnArrival) {
+        this.setState({redirect: true})
+      }
+    }
   }
 
   UNSAFE_componentWillUpdate(nextProps) {
@@ -114,8 +124,22 @@ class Begin extends React.Component {
 
   render() {
     const {story, storyTracker} = this.props;
-    console.log(story);
+    const {redirect} = this.state;
+    // console.log(story);
     console.log(storyTracker);
+
+    if (redirect && storyTracker) {
+      console.log(redirect)
+      return (
+        <Redirect
+          to={{
+            pathname: `/s/${story._id}/o/0`,
+            state: { allowed: true }
+          }}
+        />
+      )
+    }
+
     return (
       <Body>
         {/* <Sidebar /> */}
