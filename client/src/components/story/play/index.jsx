@@ -58,7 +58,7 @@ class Play extends React.Component {
     this.props.getStory(this.props.match.params.id);
     if (this.props.location.state) {
       if (this.props.match.params.oId != 0) {
-        this.props.updateStoryTracker(this.props.match.params.oId)
+        // this.props.updateStoryTracker({optionId: this.props.match.params.oId, storyId: this.props.match.params.id});
       }
     } else {
       this.setState({redirect: true})
@@ -70,7 +70,6 @@ class Play extends React.Component {
       this.props.getStoryTracker({user: nextProps.user._id, story: nextProps.story._id})
     }
 
-    // if (nextProps.match.params.oId !== 0 && !nextProps.options) {
     if (!nextProps.options && nextProps.story) {
       if (nextProps.match.params.oId != 0) {
         this.props.getOption(nextProps.match.params.oId);
@@ -79,6 +78,14 @@ class Play extends React.Component {
       }
     } else if (nextProps.options && nextProps.match.params.oId !== this.props.match.params.oId) {
       console.log('clicked new option')
+      if (this.props.match.params.oId != 0) {
+        const storyTrackerData = {
+          optionId: nextProps.match.params.oId,
+          storyId: nextProps.story._id,
+          trackerId: nextProps.storyTracker._id,
+        }
+        this.props.updateStoryTracker(storyTrackerData);
+      }
       this.props.getOption(nextProps.match.params.oId);
     }
   }

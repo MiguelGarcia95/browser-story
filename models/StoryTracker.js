@@ -13,7 +13,7 @@ const storyTrackerSchema = new Schema({
     required: true,
   },
   currentOption: {
-    type: Schema.Types.ObjectId,
+    type: Schema.Types .ObjectId,
     ref: 'option',
     required: false
   }

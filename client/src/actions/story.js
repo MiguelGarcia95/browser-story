@@ -24,7 +24,7 @@ export const getStoryTracker = data => {
 
 export const updateStoryTracker = data => {
   return async dispatch => {
-    const results = await axios.patch(`/api/stories/updateStoryTracker/${data}`, data);
+    const results = await axios.patch(`/api/stories/updateStoryTracker/${data.trackerId}`, data);
 
     console.log(results);
   }
