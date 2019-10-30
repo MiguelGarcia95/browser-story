@@ -78,13 +78,8 @@ class Play extends React.Component {
       }
     } else if (nextProps.options && nextProps.match.params.oId !== this.props.match.params.oId) {
       console.log('clicked new option')
-      if (this.props.match.params.oId != 0) {
-        const storyTrackerData = {
-          optionId: nextProps.match.params.oId,
-          storyId: nextProps.story._id,
-          trackerId: nextProps.storyTracker._id,
-        }
-        this.props.updateStoryTracker(storyTrackerData);
+      if (nextProps.match.params.oId != 0) {
+        this.props.updateStoryTracker(nextProps.storyTracker._id, nextProps.match.params.oId);
       }
       this.props.getOption(nextProps.match.params.oId);
     }
@@ -145,7 +140,7 @@ const mapDispatchToProps = dispatch => {
     getStoryTracker: data => dispatch(getStoryTracker(data)),
     setOptions: story => dispatch(setOptions(story)),
     getOption: optionId => dispatch(getOption(optionId)),
-    updateStoryTracker: data => dispatch(updateStoryTracker(data)),
+    updateStoryTracker: (trackerId, currentOption) => dispatch(updateStoryTracker(trackerId, currentOption)),
   }
 }
 
