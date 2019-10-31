@@ -69,6 +69,8 @@ class Begin extends React.Component {
   UNSAFE_componentWillUpdate(nextProps) {
     if (nextProps.user && nextProps.story && !nextProps.storyTracker) {
       this.props.getStoryTracker({user: nextProps.user._id, story: nextProps.story._id})
+    } else{
+      // this.props.startStory(storyId, userId) // story is made at login for now
     }
   }
 

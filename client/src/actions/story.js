@@ -51,8 +51,9 @@ export const getStory = storyId => {
   }
 }
 
-export const startStory = () => {
+export const startStory = (storyId, userId) => {
   return async dispatch => {
+    const results = await axios.post(`/api/stories/${storyId}/start`, userId);
     dispatch({type: START_STORY})
   }
 }

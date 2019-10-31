@@ -72,7 +72,7 @@ module.exports = {
       const story = await Story.findById(req.params.id);
       const userStoryTracker = await new StoryTracker({
         story: story._id,
-        user: req.body.user._id,
+        user: req.body.userId,
       });
       await  userStoryTracker.save();
       res.status(201).send({userStoryTracker});

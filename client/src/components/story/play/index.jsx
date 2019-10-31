@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import Navbar from '../../featureComponents/navbar';
 import Link from '../../_styledComponent/Link';
 import {Redirect} from 'react-router-dom';
-// import Sidebar from '../../featureComponents/sidebar';
 import {connect} from 'react-redux';
 
 import {getStory, getStoryTracker, updateStoryTracker} from '../../../actions/story';
@@ -54,6 +53,7 @@ class Play extends React.Component {
   state = {
     redirect: false,
   }
+
   componentDidMount() {
     this.props.getStory(this.props.match.params.id);
     if (this.props.location.state) {
@@ -109,7 +109,6 @@ class Play extends React.Component {
 
     return (
       <Body>
-        {/* <Sidebar /> */}
         <Container>
           <Navbar history={this.props.history} name={''} />
           {story && (
