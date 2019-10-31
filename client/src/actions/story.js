@@ -20,19 +20,30 @@ export const getStoryTracker = data => {
       storyTracker: results.data.storyTracker[0]
     })
   }
-} 
+}
+
+const getOptionsNotPicked = (options, pickedOption) => options.filter(option => option._id !== pickedOption);
+
+const getUniqueOptions = (options) => {
+  console.log(options)
+}
 
 export const updateStoryTracker = (storyTracker, currentOption, newOption) => {
   return async dispatch => {
+    const optionsNotPicked = getOptionsNotPicked(currentOption.optionList, newOption);
+    getUniqueOptions([...optionsNotPicked, ...storyTracker.previousOptions])
     const storyTrackerData = {
       currentOption: newOption,
       // previousOptions = storyTrackerPreviousOptions + currentOption + adjacent options not picked 
       // previousOptions: storyTracker.previousOptions + currentOption._id + currentOption.optionList - newOption
     };
 
-    const results = await axios.patch(`/api/stories/updateStoryTracker/${storyTracker._id}`, storyTrackerData);
 
-    console.log(results);
+    // console.log(storyTrackerData)
+
+    // const results = await axios.patch(`/api/stories/updateStoryTracker/${storyTracker._id}`, storyTrackerData);
+
+    // console.log(results);
   }
 }
 
