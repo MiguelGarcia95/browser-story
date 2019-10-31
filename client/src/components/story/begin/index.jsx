@@ -60,6 +60,7 @@ class Begin extends React.Component {
 
     if (this.props.location.state) {
       if (this.props.location.state.redirectOnArrival) {
+        console.log('redirect true begin')
         this.setState({redirect: true})
       }
     }
@@ -86,18 +87,15 @@ class Begin extends React.Component {
   render() {
     const {story, storyTracker} = this.props;
     const {redirect} = this.state;
-    console.log(storyTracker);
 
     if (redirect && storyTracker) {
-      console.log(redirect)
-      return (
-        <Redirect
-          to={{
-            pathname: `/s/${story._id}/o/0`,
-            state: { allowed: true }
-          }}
-        />
-      )
+      if (storyTracker.currentOption) {
+        console.log(storyTracker.currentOption)
+        return <Redirect to={{pathname: `/s/${story._id}/o/${storyTracker.currentOption}`, state: {allowed: true}}} />
+      } else {
+        console.log(storyTracker.currentOption)
+        return <Redirect to={{pathname: `/s/${story._id}/o/0`, state: {allowed: true}}} />
+      }
     }
 
     return (
@@ -111,11 +109,7 @@ class Begin extends React.Component {
               <Title>{story.name}</Title>
               <Description>{story.description ? story.description : 'Description Not Available'}</Description>
               <Status>Status: {story.status}</Status>
-              <p>
-              {/* if story started, show continue and redirect to current option, otherwise, show start story and begining options */}
-                {storyTracker ? <Link to={{pathname: `/s/${story._id}/o/0`, state: {allowed: true}}} >Continue</Link>: <Link to={{pathname: `/s/${story._id}/o/0`, state: {allowed: true}}} >Start</Link> }
-                {/* {storyTracker ? <Link to={`/s/${story._id}/o/depends`}>Continue</Link> : <Link to={`/s/${story._id}/o/0`}>Start</Link> } */}
-              </p>
+              <p>{this.displayStartLink(storyTracker, story)}</p>
             </Story>
             <EditStoryMapForm></EditStoryMapForm>
           </Content>

@@ -58,9 +58,9 @@ class Play extends React.Component {
     this.props.getStory(this.props.match.params.id);
     if (this.props.location.state) {
       if (this.props.match.params.oId != 0) {
-        // this.props.updateStoryTracker({optionId: this.props.match.params.oId, storyId: this.props.match.params.id});
       }
     } else {
+      console.log('redirect')
       this.setState({redirect: true})
     }
   }
@@ -80,8 +80,10 @@ class Play extends React.Component {
       console.log('clicked new option')
       if (nextProps.match.params.oId != 0) {
         this.props.updateStoryTracker(nextProps.storyTracker._id, nextProps.match.params.oId);
+        this.props.getOption(nextProps.match.params.oId);
+      } else {
+        this.props.setOptions(nextProps.story.optionList)
       }
-      this.props.getOption(nextProps.match.params.oId);
     }
   }
 
@@ -112,7 +114,7 @@ class Play extends React.Component {
               <Description>{story.description ? story.description : 'Description Not Available'}</Description>
               <Status>Status: {story.status}</Status>
               {options && (
-                options.map(op => <Link to={`/s/${story._id}/o/${op._id}`} key={op._id}>{op.name}</Link>)
+                options.map(op => <Link to={{pathname: `/s/${story._id}/o/${op._id}`, state: {allowed: true}}} key={op._id}>{op.name}</Link>)
               )}
             </Story>
             <EditStoryMapForm></EditStoryMapForm>
