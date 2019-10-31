@@ -49,7 +49,9 @@ module.exports = {
 
   updateStoryTracker: async (req, res) =>  {
     try {
-      const storyTracker = await StoryTracker.findByIdAndUpdate(req.params.id, {$set:req.body});
+      // const storyTracker = await StoryTracker.findByIdAndUpdate(req.params.id, {$set:req.body});
+      const storyTracker = await StoryTracker.findById(req.params.id);
+      console.log(storyTracker)
       res.status(201).send({storyTracker});
     } catch (error) {
       console.log(error);

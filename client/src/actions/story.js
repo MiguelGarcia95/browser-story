@@ -50,12 +50,8 @@ export const updateStoryTracker = (storyTracker, currentOption, newOption) => {
       currentOption: newOption,
       previousOptions: previousOptions,
     };
-    console.log(storyTrackerData)
 
-
-    // console.log(storyTrackerData)
-
-    // const results = await axios.patch(`/api/stories/updateStoryTracker/${storyTracker._id}`, storyTrackerData);
+    const results = await axios.patch(`/api/stories/updateStoryTracker/${storyTracker._id}`, storyTrackerData);
 
     // console.log(results);
   }
