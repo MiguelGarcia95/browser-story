@@ -57,6 +57,7 @@ class Play extends React.Component {
   componentDidMount() {
     this.props.getStory(this.props.match.params.id);
     if (this.props.location.state) {
+      console.log('no redirect')
       if (this.props.match.params.oId != 0) {
       }
     } else {
@@ -81,7 +82,11 @@ class Play extends React.Component {
       if (nextProps.match.params.oId != 0) {
         this.props.updateStoryTracker(nextProps.storyTracker._id, nextProps.match.params.oId);
         this.props.getOption(nextProps.match.params.oId);
+      } else if (nextProps.storyTracker && nextProps.storyTracker.currentOption) {
+        console.log('already past 0')
+        this.setState({redirect: true})
       } else {
+        console.log(nextProps.story.optionList)
         this.props.setOptions(nextProps.story.optionList)
       }
     }
