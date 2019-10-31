@@ -72,12 +72,13 @@ class Play extends React.Component {
     if (!nextProps.options && nextProps.story) {
       if (nextProps.match.params.oId != 0) {
         this.props.getOption(nextProps.match.params.oId);
+        console.log('run')
       } else {
         this.props.setOptions(nextProps.story.optionList)
       }
     } else if (nextProps.options && nextProps.match.params.oId !== this.props.match.params.oId) {
-      if (nextProps.match.params.oId != 0) {
-        this.props.updateStoryTracker(nextProps.storyTracker._id, nextProps.match.params.oId);
+      if (nextProps.match.params.oId != 0) { // || nextProps.match.params.oId is part of nextProps.storyTracker.previousOptions
+        this.props.updateStoryTracker(nextProps.storyTracker, nextProps.option, nextProps.match.params.oId);
         this.props.getOption(nextProps.match.params.oId);
       } else if (nextProps.storyTracker && nextProps.storyTracker.currentOption) {
         this.setState({redirect: true})
@@ -141,7 +142,7 @@ const mapDispatchToProps = dispatch => {
     getStoryTracker: data => dispatch(getStoryTracker(data)),
     setOptions: story => dispatch(setOptions(story)),
     getOption: optionId => dispatch(getOption(optionId)),
-    updateStoryTracker: (trackerId, currentOption) => dispatch(updateStoryTracker(trackerId, currentOption)),
+    updateStoryTracker: (storyTracker, currentOption, newOption) => dispatch(updateStoryTracker(storyTracker, currentOption, newOption)),
   }
 }
 

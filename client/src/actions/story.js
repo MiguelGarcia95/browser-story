@@ -22,9 +22,15 @@ export const getStoryTracker = data => {
   }
 } 
 
-export const updateStoryTracker = (trackerId, currentOption) => {
+export const updateStoryTracker = (storyTracker, currentOption, newOption) => {
   return async dispatch => {
-    const results = await axios.patch(`/api/stories/updateStoryTracker/${trackerId}`, {currentOption});
+    const storyTrackerData = {
+      currentOption: newOption,
+      // previousOptions = storyTrackerPreviousOptions + currentOption + adjacent options not picked 
+      // previousOptions: storyTracker.previousOptions + currentOption._id + currentOption.optionList - newOption
+    };
+
+    const results = await axios.patch(`/api/stories/updateStoryTracker/${storyTracker._id}`, storyTrackerData);
 
     console.log(results);
   }
@@ -32,7 +38,6 @@ export const updateStoryTracker = (trackerId, currentOption) => {
 
 export const getAllStories = () => {
   return async dispatch => {
-    console.log('ran')
     const results = await axios.get(`/api/stories/getStories/all`);
     dispatch({
       type: GET_STORIES,

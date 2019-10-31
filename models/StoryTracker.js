@@ -19,7 +19,8 @@ const storyTrackerSchema = new Schema({
   },
   previousOptions: [{
     type: Schema.Types.ObjectId,
-    ref: 'option'
+    ref: 'option',
+    unique: true,
   }],
 })
 
