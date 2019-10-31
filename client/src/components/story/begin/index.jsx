@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import Navbar from '../../featureComponents/navbar';
 import Link from '../../_styledComponent/Link';
 import {Redirect} from 'react-router-dom';
-// import Sidebar from '../../featureComponents/sidebar';
 import {connect} from 'react-redux';
 
 import {getStory, getStoryTracker} from '../../../actions/story';
@@ -60,7 +59,6 @@ class Begin extends React.Component {
 
     if (this.props.location.state) {
       if (this.props.location.state.redirectOnArrival) {
-        console.log('redirect true begin')
         this.setState({redirect: true})
       }
     }
@@ -92,17 +90,14 @@ class Begin extends React.Component {
 
     if (redirect && storyTracker) {
       if (storyTracker.currentOption) {
-        console.log(storyTracker.currentOption)
         return <Redirect to={{pathname: `/s/${story._id}/o/${storyTracker.currentOption}`, state: {allowed: true}}} />
       } else {
-        console.log(storyTracker.currentOption)
         return <Redirect to={{pathname: `/s/${story._id}/o/0`, state: {allowed: true}}} />
       }
     }
 
     return (
       <Body>
-        {/* <Sidebar /> */}
         <Container>
           <Navbar history={this.props.history} name={''} />
           {story && (
