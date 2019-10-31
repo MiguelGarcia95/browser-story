@@ -16,7 +16,11 @@ const storyTrackerSchema = new Schema({
     type: Schema.Types .ObjectId,
     ref: 'option',
     required: false
-  }
+  },
+  previousOptions: [{
+    type: Schema.Types.ObjectId,
+    ref: 'option'
+  }],
 })
 
 const StoryTracker = mongoose.model('storyTracker', storyTrackerSchema);
