@@ -24,6 +24,13 @@ export const getStoryTracker = data => {
 
 const getOptionsNotPicked = (options, pickedOption) => options.filter(option => option._id !== pickedOption);
 
+const getPreviousOptionsArray = options => {
+  return options.reduce((total, option) => {
+    total.push(option._id);
+    return total;
+  }, []);
+};
+
 const getUniqueOptions = (options) => {
   console.log(options)
 }
@@ -31,7 +38,8 @@ const getUniqueOptions = (options) => {
 export const updateStoryTracker = (storyTracker, currentOption, newOption) => {
   return async dispatch => {
     const optionsNotPicked = getOptionsNotPicked(currentOption.optionList, newOption);
-    getUniqueOptions([...optionsNotPicked, ...storyTracker.previousOptions])
+    const optionsNotPickedOptions = getPreviousOptionsArray(optionsNotPicked)
+    getUniqueOptions([...optionsNotPickedOptions, ...storyTracker.previousOptions, ...storyTracker.previousOptions])
     const storyTrackerData = {
       currentOption: newOption,
       // previousOptions = storyTrackerPreviousOptions + currentOption + adjacent options not picked 
