@@ -29,6 +29,8 @@ const Root = () => {
         <Route exact path='/p/:id' component={StoryProfile} />
         <Route exact path='/p/:pfId/p/:pId' component={StoryProfilePost} />
         <Route exact path='/p/:pfId/i/:pId' component={StoryProfileImagePost} /> 
+        {/* Should Depend on Option id, so /:oId/p/:pfId/p/pId */}
+
         <Route exact path='/' component={Home} />
         <Route path='/'>
           <Redirect to='/' />
