@@ -52,6 +52,10 @@ module.exports = {
       // const storyTracker = await StoryTracker.findByIdAndUpdate(req.params.id, {$set:req.body});
       const storyTracker = await StoryTracker.findById(req.params.id);
       console.log(storyTracker)
+      storyTracker.currentOption = req.body.currentOption;
+      storyTracker.previousOptions = req.body.previousOptions;
+      console.log(storyTracker)
+      // storyTracker.save();
       res.status(201).send({storyTracker});
     } catch (error) {
       console.log(error);

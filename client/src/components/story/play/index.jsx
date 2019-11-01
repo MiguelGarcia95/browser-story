@@ -77,7 +77,8 @@ class Play extends React.Component {
         this.props.setOptions(nextProps.story.optionList)
       }
     } else if (nextProps.options && nextProps.match.params.oId !== this.props.match.params.oId) {
-      if (nextProps.match.params.oId != 0) { // || nextProps.match.params.oId is part of nextProps.storyTracker.previousOptions
+      const hasOptionNotPassed = this.hasOptionNotBeenPassed(nextProps.storyTracker.previousOptions, nextProps.match.params.oId);
+      if (nextProps.match.params.oId != 0 && hasOptionNotPassed) {
         this.props.updateStoryTracker(nextProps.storyTracker, nextProps.option, nextProps.match.params.oId);
         this.props.getOption(nextProps.match.params.oId);
       } else if (nextProps.storyTracker && nextProps.storyTracker.currentOption) {
@@ -85,6 +86,15 @@ class Play extends React.Component {
       } else {
         this.props.setOptions(nextProps.story.optionList)
       }
+    }
+  }
+
+  hasOptionNotBeenPassed = (options, option) => {
+    const hasNotPassed = options.indexOf(option);
+    if (hasNotPassed === -1) {
+      return true;
+    } else {
+      return false;
     }
   }
 

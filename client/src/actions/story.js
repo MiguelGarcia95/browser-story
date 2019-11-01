@@ -43,9 +43,10 @@ const getUniqueOptions = options => {
 
 export const updateStoryTracker = (storyTracker, currentOption, newOption) => {
   return async dispatch => {
+    console.log(newOption)
     const optionsNotPicked = getOptionsNotPicked(currentOption.optionList, newOption);
     const optionsNotPickedOptions = getPreviousOptionsArray(optionsNotPicked)
-    const previousOptions = getUniqueOptions([...optionsNotPickedOptions, ...storyTracker.previousOptions]);
+    const previousOptions = getUniqueOptions([...optionsNotPickedOptions, ...storyTracker.previousOptions, currentOption._id]);
     const storyTrackerData = {
       currentOption: newOption,
       previousOptions: previousOptions,
