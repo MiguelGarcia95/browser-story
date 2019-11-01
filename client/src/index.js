@@ -25,9 +25,10 @@ const Root = () => {
         <Route exact path='/signup' component={SignUp} />
         <Route exact path='/s/:id' component={BeginStory} />
         <Route exact path='/s/:id/o/:oId' component={PlayStory} />
+        {/* Should Depend on Option id, so /:oId/p/:pfId/p/pId */}
         <Route exact path='/p/:id' component={StoryProfile} />
-        <Route exact path='/p/:id/p/:pId' component={StoryProfilePost} />
-        <Route exact path='/p/:id/ip/:pId' component={StoryProfileImagePost} /> 
+        <Route exact path='/p/:pfId/p/:pId' component={StoryProfilePost} />
+        <Route exact path='/p/:pfId/i/:pId' component={StoryProfileImagePost} /> 
         <Route exact path='/' component={Home} />
         <Route path='/'>
           <Redirect to='/' />

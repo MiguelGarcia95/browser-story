@@ -17,6 +17,7 @@ class Home extends React.Component {
         <Container open={this.state.opened}>
           <Navbar history={this.props.history} name={''} opened={this.state.opened}/>
           <Chat sidebarOpen={this.state.opened} isThereSidebar={false} />
+          <h1>profile</h1>
         </Container>
       </Body>
     )
