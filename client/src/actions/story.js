@@ -1,4 +1,4 @@
-import {GET_STORY, START_STORY, ADD_STARTING_STORY_OPTION, GET_STORIES, GET_STORY_TRACKER} from './types';
+import {GET_STORY, START_STORY, ADD_STARTING_STORY_OPTION, GET_STORIES, GET_STORY_TRACKER, UPDATE_STORY_TRACKER} from './types';
 import axios from 'axios';
 
 export const getStories = userId => {
@@ -54,7 +54,11 @@ export const updateStoryTracker = (storyTracker, currentOption, newOption) => {
 
     const results = await axios.patch(`/api/stories/updateStoryTracker/${storyTracker._id}`, storyTrackerData);
 
-    // console.log(results);
+    dispatch({
+      type: UPDATE_STORY_TRACKER,
+      storyTracker: results.data.storyTracker
+    })
+
   }
 }
 
