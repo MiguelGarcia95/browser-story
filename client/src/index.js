@@ -22,6 +22,9 @@ const Root = () => {
         <Route exact path='/signup' component={SignUp} />
         <Route exact path='/s/:id' component={BeginStory} />
         <Route exact path='/s/:id/o/:oId' component={PlayStory} />
+        {/* <Route exact path='/p/:id' component={Profile} />
+        <Route exact path='/p/:id/p/:pId' component={ProfilePost} />
+        <Route exact path='/p/:id/ip/:pId' component={ProfileImagePost} /> */}
         <Route exact path='/' component={Home} />
         <Route path='/'>
           <Redirect to='/' />
