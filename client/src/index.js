@@ -11,6 +11,9 @@ import Profile from './components/user/profile';
 import SignUp from './components/auth/signup';
 import BeginStory from './components/story/begin';
 import PlayStory from './components/story/play';
+import StoryProfile from './components/story/profile';
+import StoryProfileImagePost from './components/story/profileImagePost';
+import StoryProfilePost from './components/story/profilePost';
 import store from './store';
 
 const Root = () => {
@@ -22,9 +25,9 @@ const Root = () => {
         <Route exact path='/signup' component={SignUp} />
         <Route exact path='/s/:id' component={BeginStory} />
         <Route exact path='/s/:id/o/:oId' component={PlayStory} />
-        {/* <Route exact path='/p/:id' component={Profile} />
-        <Route exact path='/p/:id/p/:pId' component={ProfilePost} />
-        <Route exact path='/p/:id/ip/:pId' component={ProfileImagePost} /> */}
+        <Route exact path='/p/:id' component={StoryProfile} />
+        <Route exact path='/p/:id/p/:pId' component={StoryProfilePost} />
+        <Route exact path='/p/:id/ip/:pId' component={StoryProfileImagePost} /> 
         <Route exact path='/' component={Home} />
         <Route path='/'>
           <Redirect to='/' />

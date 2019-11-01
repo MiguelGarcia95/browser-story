@@ -38,7 +38,7 @@ class Home extends React.Component {
             <Story />
             <Story />
           </Content>
-          <Chat sidebarOpen={this.state.opened} />
+          <Chat sidebarOpen={this.state.opened} isThereSidebar={true} />
         </Container>
       </Body>
     )

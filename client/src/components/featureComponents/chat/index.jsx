@@ -63,10 +63,10 @@ const sampleData = {
   }
 
    render() {
-    const {sidebarOpen} = this.props;
+    const {sidebarOpen, isThereSidebar} = this.props;
     const {opened, chatBox} = this.state;
      return (
-       <Container open={opened} sidebarOpen={sidebarOpen}>
+       <Container open={opened} sidebarOpen={sidebarOpen} isThereSidebar={isThereSidebar}>
          <Header opened={opened} view={chatBox} toggleChat={this.toggleChat} user={sampleData.users[0]} setChatDispaly={this.setChatDispaly} />
          {this.displayChatBox(chatBox)}
        </Container>

@@ -5,12 +5,15 @@ export const Container = styled.div`
   width: 300px;
   position: absolute;
   bottom: 0;
-  right: 50px;
+  right: 0px;
   background: #a85757;
   overflow: hidden;
   // background: #fff;
   ${props => props.open && `
     height: 400px;
+  `}
+  ${props => props.isThereSidebar && `
+    right: 50px;
   `}
   ${props => props.sidebarOpen && `
     right: 250px;
