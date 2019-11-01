@@ -1,53 +1,12 @@
 import React from 'react';
-import styled from 'styled-components';
-import Navbar from '../../featureComponents/navbar';
-import Link from '../../_styledComponent/Link';
 import {Redirect} from 'react-router-dom';
 import {connect} from 'react-redux';
 
+import {Body, Container, Content, Story, Description, Title, Status, EditStoryMapForm} from './style';
+import Navbar from '../../featureComponents/navbar';
+import Link from '../../_styledComponent/Link';
+
 import {getStory, getStoryTracker} from '../../../actions/story';
-
-const Body = styled.div`
-  height: 100vh;
-  max-height: 100%;
-  min-width: 100vw;
-  position: relative;
-`;
-
-const Container = styled.div`
-  width: 100vw;
-  margin: auto;
-  min-height: 100vh;
-  box-sizing: border-box;
-  padding-left: 0px;
-  // padding-right: 250px;
-  position: absolute;
-  left: 0; top: 0;
-  z-index: 1;
-`;
-
-const Content = styled.div`
-  width: 100%;
-  margin: auto;
-  text-align: center;
-  padding: 25px;
-  margin-top: 50px;
-  box-sizing: border-box;
-  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
-`;
-
-const Story = styled.div`
-
-`;
-
-const Description = styled.p``;
-
-const Title = styled.h1``;
-
-const Status = styled.p``;
-
-const EditStoryMapForm = styled.form`
-`;
 
 class Begin extends React.Component {
   state = {
