@@ -1,9 +1,9 @@
 import {GET_STORY, START_STORY, ADD_STARTING_STORY_OPTION, GET_STORIES, GET_STORY_TRACKER, UPDATE_STORY_TRACKER} from './types';
 import axios from 'axios';
+import {getOptionsNotPicked, getUniqueOptions, getPreviousOptionsArray} from '../functions/story';
 
 export const getStories = userId => {
   return async dispatch => {
-    console.log('ran')
     const results = await axios.post(`/api/stories/getStories`, {user: userId});
     dispatch({
       type: GET_STORIES,
@@ -20,25 +20,6 @@ export const getStoryTracker = data => {
       storyTracker: results.data.storyTracker[0]
     })
   }
-}
-
-const getOptionsNotPicked = (options, pickedOption) => options.filter(option => option._id !== pickedOption);
-
-const getPreviousOptionsArray = options => {
-  return options.reduce((newArray, option) => {
-    newArray.push(option._id);
-    return newArray;
-  }, []);
-};
-
-const getUniqueOptions = options => {
-  return options.reduce((newArray, option) => {
-    const doesItExistInArray = newArray.indexOf(option);
-    if (doesItExistInArray === -1) {
-      newArray.push(option);
-    }
-    return newArray
-  }, [])
 }
 
 export const updateStoryTracker = (storyTracker, currentOption, newOption) => {
