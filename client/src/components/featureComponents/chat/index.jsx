@@ -1,8 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
-import ChatText from '../chatText';
 import ChatBox from '../chatBox';
 import Header from '../chatHeader';
+
+import {Container, Box, MenuItem, Avatar, UserName} from './style';
 
 const sampleData = {
   users: [
@@ -23,53 +23,6 @@ const sampleData = {
     }
   ],
 }
-
-const Container = styled.div`
-  height: 50px;
-  width: 300px;
-  position: absolute;
-  bottom: 0;
-  right: 50px;
-  background: #a85757;
-  overflow: hidden;
-  // background: #fff;
-  ${props => props.open && `
-    height: 400px;
-  `}
-  ${props => props.sidebarOpen && `
-    right: 250px;
-  `}
-  box-shadow: 0 0 5px 0px rgba(0,0,0,0.1);
-`;
-
-const Box = styled.div`
-  width: 300px;
-  height: 350px;
-  overflow: scroll;
-  &::-webkit-scrollbar {
-    display: none;
-  }
-`;
-
-const MenuItem = styled.div`
-  width: 100%;
-  height: 50px;
-  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
-`;
-
-const Avatar = styled.img`
-  width: 30px; height: 30px;
-  margin: 10px;
-  float: left;
-  border-radius: 50%;
-`;
-
-const UserName = styled.p`
-  width: 250px;
-  float: left;
-  line-height: 50px;
-  margin-top: 0;
-`;
 
  class Chat extends React.Component {
   state = {
