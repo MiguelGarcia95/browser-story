@@ -22,3 +22,10 @@ export const Container = styled.div`
   top: 0;
   z-index: 1;
 `;
+
+export const Content = styled.div`
+  width: 100%;
+  padding: 0 50px;
+  padding-top: 100px;
+  box-sizing: border-box;
+`;
