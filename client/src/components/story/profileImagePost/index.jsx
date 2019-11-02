@@ -9,7 +9,7 @@ class ProfileImagePost extends React.Component {
   render() {
     return (
       <Body>
-        <Container open={this.state.opened}>
+        <Container>
           <Navbar history={this.props.history} />
           <Chat />
           <Content>
