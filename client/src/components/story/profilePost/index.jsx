@@ -9,7 +9,7 @@ class ProfilePost extends React.Component {
     opened: false,
   }
 
-  toggleSidebar = () => this.setState({opened: !this.state.opened});
+  // toggleSidebar = () => this.setState({opened: !this.state.opened});
 
   render() {
     return (
