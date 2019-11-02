@@ -5,16 +5,13 @@ import Navbar from '../../featureComponents/navbar';
 import Chat from '../../featureComponents/chat';
 
 class ProfilePost extends React.Component {
-  state = {
-    opened: false,
-  }
 
   render() {
     return (
       <Body>
-        <Container open={this.state.opened}>
-          <Navbar history={this.props.history} name={''} opened={this.state.opened}/>
-          <Chat sidebarOpen={this.state.opened} isThereSidebar={false} />
+        <Container >
+          <Navbar history={this.props.history} />
+          <Chat />
           <Content>
             <h1>ProfilePost</h1>
           </Content>
