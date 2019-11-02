@@ -16,7 +16,7 @@ export const Container = styled.div`
   padding-right: 250px;
   position: absolute;
   ${props => !props.open && `
-    padding-right: 50px;
+    padding-right: 0px;
   `}
   left: 0;
   top: 0;

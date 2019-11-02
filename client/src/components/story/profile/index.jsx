@@ -14,7 +14,7 @@ class Home extends React.Component {
   render() {
     return (
       <Body>
-        <Container open={this.state.opened}>
+        <Container open={this.state.opened} >
           <Navbar history={this.props.history} name={''} opened={this.state.opened}/>
           <Chat sidebarOpen={this.state.opened} isThereSidebar={false} />
           <Content>
