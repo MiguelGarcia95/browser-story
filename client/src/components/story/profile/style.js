@@ -13,11 +13,8 @@ export const Container = styled.div`
   min-height: 100vh;
   box-sizing: border-box;
   padding-left: 0px;
-  padding-right: 250px;
   position: absolute;
-  ${props => !props.open && `
-    padding-right: 0px;
-  `}
+  padding-right: 0px;
   left: 0;
   top: 0;
   z-index: 1;
