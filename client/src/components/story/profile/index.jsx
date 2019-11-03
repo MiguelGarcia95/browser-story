@@ -40,6 +40,7 @@ class Home extends React.Component {
                 </PostComents>
               </ProfilePost>
             </ProfileFeed>
+            
             <h1>profile</h1>            
           </Content>
         </Container>
