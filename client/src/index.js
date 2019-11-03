@@ -12,7 +12,7 @@ import SignUp from './components/auth/signup';
 import BeginStory from './components/story/begin';
 import PlayStory from './components/story/play';
 import StoryProfile from './components/story/profile';
-import StoryProfileImagePost from './components/story/profileImagePost';
+// import StoryProfileImagePost from './components/story/profileImagePost';
 import StoryProfilePost from './components/story/profilePost';
 import store from './store';
 
@@ -28,7 +28,7 @@ const Root = () => {
         {/* Should Depend on Option id, so /:oId/p/:pfId/p/pId */}
         <Route exact path='/p/:id' component={StoryProfile} />
         <Route exact path='/p/:pfId/p/:pId' component={StoryProfilePost} />
-        <Route exact path='/p/:pfId/i/:pId' component={StoryProfileImagePost} /> 
+        {/* <Route exact path='/p/:pfId/i/:pId' component={StoryProfileImagePost} />  */}
         {/* Should Depend on Option id, so /:oId/p/:pfId/p/pId */}
 
         <Route exact path='/' component={Home} />

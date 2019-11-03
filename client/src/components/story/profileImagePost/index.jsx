@@ -1,51 +1,51 @@
-import React from 'react';
+// import React from 'react';
 
-import styled from 'styled-components';
+// import styled from 'styled-components';
 
-import {Body, Container, Content} from './style';
-import Navbar from '../../featureComponents/navbar';
-import Chat from '../../featureComponents/chat';
+// import {Body, Container, Content} from './style';
+// import Navbar from '../../featureComponents/navbar';
+// import Chat from '../../featureComponents/chat';
 
-const ProfileSidebar = styled.div``;
-const ProfileHeader = styled.div``;
-const ProfileFeed = styled.div``;
-const Post = styled.div``;
-const Image = styled.div``;
-const Description = styled.div``;
-const Meta = styled.div``;
-const Coments = styled.div``;
+// const ProfileSidebar = styled.div``;
+// const ProfileHeader = styled.div``;
+// const ProfileFeed = styled.div``;
+// const Post = styled.div``;
+// const Image = styled.div``;
+// const Description = styled.div``;
+// const Meta = styled.div``;
+// const Coments = styled.div``;
 
-class ProfileImagePost extends React.Component {
+// class ProfileImagePost extends React.Component {
 
-  render() {
-    return (
-      <Body>
-        <Container>
-          <Navbar history={this.props.history} />
-          <Chat />
-          <Content>
-          <ProfileHeader></ProfileHeader>
-            <ProfileSidebar></ProfileSidebar>
-            <ProfileFeed>
-              <Post>
-                <Image>
+//   render() {
+//     return (
+//       <Body>
+//         <Container>
+//           <Navbar history={this.props.history} />
+//           <Chat />
+//           <Content>
+//           <ProfileHeader></ProfileHeader>
+//             <ProfileSidebar></ProfileSidebar>
+//             <ProfileFeed>
+//               <Post>
+//                 <Image>
 
-                </Image>
-                <Meta></Meta>
-                <Description>
+//                 </Image>
+//                 <Meta></Meta>
+//                 <Description>
 
-                </Description>
-                <Coments>
+//                 </Description>
+//                 <Coments>
                   
-                </Coments>
-              </Post>
-            </ProfileFeed>
-            <h1>ProfileImagePost</h1>            
-          </Content>
-        </Container>
-      </Body>
-    )
-  }
-}
+//                 </Coments>
+//               </Post>
+//             </ProfileFeed>
+//             <h1>ProfileImagePost</h1>            
+//           </Content>
+//         </Container>
+//       </Body>
+//     )
+//   }
+// }
 
-export default ProfileImagePost
+// export default ProfileImagePost

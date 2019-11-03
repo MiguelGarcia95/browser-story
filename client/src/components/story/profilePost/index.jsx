@@ -24,6 +24,22 @@ class ProfilePost extends React.Component {
           <Navbar history={this.props.history} />
           <Chat />
           <Content>
+          <ProfileHeader></ProfileHeader>
+            <ProfileSidebar></ProfileSidebar>
+            <ProfileFeed>
+              <Post>
+                <Image>
+
+                </Image>
+                <Meta></Meta>
+                <Description>
+
+                </Description>
+                <Coments>
+                  
+                </Coments>
+              </Post>
+            </ProfileFeed>
             <h1>ProfilePost</h1>
           </Content>
         </Container>
