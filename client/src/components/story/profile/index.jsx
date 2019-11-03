@@ -24,6 +24,22 @@ class Home extends React.Component {
           <Navbar history={this.props.history} />
           <Chat />
           <Content>
+            <ProfileHeader></ProfileHeader>
+            <ProfileSidebar></ProfileSidebar>
+            <ProfileFeed>
+              <ProfilePost>
+                <PostImage>
+
+                </PostImage>
+                <PostMeta></PostMeta>
+                <PostDescription>
+
+                </PostDescription>
+                <PostComents>
+                  
+                </PostComents>
+              </ProfilePost>
+            </ProfileFeed>
             <h1>profile</h1>            
           </Content>
         </Container>
