@@ -1,11 +1,22 @@
 import React from 'react';
 
+import styled from 'styled-components';
+
 import {Body, Container, Content} from './style';
 import Navbar from '../../featureComponents/navbar';
 import Chat from '../../featureComponents/chat';
 
+const ProfileSidebar = styled.div``;
+const ProfileHeader = styled.div``;
+const ProfileFeed = styled.div``;
+const ProfilePost = styled.div``;
+const PostImage = styled.div``;
+const PostDescription = styled.div``;
+const PostMeta = styled.div``;
+const PostComents = styled.div``;
+
 class Home extends React.Component {
-  
+
   render() {
     return (
       <Body>
