@@ -42,7 +42,6 @@ const storyUserSchema = new mongoose.Schema({
   posts: {
     type: Number,
   },
-
 })
 
 const StoryUser = mongoose.model('storyUser', storyUserSchema);

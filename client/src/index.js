@@ -13,6 +13,11 @@ import BeginStory from './components/story/begin';
 import PlayStory from './components/story/play';
 import StoryProfile from './components/story/profile';
 // import StoryProfileImagePost from './components/story/profileImagePost';
+
+
+// import StoryDisplay from './components/story/StoryDisplay';
+
+
 import StoryProfilePost from './components/story/profilePost';
 import store from './store';
 
@@ -27,6 +32,10 @@ const Root = () => {
         <Route exact path='/s/:id/o/:oId' component={PlayStory} />
         {/* Should Depend on Option id, so /:oId/p/:pfId/p/pId */}
         <Route exact path='/p/:id' component={StoryProfile} />
+        
+        {/* don't pass values, just use storyTracker to make changes to ui */}
+        {/* <Route exact path='/story' component={StoryDisplay} /> */}
+
         <Route exact path='/p/:pfId/p/:pId' component={StoryProfilePost} />
         {/* <Route exact path='/p/:pfId/i/:pId' component={StoryProfileImagePost} />  */}
         {/* Should Depend on Option id, so /:oId/p/:pfId/p/pId */}
