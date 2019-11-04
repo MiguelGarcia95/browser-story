@@ -2,8 +2,6 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
-// const scoreSchema = new mongoose.Schema({storyId: String, gKarma: String, bKarma: String});
-
 const userSchema = new mongoose.Schema({
   username: {
     type: String,
@@ -32,11 +30,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     default: 'light',
     trim: true,
-  },
-  // scores: {
-  //   type: [scoreSchema],
-  //   default: undefined
-  // }
+  }
 })
 
 // bcrypt password during save
