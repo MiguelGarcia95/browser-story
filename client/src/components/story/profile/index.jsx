@@ -45,11 +45,26 @@ const HeaderUser = styled.h1`
   bottom: 0;
 `;
 
-const ProfileDescription = styled.p`
+const ProfileTitle = styled.p`
   width: 100%;
   box-sizing: border-box;
   padding-left: 100px;
-  line-height: 40px;
+  line-height: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 0.9rem;
+  color: gray;
+  border-top: 1px solid rgba(0,0,0,0.1);
+`;
+
+const ProfileDescription = styled.p`
+  width: 100%;
+  margin-top:0;
+  padding-bottom: 20px;
+  box-sizing: border-box;
+  padding-left: 100px;
+  padding-right: 100px;
+  min-height: 40px;
   font-size: 0.9rem;
 `;
 
@@ -78,7 +93,13 @@ class Home extends React.Component {
                   <HeaderUser>{user.username}</HeaderUser>
                   <HeaderAvatar src={user.avatar} />
                 </ProfileHeader>
-                <ProfileDescription>Home</ProfileDescription>
+
+                <ProfileTitle>About</ProfileTitle>
+                <ProfileDescription>Amateur photographer & designer</ProfileDescription>
+                <ProfileDescription>Member since November 2011</ProfileDescription>
+
+                <ProfileTitle>Place</ProfileTitle>
+                <ProfileDescription>Lives in Houston</ProfileDescription>
 
               </ProfileSidebar>
               <ProfileFeed>
