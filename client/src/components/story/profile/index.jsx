@@ -10,6 +10,7 @@ import Chat from '../../featureComponents/chat';
 
 const ProfileSidebar = styled.div`
   width: 350px;
+  min-height: 100vh;
   box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.1);
   position: relative;
 `;
@@ -69,7 +70,7 @@ const ProfileDescription = styled.p`
 const ProfileInfo = styled.div`
   width: 100%;
   margin-bottom: 50px;
-  margin-top: 50px;
+  // margin-top: 50px;
   background: white;
 `;
 
