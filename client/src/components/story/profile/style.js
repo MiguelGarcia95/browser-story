@@ -3,12 +3,13 @@ import styled from 'styled-components';
 export const Body = styled.div`
   height: 100vh;
   max-height: 100%;
-  min-width: 100vw;
+  max-width: 100%;
+  width: 100%;
   position: relative;
 `;
 
 export const Container = styled.div`
-  width: 100vw;
+  width: 100%;
   margin: auto;
   min-height: 100vh;
   box-sizing: border-box;

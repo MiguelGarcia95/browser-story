@@ -11,8 +11,6 @@ import Chat from '../../featureComponents/chat';
 const ProfileSidebar = styled.div`
   width: 350px;
   box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.1);
-  background: white;
-  z-index: 10;
   position: relative;
 `;
 
@@ -68,6 +66,13 @@ const ProfileDescription = styled.p`
   font-size: 0.9rem;
 `;
 
+const ProfileInfo = styled.div`
+  width: 100%;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  background: white;
+`;
+
 const ProfileFeed = styled.div``;
 const ProfilePost = styled.div``;
 const PostImage = styled.div``;
@@ -94,17 +99,29 @@ class Home extends React.Component {
                   <HeaderAvatar src={user.avatar} />
                 </ProfileHeader>
 
-                <ProfileTitle>About</ProfileTitle>
-                <ProfileDescription>Amateur photographer & designer</ProfileDescription>
-                <ProfileDescription>Member since November 2011</ProfileDescription>
-                <ProfileTitle>Place</ProfileTitle>
-                <ProfileDescription>Lives in Houston</ProfileDescription>
-                <ProfileTitle>Friends</ProfileTitle>
-                <ProfileDescription>182 Friends</ProfileDescription>
-                <ProfileTitle>Followers</ProfileTitle>
-                <ProfileDescription>867 Followers</ProfileDescription>
+                <ProfileInfo>
+                  <ProfileTitle>About</ProfileTitle>
+                  <ProfileDescription>Amateur photographer & designer</ProfileDescription>
+                  <ProfileDescription>Member since November 2011</ProfileDescription>
+                </ProfileInfo>
+
+                <ProfileInfo>
+                  <ProfileTitle>Place</ProfileTitle>
+                  <ProfileDescription>Lives in Houston</ProfileDescription>
+                </ProfileInfo>
+
+                <ProfileInfo>
+                  <ProfileTitle>Friends</ProfileTitle>
+                  <ProfileDescription>182 Friends</ProfileDescription>
+                </ProfileInfo>
+
+                <ProfileInfo>
+                  <ProfileTitle>Followers</ProfileTitle>
+                  <ProfileDescription>867 Followers</ProfileDescription>
+                </ProfileInfo>
 
               </ProfileSidebar>
+              
               <ProfileFeed>
                 <ProfilePost>
                   <PostImage>
@@ -120,7 +137,6 @@ class Home extends React.Component {
                 </ProfilePost>
               </ProfileFeed>
               
-              <h1>profile</h1>            
             </Content>
           }
         </Container>
