@@ -8,12 +8,17 @@ import {Body, Container, Content} from './style';
 import Navbar from '../../featureComponents/navbar';
 import Chat from '../../featureComponents/chat';
 
-const ProfileSidebar = styled.div``;
+const ProfileSidebar = styled.div`
+  width: 300px;
+
+`;
 const ProfileHeader = styled.div`
   width: 100%;
   height: 200px;
-  background: #d1d1d1;
+  background: #f6f6f6;
   position: relative;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
+
 `;
 const HeaderAvatar = styled.img`
   width: 125px; 
@@ -23,15 +28,15 @@ const HeaderAvatar = styled.img`
   margin: auto;
   border-radius: 50%;
   position: absolute;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
 `;
 const HeaderUser = styled.h1`
   height: 40px;
   line-height: 40px;
-  font-size: 1.5rem;
-  background: white;
+  font-size: 1rem;
   width: 100%;
   box-sizing: border-box;
-  padding-left: 250px;
+  padding-left: 200px;
   color: black;
   position: absolute;
   bottom: 0;
@@ -53,11 +58,13 @@ class Home extends React.Component {
           <Chat />
           {this.props.user && 
             <Content>
-              <ProfileHeader>
-                <HeaderUser>{this.props.user.username}</HeaderUser>
-                <HeaderAvatar src={this.props.user.avatar} />
-              </ProfileHeader>
-              <ProfileSidebar></ProfileSidebar>
+              <ProfileSidebar>
+                <ProfileHeader>
+                  <HeaderUser>{this.props.user.username}</HeaderUser>
+                  <HeaderAvatar src={this.props.user.avatar} />
+                </ProfileHeader>
+
+              </ProfileSidebar>
               <ProfileFeed>
                 <ProfilePost>
                   <PostImage>
