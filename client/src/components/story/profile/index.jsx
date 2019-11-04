@@ -7,7 +7,11 @@ import Navbar from '../../featureComponents/navbar';
 import Chat from '../../featureComponents/chat';
 
 const ProfileSidebar = styled.div``;
-const ProfileHeader = styled.div``;
+const ProfileHeader = styled.div`
+  width: 100%;
+  height: 200px;
+  background: #d1d1d1;
+`;
 const ProfileFeed = styled.div``;
 const ProfilePost = styled.div``;
 const PostImage = styled.div``;
