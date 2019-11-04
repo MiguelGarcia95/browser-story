@@ -9,38 +9,51 @@ import Navbar from '../../featureComponents/navbar';
 import Chat from '../../featureComponents/chat';
 
 const ProfileSidebar = styled.div`
-  width: 300px;
-
+  width: 350px;
+  box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.1);
+  background: white;
+  z-index: 10;
+  position: relative;
 `;
+
 const ProfileHeader = styled.div`
   width: 100%;
-  height: 200px;
-  background: #f6f6f6;
+  height: 250px;
   position: relative;
-  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
 
 `;
+
 const HeaderAvatar = styled.img`
-  width: 125px; 
-  height: 125px;
-  top: 0; bottom: 0;
-  left: 37.5px;
+  width: 100px; 
+  height: 100px;
+  top: 0; bottom: 50px;
+  left: 0; right: 0;
   margin: auto;
   border-radius: 50%;
   position: absolute;
   box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
 `;
+
 const HeaderUser = styled.h1`
-  height: 40px;
-  line-height: 40px;
+  height: 60px;
+  line-height: 60px;
   font-size: 1rem;
   width: 100%;
   box-sizing: border-box;
-  padding-left: 200px;
+  text-align: center;
   color: black;
   position: absolute;
   bottom: 0;
 `;
+
+const ProfileDescription = styled.p`
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 100px;
+  line-height: 40px;
+  font-size: 0.9rem;
+`;
+
 const ProfileFeed = styled.div``;
 const ProfilePost = styled.div``;
 const PostImage = styled.div``;
@@ -63,6 +76,7 @@ class Home extends React.Component {
                   <HeaderUser>{this.props.user.username}</HeaderUser>
                   <HeaderAvatar src={this.props.user.avatar} />
                 </ProfileHeader>
+                <ProfileDescription>Home</ProfileDescription>
 
               </ProfileSidebar>
               <ProfileFeed>

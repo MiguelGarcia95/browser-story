@@ -22,7 +22,7 @@ export const Container = styled.div`
 
 export const Content = styled.div`
   width: 100%;
-  padding: 0 50px;
-  padding-top: 100px;
+  // padding: 0 50px;
+  padding-top: 50px;
   box-sizing: border-box;
 `;
