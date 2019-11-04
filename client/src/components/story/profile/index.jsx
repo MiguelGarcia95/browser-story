@@ -18,9 +18,8 @@ const ProfileSidebar = styled.div`
 
 const ProfileHeader = styled.div`
   width: 100%;
-  height: 250px;
+  height: 200px;
   position: relative;
-
 `;
 
 const HeaderAvatar = styled.img`
@@ -64,17 +63,20 @@ const PostComents = styled.div``;
 class Home extends React.Component {
 
   render() {
+    const {user} = this.props;
+    // user needs to be story-user
+
     return (
       <Body>
         <Container>
           <Navbar history={this.props.history} />
           <Chat />
-          {this.props.user && 
+          {user && 
             <Content>
               <ProfileSidebar>
                 <ProfileHeader>
-                  <HeaderUser>{this.props.user.username}</HeaderUser>
-                  <HeaderAvatar src={this.props.user.avatar} />
+                  <HeaderUser>{user.username}</HeaderUser>
+                  <HeaderAvatar src={user.avatar} />
                 </ProfileHeader>
                 <ProfileDescription>Home</ProfileDescription>
 
