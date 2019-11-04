@@ -97,9 +97,12 @@ class Home extends React.Component {
                 <ProfileTitle>About</ProfileTitle>
                 <ProfileDescription>Amateur photographer & designer</ProfileDescription>
                 <ProfileDescription>Member since November 2011</ProfileDescription>
-
                 <ProfileTitle>Place</ProfileTitle>
                 <ProfileDescription>Lives in Houston</ProfileDescription>
+                <ProfileTitle>Friends</ProfileTitle>
+                <ProfileDescription>182 Friends</ProfileDescription>
+                <ProfileTitle>Followers</ProfileTitle>
+                <ProfileDescription>867 Followers</ProfileDescription>
 
               </ProfileSidebar>
               <ProfileFeed>

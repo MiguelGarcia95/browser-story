@@ -36,12 +36,12 @@ const storyUserSchema = new mongoose.Schema({
   friends: {
     type: Number,
   },
-  photos: {
-    type: Number,
-  },
-  posts: {
-    type: Number,
-  },
+  // photos: {
+  //   type: Number,
+  // },
+  // posts: {
+  //   type: Number,
+  // },
 })
 
 const StoryUser = mongoose.model('storyUser', storyUserSchema);
