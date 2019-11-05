@@ -98,10 +98,28 @@ const ProfilePost = styled.div`
   background: blue;
 `;
 
-const PostImage = styled.div``;
-const PostDescription = styled.div``;
-const PostMeta = styled.div``;
-const PostComents = styled.div``;
+const PostUser = styled.div`
+
+`;
+
+const PostDescription = styled.div`
+  padding: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  color: white;
+`;
+
+const PostImage = styled.img`
+  width: 100%;
+`;
+
+const PostMeta = styled.div`
+
+`;
+
+const PostComents = styled.div`
+
+`;
 
 class Home extends React.Component {
 
@@ -147,16 +165,15 @@ class Home extends React.Component {
               
               <ProfileFeed>
                 <ProfilePost>
-                  <PostImage>
+                  <PostUser></PostUser>
+                    <PostDescription>Last Nights party was insane. This one weird guy kept ruining our vibe though.</PostDescription>
+                    <PostImage src='http://getwallpapers.com/wallpaper/full/a/5/3/871525-beautiful-horror-background-images-1920x1080.jpg' />
 
-                  </PostImage>
-                  <PostMeta></PostMeta>
-                  <PostDescription>
+                    <PostMeta></PostMeta>
 
-                  </PostDescription>
-                  <PostComents>
+                    <PostComents>
                     
-                  </PostComents>
+                    </PostComents>
                 </ProfilePost>
 
               </ProfileFeed>
