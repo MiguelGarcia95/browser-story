@@ -9,6 +9,8 @@ export const Container = styled.div`
   background: #a85757;
   overflow: hidden;
   // background: #fff;
+  z-index: 2;
+
   ${props => props.open && `
     height: 400px;
   `}

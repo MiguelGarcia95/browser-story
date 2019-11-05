@@ -11,8 +11,11 @@ import Chat from '../../featureComponents/chat';
 const ProfileSidebar = styled.div`
   width: 350px;
   min-height: 100vh;
+  top: 0;
+  box-sizing: border-box;
+  padding-top: 50px;
   box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.1);
-  position: relative;
+  position: absolute;
   z-index: 2;
   background: #f6f6f6;
 `;
@@ -78,16 +81,22 @@ const ProfileInfo = styled.div`
 
 const ProfileFeed = styled.div`
   width: 100%;
-  top: 0;
+  top: 0px;
   min-height: 100vh;
   position: absolute;
+  padding-top: 50px;
   padding-left: 400px;
   padding-right: 50px;
   box-sizing: border-box;
   background: red;
 `;
 
-const ProfilePost = styled.div``;
+const ProfilePost = styled.div`
+  width: 100%;
+  background: blue;
+  height: 100px;
+`;
+
 const PostImage = styled.div``;
 const PostDescription = styled.div``;
 const PostMeta = styled.div``;
@@ -148,6 +157,7 @@ class Home extends React.Component {
                     
                   </PostComents>
                 </ProfilePost>
+
               </ProfileFeed>
               
             </Content>
