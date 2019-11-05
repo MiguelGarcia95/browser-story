@@ -92,9 +92,10 @@ const ProfileFeed = styled.div`
 `;
 
 const ProfilePost = styled.div`
-  width: 100%;
+  width: 600px;
+  height: 350px;
+  margin: auto;
   background: blue;
-  height: 100px;
 `;
 
 const PostImage = styled.div``;
