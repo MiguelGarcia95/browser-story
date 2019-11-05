@@ -13,6 +13,8 @@ const ProfileSidebar = styled.div`
   min-height: 100vh;
   box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.1);
   position: relative;
+  z-index: 2;
+  background: #f6f6f6;
 `;
 
 const ProfileHeader = styled.div`
@@ -74,7 +76,17 @@ const ProfileInfo = styled.div`
   background: white;
 `;
 
-const ProfileFeed = styled.div``;
+const ProfileFeed = styled.div`
+  width: 100%;
+  top: 0;
+  min-height: 100vh;
+  position: absolute;
+  padding-left: 400px;
+  padding-right: 50px;
+  box-sizing: border-box;
+  background: red;
+`;
+
 const ProfilePost = styled.div``;
 const PostImage = styled.div``;
 const PostDescription = styled.div``;
