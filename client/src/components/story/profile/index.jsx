@@ -88,21 +88,21 @@ const ProfileFeed = styled.div`
   padding-left: 400px;
   padding-right: 50px;
   box-sizing: border-box;
-  background: red;
 `;
 
 const ProfilePost = styled.div`
   width: 600px;
-  height: 350px;
+  // height: 400px;
   margin: auto;
-  background: blue;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
+  background: white;
 `;
 
 const PostDescription = styled.div`
   padding: 10px;
   margin-bottom: 10px;
   box-sizing: border-box;
-  color: white;
+  // color: white;
 `;
 
 const PostUser = styled.div`
@@ -123,7 +123,7 @@ const PostUsername = styled.h2`
   float: left;
   line-height: 50px;
   margin-top: 0;
-  color: white;
+  // color: white;
   font-size: 1rem;
   font-weight: 400;
   letter-spacing: 1px;
@@ -131,6 +131,8 @@ const PostUsername = styled.h2`
 
 const PostImage = styled.img`
   width: 100%;
+  height: 250px;
+  object-fit: cover;
 `;
 
 const PostMeta = styled.div`
