@@ -109,6 +109,14 @@ const PostDescription = styled.div`
   color: white;
 `;
 
+const PostAvatar = styled.img`
+width: 25px; 
+height: 25px;
+margin: auto;
+border-radius: 50%;
+box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
+`;
+
 const PostImage = styled.img`
   width: 100%;
 `;
@@ -165,11 +173,15 @@ class Home extends React.Component {
               
               <ProfileFeed>
                 <ProfilePost>
-                  <PostUser></PostUser>
+                    <PostUser>
+                      <PostAvatar src={user.avatar} />
+                    </PostUser>
                     <PostDescription>Last Nights party was insane. This one weird guy kept ruining our vibe though.</PostDescription>
                     <PostImage src='http://getwallpapers.com/wallpaper/full/a/5/3/871525-beautiful-horror-background-images-1920x1080.jpg' />
 
-                    <PostMeta></PostMeta>
+                    <PostMeta>
+
+                    </PostMeta>
 
                     <PostComents>
                     
