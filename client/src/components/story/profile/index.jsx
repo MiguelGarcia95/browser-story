@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 
 import styled from 'styled-components';
 
-
+import { IoIosHeart, IoIosText} from 'react-icons/io';
 import {Body, Container, Content} from './style';
 import Navbar from '../../featureComponents/navbar';
 import Chat from '../../featureComponents/chat';
@@ -139,6 +139,12 @@ const PostMeta = styled.div`
 
 `;
 
+const PostMetaText = styled.p`
+  font-size: 0.9rem;
+  margin: 0;
+  line-height: 30px;
+`;
+
 const PostComents = styled.div`
 
 `;
@@ -195,7 +201,7 @@ class Home extends React.Component {
                     <PostImage src='http://getwallpapers.com/wallpaper/full/a/5/3/871525-beautiful-horror-background-images-1920x1080.jpg' />
 
                     <PostMeta>
-
+                      <PostMetaText>51 {51 > 1 ? 'Likes' : 'Like'}</PostMetaText>
                     </PostMeta>
 
                     <PostComents>
