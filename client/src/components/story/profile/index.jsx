@@ -92,6 +92,7 @@ const ProfileFeed = styled.div`
 
 const ProfilePost = styled.div`
   width: 600px;
+  overflow: auto;
   // height: 400px;
   margin: auto;
   box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
@@ -123,7 +124,6 @@ const PostUsername = styled.h2`
   float: left;
   line-height: 50px;
   margin-top: 0;
-  // color: white;
   font-size: 1rem;
   font-weight: 400;
   letter-spacing: 1px;
@@ -136,7 +136,7 @@ const PostImage = styled.img`
 `;
 
 const PostMeta = styled.div`
-  width: 200px;
+  width: 150px;
   float: left;
   height: 30px;
   svg {
@@ -221,6 +221,8 @@ class Home extends React.Component {
                     <PostComents>
                     
                     </PostComents>
+
+
                 </ProfilePost>
 
               </ProfileFeed>
