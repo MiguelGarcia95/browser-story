@@ -201,7 +201,13 @@ class Home extends React.Component {
                     <PostImage src='http://getwallpapers.com/wallpaper/full/a/5/3/871525-beautiful-horror-background-images-1920x1080.jpg' />
 
                     <PostMeta>
+                      <IoIosHeart />
                       <PostMetaText>51 {51 > 1 ? 'Likes' : 'Like'}</PostMetaText>
+                    </PostMeta>
+
+                    <PostMeta>
+                      <IoIosText />
+                      <PostMetaText>19 {19 > 1 ? 'comments' : 'comment'}</PostMetaText>
                     </PostMeta>
 
                     <PostComents>
