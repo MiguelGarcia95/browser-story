@@ -136,12 +136,20 @@ const PostImage = styled.img`
 `;
 
 const PostMeta = styled.div`
-
+  width: 200px;
+  float: left;
+  height: 30px;
+  svg {
+    float: left;
+    height: 30px;
+    margin-right: 10px;
+  }
 `;
 
 const PostMetaText = styled.p`
   font-size: 0.9rem;
-  margin: 0;
+  margin-top: 0;
+  float: left;
   line-height: 30px;
 `;
 
@@ -201,12 +209,12 @@ class Home extends React.Component {
                     <PostImage src='http://getwallpapers.com/wallpaper/full/a/5/3/871525-beautiful-horror-background-images-1920x1080.jpg' />
 
                     <PostMeta>
-                      <IoIosHeart />
+                      <IoIosHeart size='1.1rem' />
                       <PostMetaText>51 {51 > 1 ? 'Likes' : 'Like'}</PostMetaText>
                     </PostMeta>
 
                     <PostMeta>
-                      <IoIosText />
+                      <IoIosText size='1.1rem' />
                       <PostMetaText>19 {19 > 1 ? 'comments' : 'comment'}</PostMetaText>
                     </PostMeta>
 
