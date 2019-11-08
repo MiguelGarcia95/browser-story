@@ -4,16 +4,17 @@ import styled from 'styled-components';
 const Body = styled.div`
   width: 100%;
   min-height: 80px;
-  background: red;
-  margin-bottom: 10px;
+  // margin-bottom: 10px;
+  border-top: 1px solid #e0e0e0;
   position: relative;
+  background: #f6f6f6;
 `;
 
 const Username = styled.p`
   line-height: 30px;
   position: absolute;
   left: 60px;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   letter-spacing: 1px;
   margin-top: 0;
 `;
