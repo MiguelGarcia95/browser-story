@@ -220,7 +220,10 @@ class Home extends React.Component {
                     </PostMeta>
 
                     <PostComents>
-                    
+                      <Comment />
+                      <Comment />
+                      <Comment />
+                      <Comment />
                     </PostComents>
 
 
