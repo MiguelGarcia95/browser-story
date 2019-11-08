@@ -5,6 +5,20 @@ const Body = styled.div`
 
 `;
 
+const Username = styled.p`
+
+`;
+
+const Avatar = styled.img`
+
+`;
+
+const Text = styled.p`
+
+`;
+
+
+
 function Comment() {
 
   return (
