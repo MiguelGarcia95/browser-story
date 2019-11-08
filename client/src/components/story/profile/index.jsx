@@ -155,7 +155,7 @@ const PostMetaText = styled.p`
 `;
 
 const PostComents = styled.div`
-
+  padding-top: 35px;
 `;
 
 class Home extends React.Component {

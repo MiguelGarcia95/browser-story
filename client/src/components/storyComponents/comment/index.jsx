@@ -5,7 +5,7 @@ const Body = styled.div`
   width: 100%;
   min-height: 80px;
   background: red;
-  margin-top: 10px;
+  margin-bottom: 10px;
   position: relative;
 `;
 
