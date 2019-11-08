@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Body = styled.div`
   width: 100%;
-  min-height: 80px;
+  min-height: 60px;
   // margin-bottom: 10px;
   border-top: 1px solid #e0e0e0;
   position: relative;
@@ -30,7 +30,7 @@ const Avatar = styled.img`
 
 const Text = styled.p`
   position: absolute;
-  top: 35px;
+  top: 25px;
   left: 60px;
   margin-top: 0;
 `;
