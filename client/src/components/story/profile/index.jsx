@@ -7,6 +7,7 @@ import { IoIosHeart, IoIosText} from 'react-icons/io';
 import {Body, Container, Content} from './style';
 import Navbar from '../../featureComponents/navbar';
 import Chat from '../../featureComponents/chat';
+import Comment from '../../storyComponents/comment';
 
 const ProfileSidebar = styled.div`
   width: 350px;
