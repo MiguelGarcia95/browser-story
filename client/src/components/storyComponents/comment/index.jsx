@@ -3,7 +3,10 @@ import styled from 'styled-components';
 
 const Body = styled.div`
   width: 100%;
-  min-height: 60px;
+  height: 60px;
+  ${props => `
+    height: ${props.textHeight > 2 ? props.textHeight*25 : 60}px;
+  `}
   // margin-bottom: 10px;
   border-top: 1px solid #e0e0e0;
   position: relative;
@@ -31,7 +34,8 @@ const Avatar = styled.img`
 const Text = styled.p`
   position: absolute;
   top: 25px;
-  left: 60px;
+  padding: 0 60px;
+  box-sizing: border-box;
   margin-top: 0;
 `;
 
@@ -41,11 +45,13 @@ function Comment() {
   let commentData = {
     user: 'Miguel',
     avatar: 'http://gravatar.com/avatar/49e04a3d1177667ebff002709df07435?d=identicon',
-    comment: 'What happened there!? Was it lit!?'
+    comment: 'What happened there!? Was it lit!?What happened there!? Was it lit!?What happened there!? Was it lit!?What happened there!? Was it lit!?What happened there!? Was it lit!?'
   }
 
+  let textHeight = Math.ceil(commentData.comment.length/50);
+
   return (
-    <Body>
+    <Body textHeight={textHeight}>
       <Username>{commentData.user}</Username>
       <Avatar src={commentData.avatar} />
       <Text>{commentData.comment}</Text>
