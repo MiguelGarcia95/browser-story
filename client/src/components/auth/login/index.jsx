@@ -37,7 +37,7 @@ class Login extends React.Component {
         <Container>
           <Form inputs={formInputs} submit='Login' title='Login' onSubmit={this.onSubmit} />
           <Text>
-            Already Registered? - <RedirectLink to='/signup'>Sign Up</RedirectLink>
+            Not Registered Yet? - <RedirectLink to='/signup'>Sign Up</RedirectLink>
           </Text>
         </Container>
       </Body>

@@ -143,6 +143,7 @@ const PostMeta = styled.div`
   svg {
     float: left;
     height: 30px;
+    margin-left: 10px;
     margin-right: 10px;
   }
 `;
