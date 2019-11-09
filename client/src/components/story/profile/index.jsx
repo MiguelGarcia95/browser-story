@@ -156,13 +156,12 @@ const PostMetaText = styled.p`
 `;
 
 const PostComents = styled.div`
-  padding-top: 35px;
+  padding-top: 5px;
   height: auto;
   width: 100%;
   overflow: hidden;
   ${props => props.closed && `
     height: 0px;
-    padding-top: 5px;
   `}
 `;
 
