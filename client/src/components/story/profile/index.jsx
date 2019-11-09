@@ -166,9 +166,15 @@ const PostComents = styled.div`
 `;
 
 class Home extends React.Component {
+  state = {
+    commentsClosed: false,
+  }
+
+  toggleComments = () => this.setState({commentsClosed: !this.state.commentsClosed});
 
   render() {
     const {user} = this.props;
+    const {commentsClosed} = this.state;
     // user needs to be story-user
 
     return (
@@ -221,12 +227,12 @@ class Home extends React.Component {
                       <PostMetaText>51 {51 > 1 ? 'Likes' : 'Like'}</PostMetaText>
                     </PostMeta>
 
-                    <PostMeta>
+                    <PostMeta onClick={this.toggleComments}>
                       <IoIosText size='1.1rem' />
                       <PostMetaText>19 {19 > 1 ? 'comments' : 'comment'}</PostMetaText>
                     </PostMeta>
 
-                    <PostComents>
+                    <PostComents closed={commentsClosed}>
                       <Comment />
                       <Comment />
                       <Comment />
