@@ -85,7 +85,7 @@ const ProfileFeed = styled.div`
   top: 0px;
   min-height: 100vh;
   position: absolute;
-  padding-top: 50px;
+  padding-top: 100px;
   padding-left: 400px;
   padding-right: 50px;
   box-sizing: border-box;
