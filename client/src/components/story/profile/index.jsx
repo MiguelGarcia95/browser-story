@@ -167,7 +167,7 @@ const PostComents = styled.div`
 `;
 
 const LikeList = styled.div`
-  width: 150px;
+  width: 100px;
   height: 120px;
   background: white;
   position: absolute;
@@ -177,7 +177,8 @@ const LikeList = styled.div`
   p {
     margin: 0 auto;
     line-height: 20px;
-    text-align: center;
+    text-align: left;
+    margin-left: 10px;
     font-size: 0.7rem;
   }
 `;
