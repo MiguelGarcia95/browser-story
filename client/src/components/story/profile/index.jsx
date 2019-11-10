@@ -183,15 +183,24 @@ const LikeList = styled.div`
   }
 `;
 
+const ImageModal = styled.div`
+
+`;
+
+const ImageDisplay = styled.img`
+
+`;
+
 class Home extends React.Component {
   state = {
     commentsClosed: true,
     likesModal: false,
+    imageModal: false,
   }
 
   toggleComments = () => this.setState({commentsClosed: !this.state.commentsClosed});
-
   toggleModal = () => this.setState({likesModal: !this.state.likesModal});
+  toggleImageModal = () => this.setState({imageModal: !this.state.imageModal});
 
   render() {
     const {user} = this.props;
