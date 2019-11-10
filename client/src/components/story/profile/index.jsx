@@ -139,6 +139,7 @@ const PostImage = styled.img`
 const PostMeta = styled.div`
   width: 150px;
   float: left;
+  cursor: pointer;
   height: 30px;
   svg {
     float: left;
@@ -165,16 +166,28 @@ const PostComents = styled.div`
   `}
 `;
 
+const LikeList = styled.div`
+  width: 150px;
+  height: 200px;
+  background: white;
+  position: absolute;
+  margin-top: 35px;
+  z-index: 1;
+`;
+
 class Home extends React.Component {
   state = {
     commentsClosed: true,
+    likesModal: false,
   }
 
   toggleComments = () => this.setState({commentsClosed: !this.state.commentsClosed});
 
+  toggleModal = () => this.setState({likesModal: !this.state.likesModal});
+
   render() {
     const {user} = this.props;
-    const {commentsClosed} = this.state;
+    const {commentsClosed, likesModal} = this.state;
     // user needs to be story-user
 
     return (
@@ -222,12 +235,18 @@ class Home extends React.Component {
                     <PostDescription>Last Nights party was insane. This one weird guy kept ruining our vibe though.</PostDescription>
                     <PostImage src='http://getwallpapers.com/wallpaper/full/a/5/3/871525-beautiful-horror-background-images-1920x1080.jpg' />
 
-                    <PostMeta>
+                    <PostMeta onClick={this.toggleModal}>
                       <IoIosHeart size='1.1rem' />
                       <PostMetaText>51 {51 > 1 ? 'Likes' : 'Like'}</PostMetaText>
                     </PostMeta>
 
-                    <PostMeta onClick={this.toggleComments} style={{cursor: 'pointer'}}>
+                    {likesModal && 
+                      <LikeList>
+                        List
+                      </LikeList>
+                    }
+
+                    <PostMeta onClick={this.toggleComments}>
                       <IoIosText size='1.1rem' />
                       <PostMetaText>19 {19 > 1 ? 'comments' : 'comment'}</PostMetaText>
                     </PostMeta>
