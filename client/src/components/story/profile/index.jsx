@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 
 import styled from 'styled-components';
 
-import { IoIosHeart, IoIosText} from 'react-icons/io';
+import { IoIosHeart, IoIosText, IoIosCloseCircle} from 'react-icons/io';
 import {Body, Container, Content} from './style';
 import Navbar from '../../featureComponents/navbar';
 import Chat from '../../featureComponents/chat';
@@ -134,6 +134,7 @@ const PostImage = styled.img`
   width: 100%;
   height: 250px;
   object-fit: cover;
+  cursor: pointer;
 `;
 
 const PostMeta = styled.div`
@@ -193,6 +194,10 @@ const ImageModal = styled.div`
   height: 100vh;
   max-height: 100vh;
   background: rgba(0,0,0,0.95);
+  svg {
+    margin: 10px;
+    cursor: pointer;
+  }
 `;
 
 const ImageDisplay = styled.img`
@@ -208,7 +213,7 @@ class Home extends React.Component {
   state = {
     commentsClosed: true,
     likesModal: false,
-    imageModal: true,
+    imageModal: false,
   }
 
   toggleComments = () => this.setState({commentsClosed: !this.state.commentsClosed});
@@ -263,9 +268,10 @@ class Home extends React.Component {
                       <PostUsername>{user.username}</PostUsername>
                     </PostUser>
                     <PostDescription>Last Nights party was insane. This one weird guy kept ruining our vibe though.</PostDescription>
-                    <PostImage src='http://getwallpapers.com/wallpaper/full/a/5/3/871525-beautiful-horror-background-images-1920x1080.jpg' />
+                    <PostImage onClick={this.toggleImageModal} src='http://getwallpapers.com/wallpaper/full/a/5/3/871525-beautiful-horror-background-images-1920x1080.jpg' />
                     {imageModal && 
                       <ImageModal>
+                        <IoIosCloseCircle onClick={this.toggleImageModal} color='white' size='2rem' />
                         <ImageDisplay src='http://getwallpapers.com/wallpaper/full/a/5/3/871525-beautiful-horror-background-images-1920x1080.jpg' />
                       </ImageModal>
                     }
