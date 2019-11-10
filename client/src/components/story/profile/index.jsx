@@ -167,7 +167,7 @@ const PostComents = styled.div`
 
 class Home extends React.Component {
   state = {
-    commentsClosed: false,
+    commentsClosed: true,
   }
 
   toggleComments = () => this.setState({commentsClosed: !this.state.commentsClosed});
@@ -227,7 +227,7 @@ class Home extends React.Component {
                       <PostMetaText>51 {51 > 1 ? 'Likes' : 'Like'}</PostMetaText>
                     </PostMeta>
 
-                    <PostMeta onClick={this.toggleComments}>
+                    <PostMeta onClick={this.toggleComments} style={{cursor: 'pointer'}}>
                       <IoIosText size='1.1rem' />
                       <PostMetaText>19 {19 > 1 ? 'comments' : 'comment'}</PostMetaText>
                     </PostMeta>
