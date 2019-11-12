@@ -20,30 +20,24 @@ const ProfileFeed = styled.div`
   box-sizing: border-box;
 `;
 
-class Home extends React.Component {
-  render() {
-    const {user} = this.props;
-    // user needs to be story-user
-
-    return (
-      <Body>
-        <Container>
-          <Navbar history={this.props.history} />
-          <Chat />
-          {user && 
-            <Content>
-              <ProfileSidebar user={user} />
-              
-              <ProfileFeed>
-                < ProfilePost user={user} />
-              </ProfileFeed>
-              
-            </Content>
-          }
-        </Container>
-      </Body>
-    )
-  }
+function  Home({user, history}) {
+  return (
+    <Body>
+      <Container>
+        <Navbar history={history} />
+        <Chat />
+        {user && 
+          <Content>
+            <ProfileSidebar user={user} />
+            <ProfileFeed>
+              <ProfilePost user={user} />
+            </ProfileFeed>
+            
+          </Content>
+        }
+      </Container>
+    </Body>
+  )
 }
 
 const mapStateToProps = state => {
