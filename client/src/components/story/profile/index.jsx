@@ -222,11 +222,14 @@ class Home extends React.Component {
               </ProfileSidebar>
               
               <ProfileFeed>
+
                 <ProfilePost>
+                  
                     <PostUser>
                       <PostAvatar src={user.avatar} />
                       <PostUsername>{user.username}</PostUsername>
                     </PostUser>
+
                     <PostDescription>Last Nights party was insane. This one weird guy kept ruining our vibe though.</PostDescription>
                     <PostImage onClick={this.toggleImageModal} src='http://getwallpapers.com/wallpaper/full/a/5/3/871525-beautiful-horror-background-images-1920x1080.jpg' />
                     
@@ -250,9 +253,8 @@ class Home extends React.Component {
                       <Comment />
                       <Comment />
                     </PostComents>
-
-
                 </ProfilePost>
+
 
               </ProfileFeed>
               
