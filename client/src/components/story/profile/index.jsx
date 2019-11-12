@@ -3,12 +3,13 @@ import {connect} from 'react-redux';
 
 import styled from 'styled-components';
 
-import { IoIosHeart, IoIosText, IoIosCloseCircle} from 'react-icons/io';
+import { IoIosHeart, IoIosText} from 'react-icons/io';
 import {Body, Container, Content} from './style';
 import Navbar from '../../featureComponents/navbar';
 import Chat from '../../featureComponents/chat';
 import Comment from '../../storyComponents/comment';
 import LikesModal from '../../storyComponents/LikesModal';
+import ImageModal from '../../storyComponents/ImageModal';
 
 const ProfileSidebar = styled.div`
   width: 350px;
@@ -168,31 +169,6 @@ const PostComents = styled.div`
   `}
 `;
 
-const ImageModal = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 4;
-  width: 100vw;
-  max-width: 100%;
-  height: 100vh;
-  max-height: 100vh;
-  background: rgba(0,0,0,0.95);
-  svg {
-    margin: 10px;
-    cursor: pointer;
-  }
-`;
-
-const ImageDisplay = styled.img`
-  width: 85%;
-  position: absolute;
-  left: 0; right: 0;
-  top: 0; bottom: 0;
-  margin: auto;
-  // height: 100%;
-`;
-
 class Home extends React.Component {
   state = {
     commentsClosed: true,
@@ -253,18 +229,13 @@ class Home extends React.Component {
                     </PostUser>
                     <PostDescription>Last Nights party was insane. This one weird guy kept ruining our vibe though.</PostDescription>
                     <PostImage onClick={this.toggleImageModal} src='http://getwallpapers.com/wallpaper/full/a/5/3/871525-beautiful-horror-background-images-1920x1080.jpg' />
-                    {imageModal && 
-                      <ImageModal>
-                        <IoIosCloseCircle onClick={this.toggleImageModal} color='white' size='2rem' />
-                        <ImageDisplay src='http://getwallpapers.com/wallpaper/full/a/5/3/871525-beautiful-horror-background-images-1920x1080.jpg' />
-                      </ImageModal>
-                    }
+                    {imageModal && <ImageModal toggle={this.toggleImageModal} /> }
                     <PostMeta onClick={this.toggleModal}>
                       <IoIosHeart size='1.1rem' />
                       <PostMetaText>51 {51 > 1 ? 'Likes' : 'Like'}</PostMetaText>
                     </PostMeta>
 
-                    {likesModal && <LikesModal /> }
+                    {likesModal && <LikesModal /> } 
 
                     <PostMeta onClick={this.toggleComments}>
                       <IoIosText size='1.1rem' />
