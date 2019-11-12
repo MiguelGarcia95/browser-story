@@ -30,10 +30,8 @@ const ImageDisplay = styled.img`
 function ImageModal({toggle}) {
   return (
     <Body>
-      <ImageModal>
-        <IoIosCloseCircle onClick={() => toggle()} color='white' size='2rem' />
-        <ImageDisplay src='http://getwallpapers.com/wallpaper/full/a/5/3/871525-beautiful-horror-background-images-1920x1080.jpg' />
-      </ImageModal>
+      <IoIosCloseCircle onClick={toggle} color='white' size='2rem' />
+      <ImageDisplay src='http://getwallpapers.com/wallpaper/full/a/5/3/871525-beautiful-horror-background-images-1920x1080.jpg' />
     </Body>
   )
 }

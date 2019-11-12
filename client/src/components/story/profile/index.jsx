@@ -229,7 +229,9 @@ class Home extends React.Component {
                     </PostUser>
                     <PostDescription>Last Nights party was insane. This one weird guy kept ruining our vibe though.</PostDescription>
                     <PostImage onClick={this.toggleImageModal} src='http://getwallpapers.com/wallpaper/full/a/5/3/871525-beautiful-horror-background-images-1920x1080.jpg' />
+                    
                     {imageModal && <ImageModal toggle={this.toggleImageModal} /> }
+
                     <PostMeta onClick={this.toggleModal}>
                       <IoIosHeart size='1.1rem' />
                       <PostMetaText>51 {51 > 1 ? 'Likes' : 'Like'}</PostMetaText>
