@@ -8,6 +8,7 @@ import {Body, Container, Content} from './style';
 import Navbar from '../../featureComponents/navbar';
 import Chat from '../../featureComponents/chat';
 import Comment from '../../storyComponents/comment';
+import LikesModal from '../../storyComponents/LikesModal';
 
 const ProfileSidebar = styled.div`
   width: 350px;
@@ -167,23 +168,6 @@ const PostComents = styled.div`
   `}
 `;
 
-const LikeList = styled.div`
-  width: 100px;
-  height: 120px;
-  background: white;
-  position: absolute;
-  margin-top: 35px;
-  z-index: 1;
-  
-  p {
-    margin: 0 auto;
-    line-height: 20px;
-    text-align: left;
-    margin-left: 10px;
-    font-size: 0.7rem;
-  }
-`;
-
 const ImageModal = styled.div`
   position: absolute;
   top: 0;
@@ -280,16 +264,7 @@ class Home extends React.Component {
                       <PostMetaText>51 {51 > 1 ? 'Likes' : 'Like'}</PostMetaText>
                     </PostMeta>
 
-                    {likesModal && 
-                      <LikeList>
-                        <p>Person 1</p>
-                        <p>Person 2</p>
-                        <p>Person 3</p>
-                        <p>Person 4</p>
-                        <p>Person 5</p>
-                        <p>Person 51</p>
-                      </LikeList>
-                    }
+                    {likesModal && <LikesModal /> }
 
                     <PostMeta onClick={this.toggleComments}>
                       <IoIosText size='1.1rem' />
