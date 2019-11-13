@@ -29,8 +29,12 @@ class ChatBox extends Component {
     }
   }
 
-  optionClick = () => {
+  optionClick = option => {
     console.log('option clicked')
+    // based on option, pick response/affect future events
+    this.setState({option});
+
+    this.toggleNextText();
   }
 
   render() {
@@ -43,9 +47,9 @@ class ChatBox extends Component {
         <ChatBuffer ref={node => this.chatBox = node} options={areThereOptions} />
         {areThereOptions ?
         <OptionBox>
-          <Option onClick={this.optionClick}>Option 01</Option>
-          <Option onClick={this.optionClick}>Option 02</Option>
-          <Option onClick={this.optionClick}>Option 03</Option>
+          <Option onClick={() => this.optionClick('Option 01')}>Option 01</Option>
+          <Option onClick={() => this.optionClick('Option 02')}>Option 02</Option>
+          <Option onClick={() => this.optionClick('Option 03')}>Option 03</Option>
         </OptionBox>
           : 
         <TextBox onClick={this.toggleNextText} reachedLast={isTextLast} >
