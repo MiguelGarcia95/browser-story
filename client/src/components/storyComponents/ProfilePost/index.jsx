@@ -34,6 +34,7 @@ class ProfilePost extends React.Component {
         
         {imageModal && <ImageModal toggle={this.toggleImageModal} /> }
 
+        {/* make component */}
         <PostMeta onClick={this.toggleModal}>
           <IoIosHeart size='1.1rem' />
           <PostMetaText>51 {51 > 1 ? 'Likes' : 'Like'}</PostMetaText>
@@ -41,6 +42,7 @@ class ProfilePost extends React.Component {
 
         {likesModal && <LikesModal /> } 
 
+        {/* make component */}
         <PostMeta onClick={this.toggleComments}>
           <IoIosText size='1.1rem' />
           <PostMetaText>19 {19 > 1 ? 'comments' : 'comment'}</PostMetaText>
