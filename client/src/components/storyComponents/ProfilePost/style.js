@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Body = styled.div`
+export const Body = styled.div`
   width: 600px;
   overflow: auto;
   // height: 400px;
@@ -9,19 +9,19 @@ const Body = styled.div`
   background: white;
 `;
 
-const PostDescription = styled.div`
+export const PostDescription = styled.div`
   padding: 10px;
   margin-bottom: 10px;
   box-sizing: border-box;
   // color: white;
 `;
 
-const PostUser = styled.div`
+export const PostUser = styled.div`
   width: 100%;
   height: 50px;
 `;
 
-const PostAvatar = styled.img`
+export const PostAvatar = styled.img`
   width: 25px; 
   height: 25px;
   margin: 12.5px;
@@ -30,7 +30,7 @@ const PostAvatar = styled.img`
   box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
 `;
 
-const PostUsername = styled.h2`
+export const PostUsername = styled.h2`
   float: left;
   line-height: 50px;
   margin-top: 0;
@@ -39,14 +39,14 @@ const PostUsername = styled.h2`
   letter-spacing: 1px;
 `;
 
-const PostImage = styled.img`
+export const PostImage = styled.img`
   width: 100%;
   height: 250px;
   object-fit: cover;
   cursor: pointer;
 `;
 
-const PostMeta = styled.div`
+export const PostMeta = styled.div`
   width: 150px;
   float: left;
   cursor: pointer;
@@ -59,14 +59,14 @@ const PostMeta = styled.div`
   }
 `;
 
-const PostMetaText = styled.p`
+export const PostMetaText = styled.p`
   font-size: 0.9rem;
   margin-top: 0;
   float: left;
   line-height: 30px;
 `;
 
-const PostComents = styled.div`
+export const PostComents = styled.div`
   padding-top: 5px;
   height: auto;
   width: 100%;
