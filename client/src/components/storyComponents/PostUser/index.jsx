@@ -4,11 +4,11 @@ import styled from 'styled-components';
 const Body = styled.div`
 `;
 
-function SidebarInfo() {
+function PostUser() {
   return (
     <Body>
     </Body>
   )
 }
 
-export default SidebarInfo;
+export default PostUser;
