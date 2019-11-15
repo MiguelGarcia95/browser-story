@@ -3,8 +3,9 @@ import { IoIosHeart, IoIosText} from 'react-icons/io';
 import Comment from '../comment';
 import LikesModal from '../LikesModal';
 import ImageModal from '../ImageModal';
+import PostMeta from '../PostMeta';
 
-import {Body, PostDescription, PostUser, PostAvatar, PostUsername, PostImage, PostMeta, PostMetaText, PostComents} from './style';
+import {Body, PostDescription, PostUser, PostAvatar, PostUsername, PostImage, PostComents} from './style';
 
 class ProfilePost extends React.Component {
   state = {
@@ -20,7 +21,6 @@ class ProfilePost extends React.Component {
   render() {
     const {commentsClosed, likesModal, imageModal} = this.state;
     const {user} = this.props;
-    
     return (
       <Body>
         {/* make component */}
@@ -35,18 +35,21 @@ class ProfilePost extends React.Component {
         {imageModal && <ImageModal toggle={this.toggleImageModal} /> }
 
         {/* make component */}
-        <PostMeta onClick={this.toggleModal}>
+        <PostMeta onClick={this.toggleModal} type='like' text={51 > 1 ? 'Likes' : 'Like'} />
+        <PostMeta onClick={this.toggleComments} type='comments' text={`19 ${51 > 1 ? 'Likes' : 'Like'}`} />
+
+        {/* <PostMeta onClick={this.toggleModal}>
           <IoIosHeart size='1.1rem' />
           <PostMetaText>51 {51 > 1 ? 'Likes' : 'Like'}</PostMetaText>
-        </PostMeta>
+        </PostMeta> */}
 
         {likesModal && <LikesModal /> } 
 
         {/* make component */}
-        <PostMeta onClick={this.toggleComments}>
+        {/* <PostMeta onClick={this.toggleComments}>
           <IoIosText size='1.1rem' />
           <PostMetaText>19 {19 > 1 ? 'comments' : 'comment'}</PostMetaText>
-        </PostMeta>
+        </PostMeta> */}
 
         <PostComents closed={commentsClosed}>
           <Comment />

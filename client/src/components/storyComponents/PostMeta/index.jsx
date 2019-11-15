@@ -22,11 +22,11 @@ const PostMetaText = styled.p`
   line-height: 30px;
 `;
 
-function PostMeta({type}) {
+function PostMeta({type, text, onClick}) {
   return (
-    <Body>
+    <Body onClick={onClick}>
       {type === 'like' ? <IoIosHeart size='1.1rem' /> : <IoIosText size='1.1rem' /> }
-      <PostMetaText>51 {51 > 1 ? 'Likes' : 'Like'}</PostMetaText>
+      <PostMetaText>{text}</PostMetaText>
     </Body>
   )
 }
