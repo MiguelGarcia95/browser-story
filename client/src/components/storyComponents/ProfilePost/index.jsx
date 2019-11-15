@@ -1,5 +1,4 @@
 import React from 'react';
-import { IoIosHeart, IoIosText} from 'react-icons/io';
 import Comment from '../comment';
 import LikesModal from '../LikesModal';
 import ImageModal from '../ImageModal';
@@ -34,22 +33,10 @@ class ProfilePost extends React.Component {
         
         {imageModal && <ImageModal toggle={this.toggleImageModal} /> }
 
-        {/* make component */}
         <PostMeta onClick={this.toggleModal} type='like' text={51 > 1 ? 'Likes' : 'Like'} />
         <PostMeta onClick={this.toggleComments} type='comments' text={`19 ${51 > 1 ? 'Likes' : 'Like'}`} />
 
-        {/* <PostMeta onClick={this.toggleModal}>
-          <IoIosHeart size='1.1rem' />
-          <PostMetaText>51 {51 > 1 ? 'Likes' : 'Like'}</PostMetaText>
-        </PostMeta> */}
-
         {likesModal && <LikesModal /> } 
-
-        {/* make component */}
-        {/* <PostMeta onClick={this.toggleComments}>
-          <IoIosText size='1.1rem' />
-          <PostMetaText>19 {19 > 1 ? 'comments' : 'comment'}</PostMetaText>
-        </PostMeta> */}
 
         <PostComents closed={commentsClosed}>
           <Comment />
