@@ -5,7 +5,7 @@ import ImageModal from '../ImageModal';
 import PostMeta from '../PostMeta';
 import PostUser from '../PostUser';
 
-import {Body, PostDescription, PostAvatar, PostUsername, PostImage, PostComents} from './style';
+import {Body, PostDescription, PostImage, PostComents} from './style';
 
 class ProfilePost extends React.Component {
   state = {
