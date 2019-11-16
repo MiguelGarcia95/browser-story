@@ -3,8 +3,9 @@ import Comment from '../comment';
 import LikesModal from '../LikesModal';
 import ImageModal from '../ImageModal';
 import PostMeta from '../PostMeta';
+import PostUser from '../PostUser';
 
-import {Body, PostDescription, PostUser, PostAvatar, PostUsername, PostImage, PostComents} from './style';
+import {Body, PostDescription, PostAvatar, PostUsername, PostImage, PostComents} from './style';
 
 class ProfilePost extends React.Component {
   state = {
@@ -23,10 +24,10 @@ class ProfilePost extends React.Component {
     return (
       <Body>
         {/* make component */}
-        <PostUser>
-          <PostAvatar src={user.avatar} />
-          <PostUsername>{user.username}</PostUsername>
-        </PostUser>
+        <PostUser user={user} />
+          {/* <PostAvatar src={user.avatar} /> */}
+          {/* <PostUsername>{user.username}</PostUsername> */}
+        {/* </PostUser> */}
 
         <PostDescription>Last Nights party was insane. This one weird guy kept ruining our vibe though.</PostDescription>
         <PostImage onClick={this.toggleImageModal} src='http://getwallpapers.com/wallpaper/full/a/5/3/871525-beautiful-horror-background-images-1920x1080.jpg' />
