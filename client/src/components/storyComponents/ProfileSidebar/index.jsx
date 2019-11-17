@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import {Body, ProfileHeader, HeaderAvatar, HeaderUser, ProfileTitle, ProfileDescription, ProfileInfo} from './style';
 
 function ProfileSidebar({user}) {

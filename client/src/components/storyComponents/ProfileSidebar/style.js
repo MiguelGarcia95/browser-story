@@ -1,3 +1,5 @@
+import styled from 'styled-components';
+
 export const Body = styled.div`
   width: 350px;
   min-height: 100vh;
