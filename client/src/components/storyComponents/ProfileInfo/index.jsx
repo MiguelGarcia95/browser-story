@@ -25,7 +25,7 @@ const ProfileDescription = styled.p`
   font-size: 0.9rem;
 `;
 
-const ProfileInfo = styled.div`
+const Body = styled.div`
   width: 100%;
   margin-bottom: 50px;
   // margin-top: 50px;
@@ -35,8 +35,9 @@ const ProfileInfo = styled.div`
 function ProfileInfo({user}) {
   return (
     <Body>
-      <HeaderUser>{user.username}</HeaderUser>
-      <HeaderAvatar src={user.avatar} />
+      <ProfileTitle>About</ProfileTitle>
+      <ProfileDescription>Amateur photographer & designer</ProfileDescription>
+      <ProfileDescription>Member since November 2011</ProfileDescription>
     </Body>
   )
 }
