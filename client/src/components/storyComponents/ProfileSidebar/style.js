@@ -41,32 +41,32 @@ export const HeaderUser = styled.h1`
   bottom: 0;
 `;
 
-export const ProfileTitle = styled.p`
-  width: 100%;
-  box-sizing: border-box;
-  padding-left: 100px;
-  line-height: 20px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  font-size: 0.9rem;
-  color: gray;
-  border-top: 1px solid rgba(0,0,0,0.1);
-`;
+// export const ProfileTitle = styled.p`
+//   width: 100%;
+//   box-sizing: border-box;
+//   padding-left: 100px;
+//   line-height: 20px;
+//   padding-top: 20px;
+//   padding-bottom: 20px;
+//   font-size: 0.9rem;
+//   color: gray;
+//   border-top: 1px solid rgba(0,0,0,0.1);
+// `;
 
-export const ProfileDescription = styled.p`
-  width: 100%;
-  margin-top:0;
-  padding-bottom: 20px;
-  box-sizing: border-box;
-  padding-left: 100px;
-  padding-right: 100px;
-  min-height: 40px;
-  font-size: 0.9rem;
-`;
+// export const ProfileDescription = styled.p`
+//   width: 100%;
+//   margin-top:0;
+//   padding-bottom: 20px;
+//   box-sizing: border-box;
+//   padding-left: 100px;
+//   padding-right: 100px;
+//   min-height: 40px;
+//   font-size: 0.9rem;
+// `;
 
-export const ProfileInfo = styled.div`
-  width: 100%;
-  margin-bottom: 50px;
-  // margin-top: 50px;
-  background: white;
-`;
+// export const ProfileInfo = styled.div`
+//   width: 100%;
+//   margin-bottom: 50px;
+//   // margin-top: 50px;
+//   background: white;
+// `;
