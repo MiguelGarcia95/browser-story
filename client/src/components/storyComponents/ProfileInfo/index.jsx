@@ -11,6 +11,7 @@ const ProfileTitle = styled.p`
   padding-bottom: 20px;
   font-size: 0.9rem;
   color: gray;
+  text-transform: capitalize;
   border-top: 1px solid rgba(0,0,0,0.1);
 `;
 
@@ -32,12 +33,12 @@ const Body = styled.div`
   background: white;
 `;
 
-function ProfileInfo({user}) {
+function ProfileInfo({title, description1, description2}) {
   return (
     <Body>
-      <ProfileTitle>About</ProfileTitle>
-      <ProfileDescription>Amateur photographer & designer</ProfileDescription>
-      <ProfileDescription>Member since November 2011</ProfileDescription>
+      <ProfileTitle>{title}</ProfileTitle>
+      {description1 && <ProfileDescription>{description1}</ProfileDescription> }
+      {description2 && <ProfileDescription>{description2}</ProfileDescription> }
     </Body>
   )
 }

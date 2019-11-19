@@ -1,5 +1,6 @@
 import React from 'react';
-import {Body, ProfileHeader, HeaderAvatar, HeaderUser, ProfileTitle, ProfileDescription, ProfileInfo} from './style';
+import {Body, ProfileHeader, HeaderAvatar, HeaderUser} from './style';
+import ProfileInfo from '../ProfileInfo';
 
 function ProfileSidebar({user}) {
   return (
@@ -9,26 +10,14 @@ function ProfileSidebar({user}) {
         <HeaderAvatar src={user.avatar} />
       </ProfileHeader>
 
-      <ProfileInfo>
-        <ProfileTitle>About</ProfileTitle>
-        <ProfileDescription>Amateur photographer & designer</ProfileDescription>
-        <ProfileDescription>Member since November 2011</ProfileDescription>
-      </ProfileInfo>
+      <ProfileInfo title='about' description1='Amateur photographer & designer' description2='Member since November 2011' />
+      <ProfileInfo title='Place' description1='Lives in Houston' />
+      <ProfileInfo title='Friends' description1='182 Friends' />
 
-      <ProfileInfo>
-        <ProfileTitle>Place</ProfileTitle>
-        <ProfileDescription>Lives in Houston</ProfileDescription>
-      </ProfileInfo>
-
-      <ProfileInfo>
-        <ProfileTitle>Friends</ProfileTitle>
-        <ProfileDescription>182 Friends</ProfileDescription>
-      </ProfileInfo>
-
-      <ProfileInfo>
-        <ProfileTitle>Followers</ProfileTitle>
-        <ProfileDescription>867 Followers</ProfileDescription>
-      </ProfileInfo>
+      {/* <ProfileInfo> */}
+        {/* <ProfileTitle>Followers</ProfileTitle> */}
+        {/* <ProfileDescription>867 Followers</ProfileDescription> */}
+      {/* </ProfileInfo> */}
     </Body>
   )
 }
